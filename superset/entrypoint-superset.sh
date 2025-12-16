@@ -8,8 +8,12 @@ superset fab create-admin \
   --password "${SUPERSET_ADMIN_PASSWORD}" \
   --firstname Admin \
   --lastname User \
-  --email "${SUPERSET_ADMIN_EMAIL}"
+  --email "${SUPERSET_ADMIN_EMAIL}" || true
 
 superset init
 
-exec superset run -p 8088 --with-threads --reload
+exec superset run \
+  -h 0.0.0.0 \
+  -p 8088 \
+  --with-threads \
+  --reload
