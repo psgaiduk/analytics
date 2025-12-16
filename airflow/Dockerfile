@@ -10,6 +10,3 @@ ENV AIRFLOW__CORE__LOAD_EXAMPLES=false
 
 COPY entrypoint-airflow.sh /entrypoint-airflow.sh
 ENTRYPOINT ["bash", "/entrypoint-airflow.sh"]
-
-COPY entrypoint-scheduler.sh /entrypoint-scheduler.sh
-ENTRYPOINT ["bash", "/entrypoint-scheduler.sh"]
