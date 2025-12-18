@@ -52,3 +52,8 @@ docker-compose.override.yml
 # Alembic / Migrations artifacts
 # ========================
 alembic_version
+
+# ========================
+# Logs
+# ========================
+*.log
