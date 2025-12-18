@@ -3,6 +3,7 @@ set -e
 
 superset db upgrade
 
+# Создаем admin пользователя только один раз
 superset fab create-admin \
   --username "${SUPERSET_ADMIN_USER}" \
   --password "${SUPERSET_ADMIN_PASSWORD}" \
@@ -12,8 +13,5 @@ superset fab create-admin \
 
 superset init
 
-exec superset run \
-  -h 0.0.0.0 \
-  -p 8088 \
-  --with-threads \
-  --reload
+# Запуск вебсервера
+exec superset run -h 0.0.0.0 -p 8088 --with-threads --reload

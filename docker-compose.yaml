@@ -17,7 +17,7 @@ services:
     env_file: .env
     networks:
       - biathlon-net
-    command: webserver
+    command: api-server
     ports:
       - "8080:8080"
     volumes:
