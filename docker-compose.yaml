@@ -24,6 +24,7 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/data:/opt/airflow/simple_auth_data 
 
   airflow-scheduler:
     build: ./airflow
