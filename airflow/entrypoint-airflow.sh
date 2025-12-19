@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-# --- Генерация пароля admin для Simple Auth Manager ---
+# -------------------------------
+# Simple Auth Manager (Airflow 3.x)
+# -------------------------------
 PASSWORD_FILE="/opt/airflow/simple_auth_data/simple_auth_manager_passwords.json"
 mkdir -p "$(dirname "$PASSWORD_FILE")"
 
@@ -12,16 +14,26 @@ else
     echo "Файл с паролем уже существует, пропускаем создание"
 fi
 
-# --- Миграция базы (при старте контейнера) ---
+# -------------------------------
+# Миграция базы (один раз безопасно)
+# -------------------------------
 airflow db migrate
 
-# --- Запуск нужного сервиса ---
+# -------------------------------
+# Запуск нужного сервиса
+# -------------------------------
 case "$1" in
     api-server)
         exec airflow api-server
         ;;
     scheduler)
         exec airflow scheduler
+        ;;
+    dag-processor)
+        exec airflow dag-processor
+        ;;
+    triggerer)
+        exec airflow triggerer
         ;;
     *)
         exec airflow "$@"

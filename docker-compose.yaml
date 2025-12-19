@@ -24,7 +24,7 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
-      - ./airflow/data:/opt/airflow/simple_auth_data 
+      - ./airflow/data:/opt/airflow/simple_auth_data
 
   airflow-scheduler:
     build: ./airflow
@@ -36,6 +36,26 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
+
+  airflow-dag-processor:
+    build: ./airflow
+    env_file: .env
+    networks:
+      - biathlon-net
+    command: dag-processor
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+
+  airflow-triggerer:
+    build: ./airflow
+    env_file: .env
+    networks:
+      - biathlon-net
+    command: triggerer
+    volumes:
+      - ./airflow/logs:/opt/airflow/logs
 
   superset:
     build: ./superset
