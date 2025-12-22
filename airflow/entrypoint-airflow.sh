@@ -22,20 +22,4 @@ airflow db migrate
 # -------------------------------
 # Запуск нужного сервиса
 # -------------------------------
-case "$1" in
-    api-server)
-        exec airflow api-server
-        ;;
-    scheduler)
-        exec airflow scheduler
-        ;;
-    dag-processor)
-        exec airflow dag-processor
-        ;;
-    triggerer)
-        exec airflow triggerer
-        ;;
-    *)
-        exec airflow "$@"
-        ;;
-esac
+exec airflow standalone
