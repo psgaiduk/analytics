@@ -5,6 +5,12 @@ ENV SUPERSET_ADMIN_PASSWORD=${SUPERSET_ADMIN_PASSWORD}
 ENV SUPERSET_ADMIN_EMAIL=${SUPERSET_ADMIN_EMAIL}
 ENV SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY}
 
+USER root
+
+RUN pip install --no-cache-dir clickhouse-connect
+
+USER superset
+
 COPY superset_config.py /app/pythonpath/superset_config.py
 ENV SUPERSET_CONFIG_PATH=/app/pythonpath/superset_config.py
 

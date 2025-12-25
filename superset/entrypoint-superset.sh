@@ -2,6 +2,10 @@
 set -e
 
 superset db upgrade
+superset set-database-uri \
+  --database-name ClickHouse \
+  --uri clickhousedb+connect://${CLICKHOUSE_USER}:${CLICKHOUSE_PASSWORD}@${CLICKHOUSE_HOST}:${CLICKHOUSE_PORT}/${CLICKHOUSE_DB}
+
 
 # Создаем admin пользователя только один раз
 superset fab create-admin \
