@@ -3,10 +3,7 @@ version: "3.8"
 services:
   postgres:
     image: postgres:15
-    environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
+    env_file: .env
     restart: always
     volumes:
       - postgres-data:/var/lib/postgresql/data
