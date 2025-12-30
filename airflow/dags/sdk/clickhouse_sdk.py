@@ -1,11 +1,10 @@
 # dags/sdk/clickhouse_sdk.py
 
 from os import getenv
-from typing import Iterable, Tuple, Dict
+from typing import Iterable, Tuple, List
 
-import pandas as pd
-from pandas import DataFrame
 from clickhouse_connect import get_client
+import pandas as pd
 
 
 __all__ = [
@@ -75,54 +74,136 @@ class CreateTable(DatabaseClient):
 
 
 class InsertDataFrame(DatabaseClient):
-    """
-    Вставка pandas.DataFrame в ClickHouse
-    с автоматическим определением схемы.
-    """
+    """Вставляет данные из DataFrame в таблицу ClickHouse."""
 
-    DEFAULT_TYPE_MAP: Dict[str, str] = {
-        "object": "String",
-        "int64": "Int64",
-        "float64": "Float64",
-        "bool": "UInt8",
-        "datetime64[ns]": "DateTime",
-    }
-
-    def __init__(self, df: DataFrame, table_name: str) -> None:
+    def __init__(self, df: pd.DataFrame, table_name: str) -> None:
         super().__init__()
         self.df = df
         self.table_name = table_name
-
-    def infer_ch_schema(self) -> list[Tuple[str, str]]:
-        """
-        Определяет схему ClickHouse по dtypes DataFrame.
-        """
-        columns: list[Tuple[str, str]] = []
-
-        for col, dtype in self.df.dtypes.items():
-            ch_type = self.DEFAULT_TYPE_MAP.get(str(dtype), "String")
-            columns.append((col, ch_type))
-
-        return columns
+        self.schema_inferencer = ClickHouseSchemaInferencer()
 
     def insert_data(self, recreate: bool = False) -> int:
         """
-        Создаёт таблицу (если нужно) и вставляет данные.
+        Вставляет данные из DataFrame в таблицу ClickHouse.
 
-        :param recreate: если True — таблица будет пересоздана
-        :return: количество вставленных строк
+        Args:
+            recreate (bool, optional): Если True, то таблица будет пересоздана перед вставкой данных. Defaults to False.
+
+        Returns:
+            int: Количество вставленных строк.
         """
         creator = CreateTable(self.table_name)
 
         if recreate:
             self.client.command(f"DROP TABLE IF EXISTS {self.table_name}")
 
-        columns = self.infer_ch_schema()
-        creator.create_table(columns=columns)
+        df_clean, columns = self.schema_inferencer.infer_and_cast(self.df)
 
-        # NaN -> None (важно для Nullable)
-        df_clean = self.df.where(pd.notnull(self.df), None)
+        creator.create_table(columns=columns)
 
         self.client.insert_df(self.table_name, df_clean)
 
         return len(df_clean)
+
+
+class ClickHouseSchemaInferencer:
+    """
+    Приведение pandas.DataFrame к совместимым типам.
+
+    Принципы:
+    - DateTime → datetime или ISO-строки
+    - Int64    → целые числа без дробной части
+    - Float64  → любые числовые значения с дробями
+    - UInt8    → bool-подобные значения
+    - String   → fallback
+    """
+
+    def infer_and_cast(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, List[Tuple[str, str]]]:
+        """
+        Приводит колонки DataFrame к нужным типам и возвращает схему.
+
+        Args:
+            df (pd.DataFrame): dataframe для приведения колонок к нужному типу данных.
+
+        Returns:
+            Tuple[pd.DataFrame, List[Tuple[str, str]]]: приведённый dataframe и схема.
+        """
+        df_casted = df.copy()
+        schema: List[Tuple[str, str]] = []
+
+        for column in df_casted.columns:
+            series = df_casted[column]
+
+            if self._is_datetime(series):
+                df_casted[column] = pd.to_datetime(series, errors="coerce")
+                schema.append((column, "DateTime"))
+
+            elif self._is_int(series):
+                df_casted[column] = pd.to_numeric(series, errors="coerce").astype("Int64")
+                schema.append((column, "Int64"))
+
+            elif self._is_float(series):
+                df_casted[column] = pd.to_numeric(series, errors="coerce").astype("Float64")
+                schema.append((column, "Float64"))
+
+            elif self._is_bool(series):
+                df_casted[column] = self._cast_bool(series)
+                schema.append((column, "UInt8"))
+
+            else:
+                df_casted[column] = series.astype(str)
+                schema.append((column, "String"))
+
+        return df_casted, schema
+
+    # ---------- type checks ----------
+
+    @staticmethod
+    def _is_datetime(series: pd.Series) -> bool:
+        if pd.api.types.is_numeric_dtype(series):
+            return False
+
+        try:
+            pd.to_datetime(series, errors="raise", utc=True)
+            return True
+        except Exception:
+            return False
+
+    @staticmethod
+    def _is_int(series: pd.Series) -> bool:
+        try:
+            numeric = pd.to_numeric(series.dropna(), errors="raise")
+            return (numeric % 1 == 0).all()
+        except Exception:
+            return False
+
+    @staticmethod
+    def _is_float(series: pd.Series) -> bool:
+        try:
+            numeric = pd.to_numeric(series.dropna(), errors="raise")
+            return not (numeric % 1 == 0).all()
+        except Exception:
+            return False
+
+    @staticmethod
+    def _is_bool(series: pd.Series) -> bool:
+        non_null = series.dropna().astype(str).str.lower()
+        return set(non_null.unique()).issubset({"true", "false", "1", "0"})
+
+    # ---------- casting helpers ----------
+
+    @staticmethod
+    def _cast_bool(series: pd.Series) -> pd.Series:
+        return (
+            series.astype(str)
+            .str.lower()
+            .map(
+                {
+                    "true": 1,
+                    "false": 0,
+                    "1": 1,
+                    "0": 0,
+                }
+            )
+            .astype("Int8")
+        )
