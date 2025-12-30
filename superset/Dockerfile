@@ -7,7 +7,7 @@ ENV SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY}
 
 USER root
 
-RUN pip install --no-cache-dir clickhouse-connect
+RUN pip install --no-cache-dir clickhouse-connect==0.10.0
 
 USER superset
 
