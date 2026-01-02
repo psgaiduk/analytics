@@ -1,5 +1,6 @@
 # dags/sdk/clickhouse_sdk.py
 
+from logging import getLogger
 from os import getenv
 from typing import Iterable, Tuple, List
 
@@ -12,6 +13,8 @@ __all__ = [
     "CreateTable",
     "InsertDataFrame",
 ]
+
+log = getLogger(__name__)
 
 
 class DatabaseClient:
@@ -95,6 +98,7 @@ class InsertDataFrame(DatabaseClient):
         creator = CreateTable(self.table_name)
 
         if recreate:
+            log.info(f"Recreating table {self.table_name}")
             self.client.command(f"DROP TABLE IF EXISTS {self.table_name}")
 
         df_clean, columns = self.schema_inferencer.infer_and_cast(self.df)
@@ -133,24 +137,37 @@ class ClickHouseSchemaInferencer:
 
         for column in df_casted.columns:
             series = df_casted[column]
+            series = series.dropna().astype(str).str.strip()
 
-            if self._is_datetime(series):
-                df_casted[column] = pd.to_datetime(series, errors="coerce")
-                schema.append((column, "DateTime"))
+            series = series[series != ""]
+            log.info(f"Inferring type for column '{column}' with sample data: {series.head(5).tolist()}")
+
+            if series.empty:
+                log.info(f"Column '{column}' is empty after cleaning, defaulting to String")
+                schema.append((column, "String"))
+
+            elif self._is_bool(series):
+                log.info(f"Column '{column}' inferred as Boolean")
+                df_casted[column] = self._cast_bool(series)
+                schema.append((column, "UInt8"))
 
             elif self._is_int(series):
+                log.info(f"Column '{column}' inferred as Integer")
                 df_casted[column] = pd.to_numeric(series, errors="coerce").astype("Int64")
                 schema.append((column, "Int64"))
 
             elif self._is_float(series):
+                log.info(f"Column '{column}' inferred as Float")
                 df_casted[column] = pd.to_numeric(series, errors="coerce").astype("Float64")
                 schema.append((column, "Float64"))
 
-            elif self._is_bool(series):
-                df_casted[column] = self._cast_bool(series)
-                schema.append((column, "UInt8"))
+            elif self._is_datetime(series):
+                log.info(f"Column '{column}' inferred as DateTime")
+                df_casted[column] = pd.to_datetime(series, errors="coerce")
+                schema.append((column, "DateTime"))
 
             else:
+                log.info(f"Column '{column}' inferred as String")
                 df_casted[column] = series.astype(str)
                 schema.append((column, "String"))
 
