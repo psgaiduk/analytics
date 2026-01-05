@@ -47,6 +47,7 @@ with DAG(
 
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"] or generate_season_id()
+        log.info(f"Get values rt = {rt} and season_id = {season_id}")
 
         stages = ["CH__", "OG__"]
         stages.extend([f"CP{i}" if i > 9 else f"CP0{i}" for i in range(1, 20)])
@@ -88,11 +89,15 @@ with DAG(
         """
         from datetime import date
 
+        log.info("Generate season_id")
         today = date.today()
         year = today.year % 100
+        log.debug(f"today = {today} year = {year}")
         if today.month < 7:
+            log.debug("month less 7")
             season_id = f"{year - 1}{year}"
         else:
+            log.debug("Month after 6")
             season_id = f"{year}{year + 1}"
         return season_id
 
