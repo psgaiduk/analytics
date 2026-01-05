@@ -224,3 +224,47 @@ class ClickHouseSchemaInferencer:
             )
             .astype("Int8")
         )
+
+
+class GetDataByQuery(DatabaseClient):
+    """
+    Выполнение SELECT-запросов к ClickHouse с возвратом результата в pandas.DataFrame.
+    """
+
+    def get_data(self, query: str, parameters: dict | None = None) -> pd.DataFrame:
+        """
+        Выполняет SELECT-запрос и возвращает результат как DataFrame.
+
+        Args:
+            query (str): SQL SELECT запрос
+            parameters (dict | None): параметры запроса (optional)
+
+        Returns:
+            pd.DataFrame: результат запроса
+
+        Example:
+        query =
+            SELECT *
+            FROM biathlon.results
+            WHERE season_id = %(season_id)s
+        df = GetDataByQuery().get_data(
+            query,
+            parameters={"season_id": 2526},
+        )
+        """
+        log.info("Executing ClickHouse query")
+        log.debug("SQL: %s", query)
+        log.debug("Parameters: %s", parameters)
+
+        result = self.client.query(
+            query,
+            parameters=parameters,
+        )
+
+        df = pd.DataFrame(
+            result.result_rows,
+            columns=result.column_names,
+        )
+
+        log.info("Query returned %s rows", len(df))
+        return df
