@@ -18,7 +18,7 @@ with DAG(
     tags=["biathlon"],
     params={
         "season_id": Param(
-            2526,
+            0,
             type="integer",
             description="SeasonId для biathlonresults.com",
         ),
@@ -36,7 +36,7 @@ with DAG(
 ) as dag:
 
     @task()
-    def fetch_competitions(rt: int, season_id: int) -> list:
+    def fetch_competitions(**kwargs) -> list:
         """Загружает данные соревнований с biathlonresults.com"""
         from time import sleep
 
@@ -44,6 +44,9 @@ with DAG(
         from requests import get
 
         results = DataFrame()
+
+        rt = kwargs["params"]["rt"]
+        season_id = kwargs["params"]["season_id"] or generate_season_id()
 
         stages = ["CH__", "OG__"]
         stages.extend([f"CP{i}" if i > 9 else f"CP0{i}" for i in range(1, 20)])
@@ -76,12 +79,30 @@ with DAG(
         log.info(f"data: {df.head()}")
         return results
 
+    def generate_season_id() -> str:
+        """
+        Генерирует season_id по текущей дате.
+
+        Returns:
+            str: season_id
+        """
+        from datetime import date
+
+        today = date.today()
+        year = today.year % 100
+        if today.month < 7:
+            season_id = f"{year - 1}{year}"
+        else:
+            season_id = f"{year}{year + 1}"
+        return season_id
+
     @task
-    def load_to_clickhouse(competitions: list, recreate: bool) -> None:
+    def load_to_clickhouse(competitions: list, **kwargs) -> None:
         """
         Сохраняет данные в ClickHouse
         """
 
+        recreate = kwargs["params"]["recreate"]
         log.info(f"Start load data to clickhouse, recreate={recreate}, {type(recreate)}")
 
         if competitions.empty:
