@@ -155,7 +155,7 @@ class GetDataByQuery(DatabaseClient):
         Example:
         query =
             SELECT *
-            FROM biathlon.results
+            FROM biathlon_raw.result
             WHERE season_id = %(season_id)s
         df = GetDataByQuery().get_data(
             query,

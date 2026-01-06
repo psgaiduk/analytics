@@ -114,7 +114,7 @@ with DAG(
             print("DataFrame пуст")
             return
 
-        table_name = "biathlon.competitions"
+        table_name = "biathlon_raw.competition"
 
         InsertDataFrame(df=competitions, table_name=table_name).insert_data(recreate=recreate)
 

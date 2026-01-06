@@ -31,20 +31,35 @@ with DAG(
 
     @task()
     def get_race_id() -> int:
+        from clickhouse_connect.driver.exceptions import DatabaseError
+
         query_for_get_race_id = """
         SELECT
             RaceId
-        FROM biathlon.competitions
-        WHERE RaceId NOT IN (SELECT DISTINCT race_id FROM biathlon.results)
+        FROM biathlon_raw.competition
+        WHERE RaceId NOT IN (SELECT DISTINCT race_id FROM biathlon_raw.result)
         AND StatusId = '11'
         ORDER BY StartTime DESC
         LIMIT 1
         """
+        try:
+            race_id_df = GetDataByQuery().get_data(query=query_for_get_race_id)
+        except DatabaseError as e:
+            log.error(f"Database error {e}")
+            query_for_get_race_id = """ 
+                SELECT
+                    RaceId
+                FROM biathlon_raw.competition
+                WHERE StatusId = '11'
+                ORDER BY StartTime DESC
+                LIMIT 1
+                """
+            race_id_df = GetDataByQuery().get_data(query=query_for_get_race_id)
 
-        race_id_df = GetDataByQuery().get_data(query=query_for_get_race_id)
         log.info(f"Get race id from database race_id_df = {race_id_df}")
         if race_id_df.empty:
             log.warning("Race Id is empty")
+            return
 
         race_id = race_id_df["RaceId"].iloc[0]
         return race_id
@@ -136,15 +151,16 @@ with DAG(
         if results.empty:
             log.error("DataFrame пуст")
         else:
-            table_name = "biathlon.results"
+            table_name = "biathlon_raw.result"
             InsertDataFrame(df=results, table_name=table_name).insert_data(recreate=recreate)
 
         if analytics_results.empty:
             log.error("Analytics DataFrame пуст")
         else:
-            table_name = "biathlon.analytics_results"
+            table_name = "biathlon_raw.analytics_result"
             InsertDataFrame(df=analytics_results, table_name=table_name).insert_data(recreate=recreate)
 
     race_id = get_race_id()
-    all_results = fetch_results(race_id=race_id)
-    load_to_clickhouse(all_results=all_results)
+    if race_id:
+        all_results = fetch_results(race_id=race_id)
+        load_to_clickhouse(all_results=all_results)
