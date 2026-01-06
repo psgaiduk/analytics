@@ -1,13 +1,9 @@
-# ========================
 # Secrets / env
-# ========================
 .env
 .env.*
 !.env.example
 
-# ========================
 # Python
-# ========================
 __pycache__/
 *.py[cod]
 *.pyo
@@ -18,42 +14,34 @@ __pycache__/
 venv/
 env/
 
-# ========================
 # Airflow
-# ========================
 airflow.cfg
 airflow.db
 airflow-webserver.pid
 logs/
 dags/__pycache__/
 
-# ========================
 # Superset
-# ========================
 superset.db
 superset_config.py
 superset.db-journal
 
-# ========================
 # Docker
-# ========================
 docker-compose.override.yml
 *.log
 
-# ========================
 # OS / IDE
-# ========================
 .DS_Store
 .idea/
 .vscode/
 *.swp
 
-# ========================
 # Alembic / Migrations artifacts
-# ========================
 alembic_version
 
-# ========================
 # Logs
-# ========================
 *.log
+
+# dbt
+dbt/target/
+dbt/logs/
