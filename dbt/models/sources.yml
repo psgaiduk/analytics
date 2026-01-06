@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: biathlon_raw
+    database: biathlon_raw
+    tables:
+      - name: result
+      - name: analytics_result
+      - name: competition
