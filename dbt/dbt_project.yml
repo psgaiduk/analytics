@@ -1,0 +1,10 @@
+name: biathlon_project      # уникальное имя проекта
+version: '1.0'              # версия проекта
+profile: biathlon           # имя профиля из profiles.yml
+config-version: 2           # обязательный ключ для dbt >=1.0
+model-paths: ["models"]     # путь к моделям
+macro-paths: ["macros"]     # путь к макросам
+target-path: "target"       # куда складывать compiled sql
+clean-targets:
+  - "target"
+  - "dbt_modules"

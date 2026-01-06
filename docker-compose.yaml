@@ -23,6 +23,7 @@ services:
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./airflow/data:/opt/airflow/simple_auth_data
+      - ./dbt:/opt/airflow/dbt
 
   superset:
     build: ./superset
