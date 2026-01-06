@@ -34,9 +34,9 @@ with DAG(
         query_for_get_race_id = """
         SELECT
             RaceId
-        FROM biathlon.competitions 
+        FROM biathlon.competitions
         WHERE RaceId NOT IN (SELECT DISTINCT race_id FROM biathlon.results)
-        AND StatusId = 11
+        AND StatusId = '11'
         ORDER BY StartTime DESC
         LIMIT 1
         """

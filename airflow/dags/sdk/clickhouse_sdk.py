@@ -111,16 +111,7 @@ class InsertDataFrame(DatabaseClient):
 
 
 class ClickHouseSchemaInferencer:
-    """
-    Приведение pandas.DataFrame к совместимым типам.
-
-    Принципы:
-    - DateTime → datetime или ISO-строки
-    - Int64    → целые числа без дробной части
-    - Float64  → любые числовые значения с дробями
-    - UInt8    → bool-подобные значения
-    - String   → fallback
-    """
+    """Всегда строка"""
 
     def infer_and_cast(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, List[Tuple[str, str]]]:
         """
@@ -137,93 +128,12 @@ class ClickHouseSchemaInferencer:
 
         for column in df_casted.columns:
             series = df_casted[column]
-            series = series.dropna().astype(str).str.strip()
+            log.info(f"Column '{column}' inferred as String")
+            df_casted[column] = series.astype(str)
+            schema.append((column, "String"))
 
-            series = series[series != ""]
-            log.info(f"Inferring type for column '{column}' with sample data: {series.head(5).tolist()}")
-
-            if series.empty:
-                log.info(f"Column '{column}' is empty after cleaning, defaulting to String")
-                schema.append((column, "String"))
-
-            elif self._is_bool(series):
-                log.info(f"Column '{column}' inferred as Boolean")
-                df_casted[column] = self._cast_bool(series)
-                schema.append((column, "UInt8"))
-
-            elif self._is_int(series):
-                log.info(f"Column '{column}' inferred as Integer")
-                df_casted[column] = pd.to_numeric(series, errors="coerce").astype("Int64")
-                schema.append((column, "Int64"))
-
-            elif self._is_float(series):
-                log.info(f"Column '{column}' inferred as Float")
-                df_casted[column] = pd.to_numeric(series, errors="coerce").astype("Float64")
-                schema.append((column, "Float64"))
-
-            elif self._is_datetime(series):
-                log.info(f"Column '{column}' inferred as DateTime")
-                df_casted[column] = pd.to_datetime(series, errors="coerce")
-                schema.append((column, "DateTime"))
-
-            else:
-                log.info(f"Column '{column}' inferred as String")
-                df_casted[column] = series.astype(str)
-                schema.append((column, "String"))
-
+        log.info(f"schema = {schema}")
         return df_casted, schema
-
-    # ---------- type checks ----------
-
-    @staticmethod
-    def _is_datetime(series: pd.Series) -> bool:
-        if pd.api.types.is_numeric_dtype(series):
-            return False
-
-        try:
-            pd.to_datetime(series, errors="raise", utc=True)
-            return True
-        except Exception:
-            return False
-
-    @staticmethod
-    def _is_int(series: pd.Series) -> bool:
-        try:
-            numeric = pd.to_numeric(series.dropna(), errors="raise")
-            return (numeric % 1 == 0).all()
-        except Exception:
-            return False
-
-    @staticmethod
-    def _is_float(series: pd.Series) -> bool:
-        try:
-            numeric = pd.to_numeric(series.dropna(), errors="raise")
-            return not (numeric % 1 == 0).all()
-        except Exception:
-            return False
-
-    @staticmethod
-    def _is_bool(series: pd.Series) -> bool:
-        non_null = series.dropna().astype(str).str.lower()
-        return set(non_null.unique()).issubset({"true", "false", "1", "0"})
-
-    # ---------- casting helpers ----------
-
-    @staticmethod
-    def _cast_bool(series: pd.Series) -> pd.Series:
-        return (
-            series.astype(str)
-            .str.lower()
-            .map(
-                {
-                    "true": 1,
-                    "false": 0,
-                    "1": 1,
-                    "0": 0,
-                }
-            )
-            .astype("Int8")
-        )
 
 
 class GetDataByQuery(DatabaseClient):
