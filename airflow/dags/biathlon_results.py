@@ -4,14 +4,14 @@ from logging import getLogger
 from airflow.sdk import DAG, Param, task
 
 from constants import BIATHLON_RESULTS_URL
-from sdk.clickhouse_sdk import InsertDataFrame, GetDataByQuery
+from sdk.clickhouse_sdk import DeleteFromDatabase, GetDataByQuery, InsertDataFrame
 
 
 log = getLogger(__name__)
 
 with DAG(
     dag_id="biathlon_results",
-    schedule="0 */3 * * *",
+    schedule="0 */1 * * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=["biathlon"],
@@ -138,7 +138,7 @@ with DAG(
         return [results, analytic_results]
 
     @task
-    def load_to_clickhouse(all_results: list, **kwargs) -> None:
+    def load_to_clickhouse(race_id: int, all_results: list, **kwargs) -> None:
         """
         Сохраняет данные в ClickHouse
         """
@@ -151,15 +151,17 @@ with DAG(
             log.error("DataFrame пуст")
         else:
             table_name = "biathlon_raw.result"
+            DeleteFromDatabase(table_name=table_name).delete_where(condition=f"race_id = '{race_id}'")
             InsertDataFrame(df=results, table_name=table_name).insert_data(recreate=recreate)
 
         if analytics_results.empty:
             log.error("Analytics DataFrame пуст")
         else:
             table_name = "biathlon_raw.analytics_result"
+            DeleteFromDatabase(table_name=table_name).delete_where(condition=f"race_id = '{race_id}'")
             InsertDataFrame(df=analytics_results, table_name=table_name).insert_data(recreate=recreate)
 
     race_id = get_race_id()
     if race_id:
         all_results = fetch_results(race_id=race_id)
-        load_to_clickhouse(all_results=all_results)
+        load_to_clickhouse(race_id=race_id, all_results=all_results)
