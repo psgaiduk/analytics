@@ -178,3 +178,25 @@ class GetDataByQuery(DatabaseClient):
 
         log.info("Query returned %s rows", len(df))
         return df
+
+
+class DeleteFromDatabase(DatabaseClient):
+    """Удаляет данные из базы данных."""
+
+    def __init__(self, table_name: str) -> None:
+        super().__init__()
+        self.table_name = table_name
+
+    def delete_where(self, condition: str) -> None:
+        """
+        Удаляет данные по условию.
+
+        Args:
+            condition: SQL-условие для WHERE
+        """
+        sql = f"""
+        ALTER TABLE {self.table_name}
+        DELETE WHERE {condition}
+        """
+        log.info(f"Deleting from {self.table_name} where {condition}")
+        self.client.command(sql)
