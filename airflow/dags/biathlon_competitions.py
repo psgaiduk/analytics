@@ -5,7 +5,7 @@ from airflow.sdk import DAG, task
 from airflow.models.param import Param
 
 from constants import BIATHLON_RESULTS_URL
-from sdk.clickhouse_sdk import InsertDataFrame
+from sdk.clickhouse_sdk import DeleteFromDatabase, InsertDataFrame
 
 
 log = getLogger(__name__)
@@ -114,8 +114,9 @@ with DAG(
             print("DataFrame пуст")
             return
 
+        season_id = kwargs["params"]["season_id"] or generate_season_id()
         table_name = "biathlon_raw.competition"
-
+        DeleteFromDatabase(table_name=table_name).delete_where(condition=f"season_id = '{season_id}'")
         InsertDataFrame(df=competitions, table_name=table_name).insert_data(recreate=recreate)
 
     competitions = fetch_competitions(
