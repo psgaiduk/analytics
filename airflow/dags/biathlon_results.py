@@ -132,8 +132,7 @@ with DAG(
             df["type_name"] = type_name
             analytic_results = concat([analytic_results, df], ignore_index=True)
 
-            log.info(f"data: {df.info()}")
-            log.info(f"data: {df.head()}")
+            log.debug(f"data: {df.head(2)}")
             sleep(1)
 
         return [results, analytic_results]
