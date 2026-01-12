@@ -87,13 +87,13 @@ class BiathlonResultsFetcher:
         analytic_results = DataFrame()
 
         results = self._get_results()
-        if not results:
+        if results is None or results.empty:
             return []
         sleep(1)
 
-        for type_id, type_name in self._get_analytics_type:
+        for type_id, type_name in self._get_analytics_type():
             analytic_results_df = self._get_analytics_results(type_id=type_id, type_name=type_name)
-            if not analytic_results_df:
+            if analytic_results_df is None or analytic_results_df.empty:
                 continue
             analytic_results = concat([analytic_results, analytic_results_df], ignore_index=True)
             sleep(1)
@@ -112,15 +112,15 @@ class BiathlonResultsFetcher:
         if not data:
             return
 
+        self.competition = data["Competition"]
         df = DataFrame(data["Results"])
         df["race_id"] = self.race_id
         df["rt"] = self.rt
         return df
 
-    def _get_analytics_type(self, data: dict):
-        competition = data["Competition"]
-        legs = int(competition.get("NrLegs", 0))
-        shootings = int(competition.get("NrShootings", 0))
+    def _get_analytics_type(self):
+        legs = int(self.competition.get("NrLegs", 0))
+        shootings = int(self.competition.get("NrShootings", 0))
         analytic_types = [
             ["CRST", "Total Course Time"],
             ["RNGT", "Total Range Time"],
