@@ -18,11 +18,6 @@ class BiathlonCompetitionsFetcher:
 
     stages: List[str] = ["CH__", "OG__"] + [f"CP{i}" if i > 9 else f"CP0{i}" for i in range(1, 20)]
 
-    def __init__(self) -> None:
-        """Init."""
-        self.base_url = BIATHLON_RESULTS_URL
-        self.sleep_seconds = 1
-
     def fetch(self, rt: int, season_id: int) -> DataFrame:
         """Fetch competitions for this season.
 
@@ -50,14 +45,14 @@ class BiathlonCompetitionsFetcher:
             df["stage"] = stage
             df["rt"] = rt
             results = concat([results, df], ignore_index=True)
-            sleep(self.sleep_seconds)
+            sleep(1)
 
         self.log.info("Fetched %s rows", len(results))
         return results
 
     def _get_stage(self, stage: str):
         event_id = f"BT{self.season_id}SWRL{stage}"
-        url = f"{self.base_url}/Competitions?RT={self.rt}&EventId={event_id}"
+        url = f"{BIATHLON_RESULTS_URL}/Competitions?RT={self.rt}&EventId={event_id}"
 
         response = get(url, timeout=30)
         self.log.info(
@@ -67,7 +62,100 @@ class BiathlonCompetitionsFetcher:
         )
 
         if response.status_code != 200:
-            self.log.error("Error response: %s", response.text)
+            self.log.error(f"Error response: {response.text}")
             return
 
         return response.json()
+
+
+class BiathlonResultsFetcher:
+    """Загружает данные соревнований с biathlonresults.com."""
+
+    def fetch(self, race_id: str, rt: int) -> list:
+        """Fetch results and analytics results from biathlon results.
+
+        Args:
+            race_id (str): race id.
+            rt (int): rt.
+
+        Returns:
+            list: [results, analytics_results]
+        """
+
+        self.race_id = race_id
+        self.rt = rt
+        analytic_results = DataFrame()
+
+        results = self._get_results()
+        if not results:
+            return []
+        sleep(1)
+
+        for type_id, type_name in self._get_analytics_type:
+            analytic_results_df = self._get_analytics_results(type_id=type_id, type_name=type_name)
+            if not analytic_results_df:
+                continue
+            analytic_results = concat([analytic_results, analytic_results_df], ignore_index=True)
+            sleep(1)
+
+        return [results, analytic_results]
+
+    def _get_results(self):
+        url = f"{BIATHLON_RESULTS_URL}/Results?RT={self.rt}&RaceId={self.race_id}"
+        response = get(url, timeout=30)
+        log.info(f"Status code for race_id {self.race_id}: {response.status_code}")
+        if response.status_code != 200:
+            log.error(f"Get error response: {response.text}")
+            return
+
+        data = response.json()
+        if not data:
+            return
+
+        df = DataFrame(data["Results"])
+        df["race_id"] = self.race_id
+        df["rt"] = self.rt
+        return df
+
+    def _get_analytics_type(self, data: dict):
+        competition = data["Competition"]
+        legs = int(competition.get("NrLegs", 0))
+        shootings = int(competition.get("NrShootings", 0))
+        analytic_types = [
+            ["CRST", "Total Course Time"],
+            ["RNGT", "Total Range Time"],
+            ["STTM", "Total Shooting Time"],
+            ["SKIT", "Ski Time"],
+        ]
+
+        if legs:
+            analytic_types.extend([[f"FI{i + 1}L", f"Results Les {i + 1}"] for i in range(legs)])
+            analytic_types.extend([[f"CRST{i + 1}", f"Course Time Leg {i + 1}"] for i in range(legs)])
+            analytic_types.extend([[f"RNGT{i + 1}T", f"Range Time Leg {i + 1}"] for i in range(legs)])
+        else:
+            legs = 1
+
+        analytic_types.extend([[f"CRS{i + 1}", f"Course Time Lap {i + 1}"] for i in range((shootings + 1) * legs)])
+        analytic_types.extend([[f"RNG{i + 1}", f"Range Time {i + 1}"] for i in range(shootings * legs)])
+        analytic_types.extend([[f"S{i + 1}TM", f"Shooting Time {i + 1}"] for i in range(shootings * legs)])
+        log.info(f"analytic_types: {analytic_types}")
+        return analytic_types
+
+    def _get_analytics_results(self, type_name: str, type_id: str) -> DataFrame:
+        analytics_url = f"{BIATHLON_RESULTS_URL}/AnalyticResults?RaceId={self.race_id}&TypeId={type_id}"
+        response = get(analytics_url, timeout=30)
+        log.info(f"Status code for type_id {type_id}: {response.status_code}")
+        if response.status_code != 200:
+            log.error(f"Get error response: {response.text}")
+            return
+        analytics_data = response.json()
+        if not analytics_data:
+            return
+
+        df = DataFrame(analytics_data["Results"])
+        df["race_id"] = self.race_id
+        df["type_id"] = type_id
+        df["type_name"] = type_name
+
+        log.debug(f"data: {df.head(2)}")
+        return df
