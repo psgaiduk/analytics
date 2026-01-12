@@ -1,3 +1,4 @@
+from datetime import datetime
 from logging import getLogger
 from time import sleep
 from typing import List
@@ -44,6 +45,7 @@ class BiathlonCompetitionsFetcher:
             df["season_id"] = season_id
             df["stage"] = stage
             df["rt"] = rt
+            df["updated_at"] = datetime.now()
             results = concat([results, df], ignore_index=True)
             sleep(1)
 
