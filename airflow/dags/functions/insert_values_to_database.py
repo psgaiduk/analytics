@@ -23,5 +23,4 @@ def load_to_database(table_name: str, data: DataFrame, recreate: bool) -> None:
         print("DataFrame пуст")
         return
 
-    table_name = "biathlon_raw.competition"
     InsertDataFrame(df=data, table_name=table_name).insert_data(recreate=recreate)
