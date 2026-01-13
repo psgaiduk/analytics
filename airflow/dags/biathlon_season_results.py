@@ -89,7 +89,6 @@ with DAG(
             load_to_database(table_name=table_analytics_results, data=analytics_results, recreate=recreate)
             log.info(f"complete update race id = {race_id}")
             sleep(5)
-            break
 
     def _get_race_id(season_id: int) -> int:
         log.info(f"Get season_id = {season_id}")
