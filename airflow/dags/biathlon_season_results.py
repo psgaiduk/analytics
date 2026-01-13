@@ -29,11 +29,6 @@ with DAG(
             type="integer",
             description="RT для biathlonresults.com",
         ),
-        "recreate": Param(
-            False,
-            type="boolean",
-            description="Recreate table in database or not",
-        ),
     },
 ) as dag:
 
@@ -41,12 +36,11 @@ with DAG(
     def get_competitions(**kwargs):
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"] or generate_season_id()
-        recreate = kwargs["params"]["recreate"]
         table_name = "biathlon_raw.competition"
 
         DeleteFromDatabase(table_name=table_name).delete_where(condition=f"season_id = '{season_id}'")
         competitions = BiathlonCompetitionsFetcher().fetch(rt=rt, season_id=season_id)
-        load_to_database(data=competitions, table_name=table_name, recreate=recreate)
+        load_to_database(data=competitions, table_name=table_name)
 
     def generate_season_id() -> str:
         """
@@ -71,7 +65,6 @@ with DAG(
     def get_results(**kwargs):
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"] or generate_season_id()
-        recreate = kwargs["params"]["recreate"]
 
         table_results = "biathlon_raw.result"
         table_analytics_results = "biathlon_raw.analytics_result"
@@ -85,8 +78,8 @@ with DAG(
                 break
             log.info(f"start update race id = {race_id}")
             results, analytics_results = BiathlonResultsFetcher().fetch(season_id=season_id, race_id=race_id, rt=rt)
-            load_to_database(table_name=table_results, data=results, recreate=recreate)
-            load_to_database(table_name=table_analytics_results, data=analytics_results, recreate=recreate)
+            load_to_database(table_name=table_results, data=results)
+            load_to_database(table_name=table_analytics_results, data=analytics_results)
             log.info(f"complete update race id = {race_id}")
             sleep(5)
 
