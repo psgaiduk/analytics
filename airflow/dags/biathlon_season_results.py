@@ -5,6 +5,7 @@ from time import sleep
 from airflow.sdk import DAG, Param, task
 from clickhouse_connect.driver.exceptions import DatabaseError
 
+from choices.name_tables import TableNames
 from functions.insert_values_to_database import load_to_database
 from sdk.biathlon.fetch_data import BiathlonCompetitionsFetcher, BiathlonResultsFetcher
 from sdk.clickhouse_sdk import GetDataByQuery, DeleteFromDatabase
@@ -36,7 +37,7 @@ with DAG(
     def get_competitions(**kwargs):
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"] or generate_season_id()
-        table_name = "biathlon_raw.competition"
+        table_name = TableNames.BIATHLON_COMPETITION.value
 
         DeleteFromDatabase(table_name=table_name).delete_where(condition=f"season_id = '{season_id}'")
         competitions = BiathlonCompetitionsFetcher().fetch(rt=rt, season_id=season_id)
@@ -66,8 +67,8 @@ with DAG(
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"] or generate_season_id()
 
-        table_results = "biathlon_raw.result"
-        table_analytics_results = "biathlon_raw.analytics_result"
+        table_results = TableNames.BIATHLON_RESULT.value
+        table_analytics_results = TableNames.BIATHLON_ANALYTICS_RESULT.value
         DeleteFromDatabase(table_name=table_results).delete_where(condition=f"season_id = '{season_id}'")
         DeleteFromDatabase(table_name=table_analytics_results).delete_where(condition=f"season_id = '{season_id}'")
 
@@ -88,9 +89,14 @@ with DAG(
         query_for_get_race_id = f"""
         SELECT
             RaceId
-        FROM biathlon_raw.competition
+        FROM {TableNames.BIATHLON_COMPETITION.value}
         WHERE StatusId = '11' AND season_id = '{season_id}'
-        AND RaceId NOT IN (SELECT DISTINCT race_id FROM biathlon_raw.result)
+        AND RaceId NOT IN (
+            SELECT
+                DISTINCT race_id
+            FROM {TableNames.BIATHLON_RESULT.value}
+            WHERE season_id = '{season_id}'
+        )
         ORDER BY StartTime DESC
         LIMIT 1
         """
@@ -101,7 +107,7 @@ with DAG(
             query_for_get_race_id = f"""
                 SELECT
                     RaceId
-                FROM biathlon_raw.competition
+                FROM {TableNames.BIATHLON_COMPETITION.value}
                 WHERE StatusId = '11' AND season_id = '{season_id}'
                 ORDER BY StartTime DESC
                 LIMIT 1
