@@ -33,11 +33,11 @@ class BiathlonCompetitionsFetcher:
         self.season_id = season_id
         results = DataFrame()
 
-        self.log.info(f"Fetching competitions: rt={rt}, season_id={season_id}")
-        self.log.info(f"Stages: {self.stages}")
+        log.info(f"Fetching competitions: rt={rt}, season_id={season_id}")
+        log.info(f"Stages: {self.stages}")
 
         for stage in self.stages:
-            data = self._get_stage()
+            data = self._get_stage(stage=stage)
             if not data:
                 continue
 
@@ -49,7 +49,7 @@ class BiathlonCompetitionsFetcher:
             results = concat([results, df], ignore_index=True)
             sleep(1)
 
-        self.log.info("Fetched %s rows", len(results))
+        log.info("Fetched %s rows", len(results))
         return results
 
     def _get_stage(self, stage: str):
@@ -57,7 +57,7 @@ class BiathlonCompetitionsFetcher:
         url = f"{BIATHLON_RESULTS_URL}/Competitions?RT={self.rt}&EventId={event_id}"
 
         response = get(url, timeout=30)
-        self.log.info(
+        log.info(
             "Status code for event_id %s: %s",
             event_id,
             response.status_code,
@@ -73,10 +73,11 @@ class BiathlonCompetitionsFetcher:
 class BiathlonResultsFetcher:
     """Загружает данные соревнований с biathlonresults.com."""
 
-    def fetch(self, race_id: str, rt: int) -> list:
+    def fetch(self, season_id: int, race_id: str, rt: int) -> list:
         """Fetch results and analytics results from biathlon results.
 
         Args:
+            season_id (int): season id.
             race_id (str): race id.
             rt (int): rt.
 
@@ -86,6 +87,8 @@ class BiathlonResultsFetcher:
 
         self.race_id = race_id
         self.rt = rt
+        self.season_id = season_id
+        log.info(f"start get results for season {season_id} and race {race_id}")
         analytic_results = DataFrame()
 
         results = self._get_results()
@@ -118,6 +121,7 @@ class BiathlonResultsFetcher:
         df = DataFrame(data["Results"])
         df["race_id"] = self.race_id
         df["rt"] = self.rt
+        df["season_id"] = self.season_id
         return df
 
     def _get_analytics_type(self):
@@ -158,6 +162,7 @@ class BiathlonResultsFetcher:
         df["race_id"] = self.race_id
         df["type_id"] = type_id
         df["type_name"] = type_name
+        df["season_id"] = self.season_id
 
         log.debug(f"data: {df.head(2)}")
         return df
