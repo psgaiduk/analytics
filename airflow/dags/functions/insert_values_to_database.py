@@ -8,13 +8,13 @@ from sdk.clickhouse_sdk import InsertDataFrame
 log = getLogger(__name__)
 
 
-def load_to_database(table_name: str, data: DataFrame, recreate: bool) -> None:
+def load_to_database(table_name: str, data: DataFrame, recreate: bool = False) -> None:
     """Сохраняет данные в базу данных.
 
     Args:
         table_name (str): name of table.
         data (DataFrame): data for load in table.
-        recreate (bool): recreate table or not (This delete all data).
+        recreate (bool, optional): recreate table or not (This delete all data).
     """
 
     log.info(f"Start load data to database, recreate={recreate}, {type(recreate)}")
