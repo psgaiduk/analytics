@@ -22,7 +22,7 @@ with DAG(
     params={
         "season_id": Param(
             0,
-            type="integer",
+            type="string",
             description="SeasonId для biathlonresults.com",
         ),
         "rt": Param(
@@ -84,7 +84,7 @@ with DAG(
             log.info(f"complete update race id = {race_id}")
             sleep(5)
 
-    def _get_race_id(season_id: int) -> int:
+    def _get_race_id(season_id: str) -> int:
         log.info(f"Get season_id = {season_id}")
         query_for_get_race_id = f"""
         SELECT
