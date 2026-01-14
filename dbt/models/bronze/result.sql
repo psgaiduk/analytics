@@ -9,7 +9,7 @@ SELECT
     FamilyName AS family_name,
     GivenName AS given_name,
     Nat AS nationality,
-    CAST(Bib AS Int32) AS bib,
+    toInt32OrNull(Bib) AS bib,
     nullIf(Leg, 'None') AS leg,
     toInt32OrNull(Rank) AS rank,
     Shootings AS shootings,
@@ -43,4 +43,4 @@ SELECT
     nullIf(StartGroup, 'None') AS start_group,
     PursuitStartDistance AS pursuit_start_distance,
     race_id
-FROM biathlon_raw.result
+FROM {{ source('biathlon_raw', 'result') }}
