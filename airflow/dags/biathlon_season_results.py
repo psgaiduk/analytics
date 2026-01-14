@@ -21,7 +21,7 @@ with DAG(
     tags=["biathlon"],
     params={
         "season_id": Param(
-            0,
+            "",
             type="string",
             description="SeasonId для biathlonresults.com",
         ),
