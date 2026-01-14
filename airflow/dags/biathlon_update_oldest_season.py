@@ -36,7 +36,7 @@ with DAG(
     @task()
     def build_conf():
         return {
-            "season_id": int(generate_season_id()),
+            "season_id": generate_season_id(),
         }
 
     conf_data = build_conf()
