@@ -206,3 +206,13 @@ class DeleteFromDatabase(DatabaseClient):
             self.client.command(sql)
         else:
             log.warning(f"Table {self.table_name} does not exist. Skipping delete.")
+
+
+class TableDropper(DatabaseClient):
+    """Удаление таблиц из базы данных."""
+
+    def drop_tables(self, tables: list[str]) -> None:
+        """Полное удаление указанных таблиц."""
+        for table in tables:
+            log.info(f"Dropping table: {table}")
+            self.client.command(f"DROP TABLE IF EXISTS {table}")
