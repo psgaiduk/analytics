@@ -194,9 +194,15 @@ class DeleteFromDatabase(DatabaseClient):
         Args:
             condition: SQL-условие для WHERE
         """
-        sql = f"""
-        ALTER TABLE {self.table_name}
-        DELETE WHERE {condition}
-        """
-        log.info(f"Deleting from {self.table_name} where {condition}")
-        self.client.command(sql)
+        check_sql = f"EXISTS TABLE {self.table_name}"
+        table_exists = self.client.command(check_sql)
+
+        if table_exists:
+            sql = f"""
+            ALTER TABLE {self.table_name}
+            DELETE WHERE {condition}
+            """
+            log.info(f"Deleting from {self.table_name} where {condition}")
+            self.client.command(sql)
+        else:
+            log.warning(f"Table {self.table_name} does not exist. Skipping delete.")
