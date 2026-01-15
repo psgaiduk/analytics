@@ -30,24 +30,51 @@ SELECT
         0
     ) AS new_wc,
 
-    -- 2. КУБОК НАЦИЙ (Nations Cup 25/26)
+    -- 2. КУБОК НАЦИЙ (Nations Cup)
     multiIf(
         rank IS NULL OR rank = 0 OR NOT is_nc_race, 0,
         -- Эстафеты и командная гонка (RL, TM)
         discipline_id IN ('RL', 'TM'), 
-            multiIf(rank = 1, 420, rank = 2, 390, rank = 3, 360, rank = 4, 330, rank = 5, 310, rank = 6, 290, 
-                    rank = 7, 270, rank = 8, 250, rank = 9, 230, rank = 10, 220, 
-                    rank BETWEEN 11 AND 15, 320 - (rank * 10), 0),
+            multiIf(
+                rank = 1, 420,
+                rank = 2, 390,
+                rank = 3, 360,
+                rank = 4, 330,
+                rank = 5, 310,
+                rank = 6, 290, 
+                rank = 7, 270,
+                rank = 8, 250,
+                rank = 9, 230, 
+                ank = 10, 220, 
+                rank BETWEEN 11 AND 15, 320 - (rank * 10),
+                0
+            ),
         -- Сингл-микст (SR)
         discipline_id = 'SR', 
-            multiIf(rank = 1, 210, rank = 2, 195, rank = 3, 180, rank = 4, 165, rank = 5, 155, rank = 6, 145, 
-                    rank = 7, 135, rank = 8, 125, rank = 9, 115, rank = 10, 110, 0),
+            multiIf(
+                rank = 1,210,
+                rank = 2, 195,
+                rank = 3, 180,
+                rank = 4, 165,
+                rank = 5, 155,
+                rank = 6, 145, 
+                rank = 7, 135,
+                rank = 8, 125,
+                rank = 9, 115,
+                rank = 10, 110,
+                0
+            ),
         -- Личные гонки (IN, SP)
         discipline_id IN ('IN', 'SP'),
-            multiIf(rank = 1, 160, rank = 2, 154, rank = 3, 148, 
-                    rank BETWEEN 4 AND 10, 143 - ((rank - 4) * 3), 
-                    rank BETWEEN 11 AND 80, 124 - ((rank - 11) * 2), 
-                    rank BETWEEN 81 AND 160, 80 - (rank - 81), 0),
+            multiIf(
+                rank = 1, 160,
+                rank = 2, 154,
+                rank = 3, 148, 
+                rank BETWEEN 4 AND 10, 143 - ((rank - 4) * 3), 
+                rank BETWEEN 11 AND 80, 124 - ((rank - 11) * 2), 
+                rank BETWEEN 81 AND 160, 80 - (rank - 81),
+                0
+            ),
         0
     ) AS new_nc
 FROM {{ ref('result') }}
