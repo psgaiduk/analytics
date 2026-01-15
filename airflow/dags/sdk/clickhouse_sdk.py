@@ -3,9 +3,12 @@
 from logging import getLogger
 from os import getenv
 from typing import Iterable, Tuple, List
+from urllib3.exceptions import NewConnectionError, MaxRetryError, HTTPError
 
 from clickhouse_connect import get_client
+from clickhouse_connect.driver.exceptions import OperationalError, DatabaseError
 import pandas as pd
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 
 __all__ = [
@@ -17,6 +20,9 @@ __all__ = [
 log = getLogger(__name__)
 
 
+RETRYABLE_ERRORS = (OperationalError, DatabaseError, NewConnectionError, MaxRetryError, HTTPError)
+
+
 class DatabaseClient:
     """
     Базовый клиент ClickHouse.
@@ -26,6 +32,12 @@ class DatabaseClient:
     def __init__(self) -> None:
         self.client = self._get_client()
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=5, max=60),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        reraise=True,
+    )
     def _get_client(self):
         """
         Создаёт и возвращает ClickHouse client
@@ -37,6 +49,7 @@ class DatabaseClient:
             username=getenv("CLICKHOUSE_USER"),
             password=getenv("CLICKHOUSE_PASSWORD"),
             database=getenv("CLICKHOUSE_DB"),
+            connect_timeout=30,
         )
 
 
@@ -49,6 +62,15 @@ class CreateTable(DatabaseClient):
         super().__init__()
         self.table_name = table_name
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.info(
+            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def create_table(
         self,
         columns: Iterable[Tuple[str, str]],
@@ -85,6 +107,15 @@ class InsertDataFrame(DatabaseClient):
         self.table_name = table_name
         self.schema_inferencer = ClickHouseSchemaInferencer()
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.info(
+            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def insert_data(self, recreate: bool = False) -> int:
         """
         Вставляет данные из DataFrame в таблицу ClickHouse.
@@ -113,6 +144,15 @@ class InsertDataFrame(DatabaseClient):
 class ClickHouseSchemaInferencer:
     """Всегда строка"""
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.info(
+            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def infer_and_cast(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, List[Tuple[str, str]]]:
         """
         Приводит колонки DataFrame к нужным типам и возвращает схему.
@@ -141,6 +181,15 @@ class GetDataByQuery(DatabaseClient):
     Выполнение SELECT-запросов к ClickHouse с возвратом результата в pandas.DataFrame.
     """
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.info(
+            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def get_data(self, query: str, parameters: dict | None = None) -> pd.DataFrame:
         """
         Выполняет SELECT-запрос и возвращает результат как DataFrame.
@@ -187,6 +236,15 @@ class DeleteFromDatabase(DatabaseClient):
         super().__init__()
         self.table_name = table_name
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.info(
+            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def delete_where(self, condition: str) -> None:
         """
         Удаляет данные по условию.
@@ -211,6 +269,15 @@ class DeleteFromDatabase(DatabaseClient):
 class TableDropper(DatabaseClient):
     """Удаление таблиц из базы данных."""
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.info(
+            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def drop_tables(self, tables: list[str]) -> None:
         """Полное удаление указанных таблиц."""
         for table in tables:
