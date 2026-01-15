@@ -30,7 +30,7 @@ SELECT
     CAST(LocalUTCOffset AS Int32) AS local_utc_offset,
     RSC AS rsc,
     nullIf(GenderOrder, 'None') AS gender_order,
-    CAST(season_id AS Int32) AS season_id,
+    season_id,
     stage,
     CAST(rt AS Int32) AS rt
 FROM {{ source('biathlon_raw', 'competition') }}
