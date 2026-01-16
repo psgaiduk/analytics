@@ -45,6 +45,17 @@ services:
     volumes:
       - clickhouse-data:/var/lib/clickhouse
 
+  metabase:
+    build: ./metabase
+    env_file: .env
+    restart: always
+    networks:
+      - biathlon-net
+    ports:
+      - "3000:3000"
+    volumes:
+      - metabase-data:/metabase-data
+
 networks:
   biathlon-net:
     driver: bridge
@@ -53,3 +64,4 @@ volumes:
   postgres-data:
   clickhouse-data:
   superset-data:
+  metabase-data:
