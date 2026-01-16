@@ -5,9 +5,13 @@ from typing import List
 
 from pandas import DataFrame, concat
 from requests import get
+from requests.exceptions import Timeout, ConnectionError, HTTPError
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 from constants import BIATHLON_RESULTS_URL
 
+
+RETRYABLE_ERRORS = (Timeout, ConnectionError, HTTPError)
 
 log = getLogger(__name__)
 
@@ -52,6 +56,15 @@ class BiathlonCompetitionsFetcher:
         log.info("Fetched %s rows", len(results))
         return results
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying get competitions from api (attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def _get_stage(self, stage: str):
         event_id = f"BT{self.season_id}SWRL{stage}"
         url = f"{BIATHLON_RESULTS_URL}/Competitions?RT={self.rt}&EventId={event_id}"
@@ -62,6 +75,7 @@ class BiathlonCompetitionsFetcher:
             event_id,
             response.status_code,
         )
+        response.raise_for_status()
 
         if response.status_code != 200:
             self.log.error(f"Error response: {response.text}")
@@ -105,6 +119,15 @@ class BiathlonResultsFetcher:
 
         return [results, analytic_results]
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying get results from api (attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def _get_results(self):
         url = f"{BIATHLON_RESULTS_URL}/Results?RT={self.rt}&RaceId={self.race_id}"
         response = get(url, timeout=30)
@@ -112,7 +135,6 @@ class BiathlonResultsFetcher:
         if response.status_code != 200:
             log.error(f"Get error response: {response.text}")
             return
-
         data = response.json()
         if not data:
             return
@@ -147,9 +169,19 @@ class BiathlonResultsFetcher:
         log.info(f"analytic_types: {analytic_types}")
         return analytic_types
 
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying get analytics result from api (attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
     def _get_analytics_results(self, type_name: str, type_id: str) -> DataFrame:
         analytics_url = f"{BIATHLON_RESULTS_URL}/AnalyticResults?RaceId={self.race_id}&TypeId={type_id}"
         response = get(analytics_url, timeout=30)
+        response.raise_for_status()
         log.info(f"Status code for type_id {type_id}: {response.status_code}")
         if response.status_code != 200:
             log.error(f"Get error response: {response.text}")
