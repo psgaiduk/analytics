@@ -107,7 +107,8 @@ class BiathlonResultsFetcher:
 
         results = self._get_results()
         if results is None or results.empty:
-            return []
+            log.warning(f"Race {race_id} has no results.")
+            return [], []
         sleep(1)
 
         for type_id, type_name in self._get_analytics_type():
@@ -137,7 +138,8 @@ class BiathlonResultsFetcher:
             return
         data = response.json()
         if not data:
-            return
+            log.warning(f"No analytics data for race_id = {self.race_id} and type_id {type_id}")
+            return DataFrame()
 
         self.competition = data["Competition"]
         df = DataFrame(data["Results"])
@@ -185,10 +187,11 @@ class BiathlonResultsFetcher:
         log.info(f"Status code for type_id {type_id}: {response.status_code}")
         if response.status_code != 200:
             log.error(f"Get error response: {response.text}")
-            return
+            return DataFrame()
         analytics_data = response.json()
         if not analytics_data:
-            return
+            log.warning(f"No analytics data for race_id = {self.race_id} and type_id {type_id}")
+            return DataFrame()
 
         df = DataFrame(analytics_data["Results"])
         df["race_id"] = self.race_id
