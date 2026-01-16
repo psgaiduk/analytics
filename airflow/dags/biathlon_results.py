@@ -10,8 +10,25 @@ from sdk.clickhouse_sdk import DeleteFromDatabase
 
 log = getLogger(__name__)
 
+doc_md_text = """
+### DAG: Обновление результатов конкретной гонки.
+
+#### Как это работает:
+1. **Очистка данных**: Удаляет все записи если они есть для гонки по *race_id*.
+2. **Загрузка**: Получает свежие данные через API biathlonresults.com.
+3. **Запись**: Загружает данные обратно в ClickHouse.
+
+#### Параметры запуска:
+* `rt`: Технический идентификатор.
+* `race_id`: Уникальный ID гонки (строка).
+
+> **Важно**: При запуске убедитесь, что race_id указан верно, иначе данные не будут найдены.
+"""
+
+
 with DAG(
     dag_id="biathlon_update_race_results",
+    description="Обновление результатов одной гонки с biathlonresults.com",
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
@@ -29,9 +46,12 @@ with DAG(
     },
 ) as dag:
 
+    dag.doc_md = doc_md_text
+
     @task()
     def update_race_results(**kwargs) -> list:
         """Загружает данные соревнований с biathlonresults.com"""
+        update_race_results.doc_md = "Удаляет старые данные и загружает новые для конкретной гонки."
         race_id = kwargs["params"]["race_id"]
         rt = kwargs["params"]["rt"]
         recreate = False
