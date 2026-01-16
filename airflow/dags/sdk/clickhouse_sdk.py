@@ -36,6 +36,7 @@ class DatabaseClient:
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=5, max=60),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.warning(f"Retrying create client (attempt {retry_state.attempt_number})..."),
         reraise=True,
     )
     def _get_client(self):
@@ -66,9 +67,7 @@ class CreateTable(DatabaseClient):
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=2, max=30),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.info(
-            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
-        ),
+        before_sleep=lambda retry_state: log.warning(f"Retrying create table (attempt {retry_state.attempt_number})..."),
         reraise=True,
     )
     def create_table(
@@ -111,9 +110,7 @@ class InsertDataFrame(DatabaseClient):
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=2, max=30),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.info(
-            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
-        ),
+        before_sleep=lambda retry_state: log.warning(f"Retrying insert data (attempt {retry_state.attempt_number})..."),
         reraise=True,
     )
     def insert_data(self, recreate: bool = False) -> int:
@@ -144,15 +141,6 @@ class InsertDataFrame(DatabaseClient):
 class ClickHouseSchemaInferencer:
     """Всегда строка"""
 
-    @retry(
-        stop=stop_after_attempt(5),
-        wait=wait_exponential(multiplier=2, min=2, max=30),
-        retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.info(
-            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
-        ),
-        reraise=True,
-    )
     def infer_and_cast(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, List[Tuple[str, str]]]:
         """
         Приводит колонки DataFrame к нужным типам и возвращает схему.
@@ -185,8 +173,8 @@ class GetDataByQuery(DatabaseClient):
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=2, max=30),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.info(
-            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying get data by query (attempt {retry_state.attempt_number})..."
         ),
         reraise=True,
     )
@@ -240,8 +228,8 @@ class DeleteFromDatabase(DatabaseClient):
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=2, max=30),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.info(
-            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying delete from database (attempt {retry_state.attempt_number})..."
         ),
         reraise=True,
     )
@@ -273,13 +261,40 @@ class TableDropper(DatabaseClient):
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=2, max=30),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.info(
-            f"Retrying insert into {retry_state.args[0].table_name} " f"(attempt {retry_state.attempt_number})..."
-        ),
+        before_sleep=lambda retry_state: log.warning(f"Retrying drop table (attempt {retry_state.attempt_number})..."),
         reraise=True,
     )
     def drop_tables(self, tables: list[str]) -> None:
         """Полное удаление указанных таблиц."""
+        self._drop_need_tables(tables=tables)
+
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=5, max=60),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        reraise=True,
+    )
+    def drop_all_tables_in_db(self, db_name: str) -> None:
+        """Удаляет все таблицы из указанной базы данных, не удаляя саму базу."""
+
+        tables_query = f"SELECT name FROM system.tables WHERE database = '{db_name}'"
+
+        result = self.client.query(tables_query)
+        tables = [row[0] for row in result.result_rows]
+
+        if not tables:
+            log.info(f"No tables found in database: {db_name}")
+            return
+
+        log.info(f"Found {len(tables)} tables in {db_name}. Starting deletion...")
+
+        self._drop_need_tables(tables=tables)
+
+        log.info(f"All tables in {db_name} have been dropped.")
+
+    def _drop_need_tables(self, tables: str) -> None:
+        """Полное удаление указанных таблиц."""
+        log.info(f"Dropping tables: {tables}")
         for table in tables:
             log.info(f"Dropping table: {table}")
             self.client.command(f"DROP TABLE IF EXISTS {table}")
