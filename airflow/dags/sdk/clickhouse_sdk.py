@@ -280,7 +280,7 @@ class TableDropper(DatabaseClient):
         tables_query = f"SELECT name FROM system.tables WHERE database = '{db_name}'"
 
         result = self.client.query(tables_query)
-        tables = [row[0] for row in result.result_rows]
+        tables = [f"{db_name}.{row[0]}" for row in result.result_rows]
 
         if not tables:
             log.info(f"No tables found in database: {db_name}")
