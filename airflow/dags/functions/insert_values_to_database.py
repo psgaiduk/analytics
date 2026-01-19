@@ -20,7 +20,7 @@ def load_to_database(table_name: str, data: DataFrame, recreate: bool = False) -
     log.info(f"Start load data to database, recreate={recreate}, {type(recreate)}")
 
     if data.empty:
-        print("DataFrame пуст")
+        log.warning(f"DataFrame пуст для таблицы {table_name}, пропуск загрузки.")
         return
 
     InsertDataFrame(df=data, table_name=table_name).insert_data(recreate=recreate)
