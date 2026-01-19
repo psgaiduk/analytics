@@ -154,7 +154,7 @@ class BiathlonResultsFetcher:
             return
         data = response.json()
         if not data:
-            log.warning(f"No analytics data for race_id = {self.race_id} and type_id {type_id}")
+            log.warning(f"No analytics data for race_id = {self.race_id}")
             return DataFrame()
 
         self.competition = data["Competition"]
