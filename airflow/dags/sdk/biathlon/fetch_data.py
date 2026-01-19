@@ -108,7 +108,7 @@ class BiathlonResultsFetcher:
         results = self._get_results()
         if results is None or results.empty:
             log.warning(f"Race {race_id} has no results.")
-            return [], []
+            return DataFrame(), DataFrame()
         sleep(1)
 
         for type_id, type_name in self._get_analytics_type():
