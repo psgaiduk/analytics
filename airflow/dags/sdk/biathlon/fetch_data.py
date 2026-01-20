@@ -15,6 +15,55 @@ RETRYABLE_ERRORS = (Timeout, ConnectionError, HTTPError)
 log = getLogger(__name__)
 
 
+class BiathlonEventsFetcher:
+    """Fetch events for season."""
+
+    def __init__(self, rt: int, season_id: str):
+        """Init.
+
+        Args:
+            rt (int): rt for biathlon results
+            season_id (int): id of season.
+        """
+        self.rt = rt
+        self.season_id = season_id
+
+    def fetch(self) -> DataFrame:
+        """Fetch events for this season.
+
+        Returns:
+            DataFrame: competitions on this season.
+        """
+
+        log.info(f"Fetching competitions: rt={self.rt}, season_id={self.season_id}")
+        events = self._get_events()
+        events_df = DataFrame(events)
+        events_df["updated_at"] = datetime.now()
+        log.info(f"Fetched {len(events_df)} rows")
+
+        return events_df
+
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(RETRYABLE_ERRORS),
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying get events from api (attempt {retry_state.attempt_number})..."
+        ),
+        reraise=True,
+    )
+    def _get_events(self):
+        url = f"{BIATHLON_RESULTS_URL}/Events?RT={self.rt}&SeasonId={self.season_id}"
+        response = get(url, timeout=30)
+        log.info(f"Status code for season_id {self.season_id} {response.status_code}")
+
+        if response.status_code != 200:
+            log.error(f"API Error {response.status_code}: {response.text}")
+            response.raise_for_status()
+
+        return response.json()
+
+
 class BiathlonCompetitionsFetcher:
     """
     Загружает список соревнований с biathlonresults.com.
