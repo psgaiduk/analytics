@@ -4,10 +4,11 @@ from time import sleep
 
 from airflow.sdk import DAG, Param, task
 from clickhouse_connect.driver.exceptions import DatabaseError
+from pandas import DataFrame
 
 from choices.name_tables import TableNames
 from functions.insert_values_to_database import load_to_database
-from sdk.biathlon.fetch_data import BiathlonCompetitionsFetcher, BiathlonResultsFetcher
+from sdk.biathlon.fetch_data import BiathlonCompetitionsFetcher, BiathlonEventsFetcher, BiathlonResultsFetcher
 from sdk.clickhouse_sdk import GetDataByQuery, DeleteFromDatabase
 
 
@@ -32,6 +33,12 @@ with DAG(
         ),
     },
 ) as dag:
+
+    @task()
+    def get_events(**kwargs) -> DataFrame:
+        rt = kwargs["params"]["rt"]
+        season_id = kwargs["params"]["season_id"]
+        return BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
 
     @task()
     def get_competitions(**kwargs):
