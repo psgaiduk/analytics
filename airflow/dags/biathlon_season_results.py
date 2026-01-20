@@ -41,6 +41,14 @@ with DAG(
         return BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
 
     @task()
+    def load_events_to_clickhouse(events_df, **kwargs) -> list[int]:
+        season_id = kwargs["params"]["season_id"]
+        table_name = TableNames.BIATHLON_EVENTS.value
+        DeleteFromDatabase(table_name=table_name).delete_where(condition=f"SeasonId = '{season_id}'")
+        load_to_database(data=events_df, table_name=table_name)
+        return [event_id for event_id in events_df["EventId"].tolist()]
+
+    @task()
     def get_competitions(**kwargs):
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"] or generate_season_id()
