@@ -4,7 +4,7 @@ from time import sleep
 
 from airflow.sdk import DAG, Param, task
 from clickhouse_connect.driver.exceptions import DatabaseError
-from pandas import DataFrame
+from pandas import DataFrame, concat
 
 from choices.name_tables import TableNames
 from functions.insert_values_to_database import load_to_database
@@ -51,7 +51,15 @@ with DAG(
     @task()
     def get_competitions(event_id, **kwargs):
         rt = kwargs["params"]["rt"]
-        return BiathlonCompetitionsFetcher(rt=rt).fetch(event_id=event_id)
+        season_id = kwargs["params"]["season_id"]
+        return BiathlonCompetitionsFetcher(rt=rt, season_id=season_id).fetch(event_id=event_id)
+
+    @task()
+    def merge_and_load_competitions(dfs_list, **kwargs):
+        competitions_df = concat(dfs_list, ignore_index=True)
+        table_name = TableNames.BIATHLON_COMPETITION.value
+        load_to_database(data=competitions_df, table_name=table_name)
+        return [race_id for race_id in competitions_df["RaceId"].tolist()]
 
     def generate_season_id() -> str:
         """
@@ -134,3 +142,4 @@ with DAG(
     events_df = get_events()
     events_ids = load_events_to_clickhouse(events_df=events_df)
     dfs_list = get_competitions.partial(max_active_tis_per_dag=1).expand(event_id=events_ids)
+    race_ids = merge_and_load_competitions(dfs_list=dfs_list)
