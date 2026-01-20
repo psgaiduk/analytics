@@ -67,13 +67,15 @@ class BiathlonEventsFetcher:
 class BiathlonCompetitionsFetcher:
     """Fetch competition for event."""
 
-    def __init__(self, rt: int):
+    def __init__(self, rt: int, season_id: str):
         """Init.
 
         Args:
             rt (int): rt for biathlon results
+            season_id (int): id of season.
         """
         self.rt = rt
+        self.season_id = season_id
 
     def fetch(self, event_id: str) -> DataFrame:
         """Fetch competitions for this event.
@@ -85,8 +87,7 @@ class BiathlonCompetitionsFetcher:
             DataFrame: competitions for this event.
         """
 
-        log.info(f"Fetching competitions: {event_id}")
-        log.info(f"Stages: {self.stages}")
+        log.info(f"Fetching competitions for event: {event_id}")
 
         data = self._get_stage(event_id=event_id)
         if not data:
@@ -94,6 +95,7 @@ class BiathlonCompetitionsFetcher:
 
         competition = DataFrame(data)
         competition["updated_at"] = datetime.now()
+        competition["season_id"] = self.season_id
         sleep(1)
 
         log.info(f"Fetched {len(competition)} rows")
