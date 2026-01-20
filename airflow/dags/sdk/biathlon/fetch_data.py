@@ -65,43 +65,39 @@ class BiathlonEventsFetcher:
 
 
 class BiathlonCompetitionsFetcher:
-    """
-    Загружает список соревнований с biathlonresults.com.
-    """
+    """Fetch competition for event."""
 
-    def fetch(self, rt: int, season_id: int) -> DataFrame:
-        """Fetch competitions for this season.
+    def __init__(self, rt: int):
+        """Init.
 
         Args:
             rt (int): rt for biathlon results
-            season_id (int): id of season.
-
-        Returns:
-            DataFrame: competitions on this season.
         """
         self.rt = rt
-        self.season_id = season_id
-        self._get_stages()
-        results = DataFrame()
 
-        log.info(f"Fetching competitions: rt={rt}, season_id={season_id}")
+    def fetch(self, event_id: str) -> DataFrame:
+        """Fetch competitions for this event.
+
+        Args:
+            event_id (str): id of event.
+
+        Returns:
+            DataFrame: competitions for this event.
+        """
+
+        log.info(f"Fetching competitions: {event_id}")
         log.info(f"Stages: {self.stages}")
 
-        for stage in self.stages:
-            data = self._get_stage(stage=stage)
-            if not data:
-                continue
+        data = self._get_stage(event_id=event_id)
+        if not data:
+            return DataFrame()
 
-            df = DataFrame(data)
-            df["season_id"] = season_id
-            df["stage"] = stage
-            df["rt"] = rt
-            df["updated_at"] = datetime.now()
-            results = concat([results, df], ignore_index=True)
-            sleep(1)
+        competition = DataFrame(data)
+        competition["updated_at"] = datetime.now()
+        sleep(1)
 
-        log.info(f"Fetched {len(results)} rows")
-        return results
+        log.info(f"Fetched {len(competition)} rows")
+        return competition
 
     @retry(
         stop=stop_after_attempt(5),
@@ -112,41 +108,18 @@ class BiathlonCompetitionsFetcher:
         ),
         reraise=True,
     )
-    def _get_stage(self, stage: str):
-        url = f"{BIATHLON_RESULTS_URL}/Competitions?RT={self.rt}&EventId={stage}"
+    def _get_stage(self, event_id: str):
+        url = f"{BIATHLON_RESULTS_URL}/Competitions?RT={self.rt}&EventId={event_id}"
 
         response = get(url, timeout=30)
-        log.info(f"Status code for event_id {stage}: {response.status_code}")
-        response.raise_for_status()
+        log.info(f"Status code for event_id {event_id}: {response.status_code}")
 
         if response.status_code != 200:
             self.log.error(f"Error response: {response.text}")
+            response.raise_for_status()
             return
 
         return response.json()
-
-    @retry(
-        stop=stop_after_attempt(5),
-        wait=wait_exponential(multiplier=2, min=2, max=30),
-        retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.warning(
-            f"Retrying get events from api (attempt {retry_state.attempt_number})..."
-        ),
-        reraise=True,
-    )
-    def _get_stages(self):
-
-        url = f"{BIATHLON_RESULTS_URL}/Events?RT={self.rt}&SeasonId={self.season_id}"
-        response = get(url, timeout=30)
-        log.info(f"Status code for season_id {self.season_id} {response.status_code}")
-        response.raise_for_status()
-
-        if response.status_code != 200:
-            self.log.error(f"Error response: {response.text}")
-            return
-
-        events = response.json()
-        self.stages = [event["EventId"] for event in events]
 
 
 class BiathlonResultsFetcher:
