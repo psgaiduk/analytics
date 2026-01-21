@@ -66,7 +66,10 @@ with DAG(
         competitions_df = concat(dfs_list, ignore_index=True)
         table_name = TableNames.BIATHLON_COMPETITION.value
         load_to_database(data=competitions_df, table_name=table_name)
-        return [{'race_id': race_id} for race_id in competitions_df["RaceId"].tolist()]
+
+        finished_races = competitions_df[competitions_df["StatusId"].astype(int) == 11]
+        log.info(f"Total races: {len(competitions_df)}, Finished races to trigger: {len(finished_races)}")
+        return [{"race_id": race_id} for race_id in finished_races["RaceId"].tolist()]
 
     def generate_season_id() -> str:
         """
