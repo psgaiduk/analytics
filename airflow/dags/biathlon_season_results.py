@@ -38,7 +38,7 @@ with DAG(
     @task()
     def get_events(**kwargs) -> DataFrame:
         rt = kwargs["params"]["rt"]
-        season_id = kwargs["params"]["season_id"]
+        season_id = kwargs["params"]["season_id"] or generate_season_id()
         events_df = BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
         if events_df.empty:
             log.info("Данных нет. Пропускаем выполнение всего DAG.")
@@ -47,7 +47,7 @@ with DAG(
 
     @task()
     def load_events_to_clickhouse(events_df, **kwargs) -> list[int]:
-        season_id = kwargs["params"]["season_id"]
+        season_id = kwargs["params"]["season_id"] or generate_season_id()
         table_name = TableNames.BIATHLON_EVENTS.value
         DeleteFromDatabase(table_name=table_name).delete_where(condition=f"SeasonId = '{season_id}'")
         load_to_database(data=events_df, table_name=table_name)
@@ -56,7 +56,7 @@ with DAG(
     @task()
     def get_competitions(event_id, **kwargs):
         rt = kwargs["params"]["rt"]
-        season_id = kwargs["params"]["season_id"]
+        season_id = kwargs["params"]["season_id"] or generate_season_id()
         return BiathlonCompetitionsFetcher(rt=rt, season_id=season_id).fetch(event_id=event_id)
 
     @task()
