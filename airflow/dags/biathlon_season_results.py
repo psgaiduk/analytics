@@ -2,6 +2,7 @@ from datetime import date, datetime
 from logging import getLogger
 from time import sleep
 
+from airflow.exceptions import AirflowSkipException
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, Param, task
 from clickhouse_connect.driver.exceptions import DatabaseError
@@ -40,7 +41,11 @@ with DAG(
     def get_events(**kwargs) -> DataFrame:
         rt = kwargs["params"]["rt"]
         season_id = kwargs["params"]["season_id"]
-        return BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
+        events_df = BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
+        if events_df.empty:
+            log.info("Данных нет. Пропускаем выполнение всего DAG.")
+            raise AirflowSkipException("No events found for this season")
+        return events_df
 
     @task()
     def load_events_to_clickhouse(events_df, **kwargs) -> list[int]:
