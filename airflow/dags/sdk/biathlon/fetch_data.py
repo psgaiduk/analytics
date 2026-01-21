@@ -38,6 +38,9 @@ class BiathlonEventsFetcher:
         log.info(f"Fetching competitions: rt={self.rt}, season_id={self.season_id}")
         events = self._get_events()
         events_df = DataFrame(events)
+        if events_df.empty:
+            log.warning(f"Season {self.season_id} has no events.")
+            return DataFrame()
         events_df["updated_at"] = datetime.now()
         log.info(f"Fetched {len(events_df)} rows")
 
@@ -94,6 +97,9 @@ class BiathlonCompetitionsFetcher:
             return DataFrame()
 
         competition = DataFrame(data)
+        if competition.empty:
+            log.warning(f"Event {event_id} has no competitions.")
+            return DataFrame()
         competition["updated_at"] = datetime.now()
         competition["season_id"] = self.season_id
         sleep(1)
