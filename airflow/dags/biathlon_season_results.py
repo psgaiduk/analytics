@@ -2,6 +2,7 @@ from datetime import date, datetime
 from logging import getLogger
 from time import sleep
 
+from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, Param, task
 from clickhouse_connect.driver.exceptions import DatabaseError
 from pandas import DataFrame, concat
@@ -32,6 +33,7 @@ with DAG(
             description="RT для biathlonresults.com",
         ),
     },
+    max_active_tasks=5,
 ) as dag:
 
     @task()
@@ -59,7 +61,7 @@ with DAG(
         competitions_df = concat(dfs_list, ignore_index=True)
         table_name = TableNames.BIATHLON_COMPETITION.value
         load_to_database(data=competitions_df, table_name=table_name)
-        return [race_id for race_id in competitions_df["RaceId"].tolist()]
+        return [{'race_id': race_id} for race_id in competitions_df["RaceId"].tolist()]
 
     def generate_season_id() -> str:
         """
@@ -143,3 +145,10 @@ with DAG(
     events_ids = load_events_to_clickhouse(events_df=events_df)
     dfs_list = get_competitions.partial(max_active_tis_per_dag=1).expand(event_id=events_ids)
     race_ids = merge_and_load_competitions(dfs_list=dfs_list)
+
+    TriggerDagRunOperator.partial(
+        task_id="trigger_update_races_results",
+        trigger_dag_id="biathlon_update_race_results",
+        wait_for_completion=True,
+        max_active_tis_per_dag=1,
+    ).expand(conf=race_ids)
