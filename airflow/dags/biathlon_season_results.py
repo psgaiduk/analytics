@@ -16,7 +16,7 @@ log = getLogger(__name__)
 
 with DAG(
     dag_id="biathlon_season_results",
-    schedule="0 1 * * *",
+    schedule="0 1 1 * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=["biathlon"],
