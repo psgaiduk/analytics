@@ -31,6 +31,7 @@ with DAG(
             description="Id гонки, которую нужно обновить.",
         ),
     },
+    max_active_tasks=5,
 ) as dag:
 
     @task()
