@@ -13,7 +13,7 @@ log = getLogger(__name__)
 
 
 def get_seasons_list() -> list[dict[str, int]]:
-    """Generates a list of season IDs from 1983-1984 to the current season.
+    """Generates a list of season IDs from 1957-1958 to the current season.
 
     Returns:
         list[dict[str, int]]: List of dictionaries containing season IDs.
@@ -51,6 +51,7 @@ def biathlon_update_dag():
             TableNames.BIATHLON_COMPETITION.value,
             TableNames.BIATHLON_ANALYTICS_RESULT.value,
             TableNames.BIATHLON_RESULT.value,
+            TableNames.BIATHLON_EVENTS.value,
         ]
 
         dropper = TableDropper()
