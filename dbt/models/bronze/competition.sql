@@ -31,7 +31,6 @@ SELECT
     RSC AS rsc,
     nullIf(GenderOrder, 'None') AS gender_order,
     season_id,
-    stage,
     CAST(rt AS Int32) AS rt
-FROM {{ source('biathlon_raw', 'competition') }}
+FROM {{ source('biathlon_raw', 'competitions') }}
 

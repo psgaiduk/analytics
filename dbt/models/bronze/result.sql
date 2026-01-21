@@ -43,4 +43,4 @@ SELECT
     nullIf(StartGroup, 'None') AS start_group,
     PursuitStartDistance AS pursuit_start_distance,
     race_id
-FROM {{ source('biathlon_raw', 'result') }}
+FROM {{ source('biathlon_raw', 'results') }}

@@ -4,6 +4,7 @@ sources:
   - name: biathlon_raw
     database: biathlon_raw
     tables:
-      - name: result
-      - name: analytics_result
-      - name: competition
+      - name: results
+      - name: analytics_results
+      - name: competitions
+      - name: events
