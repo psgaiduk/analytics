@@ -2,7 +2,7 @@ from datetime import datetime
 from logging import getLogger
 from time import sleep
 
-from pandas import DataFrame, concat
+from pandas import DataFrame
 from requests import get
 from requests.exceptions import Timeout, ConnectionError, HTTPError
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
