@@ -36,7 +36,9 @@ class DatabaseClient:
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=5, max=60),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.warning(f"Retrying create client (attempt {retry_state.attempt_number})..."),
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying create client (attempt {retry_state.attempt_number})..."
+        ),
         reraise=True,
     )
     def _get_client(self):
@@ -67,7 +69,9 @@ class CreateTable(DatabaseClient):
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=2, min=2, max=30),
         retry=retry_if_exception_type(RETRYABLE_ERRORS),
-        before_sleep=lambda retry_state: log.warning(f"Retrying create table (attempt {retry_state.attempt_number})..."),
+        before_sleep=lambda retry_state: log.warning(
+            f"Retrying create table (attempt {retry_state.attempt_number})..."
+        ),
         reraise=True,
     )
     def create_table(
