@@ -123,7 +123,7 @@ class BiathlonCompetitionsFetcher:
         log.info(f"Status code for event_id {event_id}: {response.status_code}")
 
         if response.status_code != 200:
-            self.log.error(f"Error response: {response.text}")
+            log.error(f"Error response: {response.text}")
             response.raise_for_status()
             return
 
