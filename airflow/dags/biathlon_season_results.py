@@ -43,6 +43,9 @@ with DAG(
         if events_df.empty:
             log.info("Данных нет. Пропускаем выполнение всего DAG.")
             raise AirflowSkipException("No events found for this season")
+        events_df = events_df[
+            (events_df["EventId"].str.startswith(f"BT{season_id}SWRL")) & (events_df["Level"].astype("int") == 1)
+        ]
         return events_df
 
     @task()
@@ -97,5 +100,6 @@ with DAG(
         task_id="trigger_update_races_results",
         trigger_dag_id="biathlon_update_race_results",
         wait_for_completion=True,
+        poke_interval=5,
         max_active_tis_per_dag=1,
     ).expand(conf=race_ids)
