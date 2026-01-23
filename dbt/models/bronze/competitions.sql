@@ -31,6 +31,7 @@ SELECT
     RSC AS rsc,
     nullIf(GenderOrder, 'None') AS gender_order,
     season_id,
+    event_id,
     parseDateTime64BestEffort(updated_at, 3) AS updated_at
 FROM {{ source('biathlon_raw', 'competitions') }}
 
