@@ -13,5 +13,5 @@ SELECT
         WHEN min(status_id) = 1 AND MAX(status_id) = 1 THEN 'planned'
         ELSE 'current'
     END AS stage_status
-FROM {{ ref('competition') }}
+FROM {{ ref('competitions') }}
 GROUP BY season_id, stage, location

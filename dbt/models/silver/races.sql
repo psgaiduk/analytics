@@ -29,5 +29,5 @@ SELECT
         WHEN discipline_id = 'TM' THEN 'Командная гонка'
         ELSE 'Эстафета'
     END race_type
-FROM {{ ref('competition') }} AS c
+FROM {{ ref('competitions') }} AS c
 JOIN {{ ref('stages') }} AS s ON c.stage = s.stage_name AND c.season_id = s.season_id
