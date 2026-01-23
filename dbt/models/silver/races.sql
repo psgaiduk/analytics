@@ -30,4 +30,4 @@ SELECT
         ELSE 'Эстафета'
     END race_type
 FROM {{ ref('competitions') }} AS c
-JOIN {{ ref('stages') }} AS s ON c.stage = s.stage_name AND c.season_id = s.season_id
+JOIN {{ ref('stages') }}  AS s on s.season_id = c.season_id AND s.event_id = c.event_id
