@@ -101,5 +101,5 @@ with DAG(
         trigger_dag_id="biathlon_update_race_results",
         wait_for_completion=True,
         poke_interval=5,
-        max_active_tis_per_dag=1,
+        max_active_tis_per_dag=2,
     ).expand(conf=race_ids)
