@@ -102,6 +102,7 @@ class BiathlonCompetitionsFetcher:
             return DataFrame()
         competition["updated_at"] = datetime.now()
         competition["season_id"] = self.season_id
+        competition["event_id"] = event_id
         sleep(1)
 
         log.info(f"Fetched {len(competition)} rows")
