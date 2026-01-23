@@ -4,7 +4,7 @@
 
 SELECT
     RaceId AS race_id,
-    km AS km,
+    nullIf(km, '') AS km,
     catId As cat_id,
     DisciplineId AS discipline_id,
     CAST(StatusId AS Int64) AS status_id,
@@ -31,6 +31,6 @@ SELECT
     RSC AS rsc,
     nullIf(GenderOrder, 'None') AS gender_order,
     season_id,
-    CAST(rt AS Int32) AS rt
+    parseDateTime64BestEffort(updated_at, 3) AS updated_at
 FROM {{ source('biathlon_raw', 'competitions') }}
 
