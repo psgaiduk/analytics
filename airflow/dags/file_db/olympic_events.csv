@@ -1,0 +1,7 @@
+SeasonId,Trimester,EventId,StartDate,EndDate,FirstCompetitionDate,Description,EventSeriesNr,ShortDescription,Altitude,OrganizerId,Organizer,OrganizerColor,Nat,NatLong,MedalSetId,EventClassificationId,Level,UTCOffset,IsActual,IsCurrent,EventStatusId,EventStatus,Notes,updated_at
+5960,,BT5960SWRLOG__,1960-02-18,1960-02-28,1960-02-21,Olympic Winter Games,,Squaw Valley,1890,SQV,Squaw Valley,,USA,USA,,BTSWRLOG,1,,false,false,0,'','null',2026-01-26
+6364,,BT6364SWRLOG__,1964-01-29,1964-02-09,1964-02-04,Olympic Winter Games,,Innsbruck,1200,INN,Innsbruck,,AUT,AUSTRIA,,BTSWRLOG,1,,false,false,0,'','null',2026-01-26
+6768,,BT6768SWRLOG__,1968-02-06,1968-02-18,1968-02-12,Olympic Winter Games,,Grenoble,1050,GRE,Grenoble,,FRA,FRANCE,,BTSWRLOG,1,,false,false,0,'','null',2026-01-26
+7172,,BT7172SWRLOG__,1972-02-03,1972-02-13,1972-02-09,Olympic Winter Games,,Sapporo,250,SAP,Sapporo,,JPN,JAPAN,,BTSWRLOG,1,,false,false,0,'','null',2026-01-26
+7576,,BT7576SWRLOG__,1976-02-04,1976-02-15,1976-02-06,Olympic Winter Games,,Innsbruck,1200,INN,Innsbruck,,AUT,AUSTRIA,,BTSWRLOG,1,,false,false,0,'','null',2026-01-26
+7980,,BT7980SWRLOG__,1980-02-13,1980-02-24,1980-02-16,Olympic Winter Games,,Lake Placid,500,LPL,Lake Placid,,USA,USA,,BTSWRLOG,1,,false,false,0,'','null',2026-01-26
