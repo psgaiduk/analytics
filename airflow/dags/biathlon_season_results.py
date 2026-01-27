@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime
 from logging import getLogger
 
 from airflow.exceptions import AirflowSkipException
@@ -7,6 +7,7 @@ from airflow.sdk import DAG, Param, task
 from pandas import DataFrame, concat
 
 from choices.name_tables import TableNames
+from functions.generate_season_id import generate_season_id_func
 from functions.insert_values_to_database import load_to_database
 from sdk.biathlon.fetch_data import BiathlonCompetitionsFetcher, BiathlonEventsFetcher
 from sdk.clickhouse_sdk import DeleteFromDatabase
@@ -38,7 +39,7 @@ with DAG(
     @task()
     def get_events(**kwargs) -> DataFrame:
         rt = kwargs["params"]["rt"]
-        season_id = kwargs["params"]["season_id"] or generate_season_id()
+        season_id = kwargs["params"]["season_id"] or generate_season_id_func()
         events_df = BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
         if events_df.empty:
             log.info("Данных нет. Пропускаем выполнение всего DAG.")
@@ -50,7 +51,7 @@ with DAG(
 
     @task()
     def load_events_to_clickhouse(events_df, **kwargs) -> list[int]:
-        season_id = kwargs["params"]["season_id"] or generate_season_id()
+        season_id = kwargs["params"]["season_id"] or generate_season_id_func()
         table_name = TableNames.BIATHLON_EVENTS.value
         DeleteFromDatabase(table_name=table_name).delete_where(condition=f"SeasonId = '{season_id}'")
         load_to_database(data=events_df, table_name=table_name)
@@ -59,7 +60,7 @@ with DAG(
     @task()
     def get_competitions(event_id, **kwargs):
         rt = kwargs["params"]["rt"]
-        season_id = kwargs["params"]["season_id"] or generate_season_id()
+        season_id = kwargs["params"]["season_id"] or generate_season_id_func()
         return BiathlonCompetitionsFetcher(rt=rt, season_id=season_id).fetch(event_id=event_id)
 
     @task()
@@ -71,25 +72,6 @@ with DAG(
         finished_races = competitions_df[competitions_df["StatusId"].astype(int) == 11]
         log.info(f"Total races: {len(competitions_df)}, Finished races to trigger: {len(finished_races)}")
         return [{"race_id": race_id} for race_id in finished_races["RaceId"].tolist()]
-
-    def generate_season_id() -> str:
-        """
-        Генерирует season_id по текущей дате.
-
-        Returns:
-            str: season_id
-        """
-        log.info("Generate season_id")
-        today = date.today()
-        year = today.year % 100
-        log.debug(f"today = {today} year = {year}")
-        if today.month < 7:
-            log.debug("month less 7")
-            season_id = f"{year - 1}{year}"
-        else:
-            log.debug("Month after 6")
-            season_id = f"{year}{year + 1}"
-        return season_id
 
     events_df = get_events()
     events_ids = load_events_to_clickhouse(events_df=events_df)
