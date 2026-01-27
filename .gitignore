@@ -45,3 +45,6 @@ alembic_version
 # dbt
 dbt/target/
 dbt/logs/
+
+# Jupyter / Quarto Notebooks
+.ipynb_checkpoints/

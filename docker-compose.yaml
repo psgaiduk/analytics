@@ -56,6 +56,23 @@ services:
     volumes:
       - metabase-data:/metabase-data
 
+  quarto:
+      build: ./quarto
+      platform: linux/amd64
+      env_file: .env
+      restart: always
+      networks:
+        - biathlon-net
+      ports:
+        - "8888:8888"
+        - "4200:4200"
+      volumes:
+        - ./quarto:/home/jovyan/work
+      environment:
+        - PYTHONPATH=/home/jovyan/work
+        - JUPYTER_ENABLE_LAB=yes
+        - JUPYTER_PASSWORD=${JUPYTER_PASSWORD_HASH}
+
 networks:
   biathlon-net:
     driver: bridge
