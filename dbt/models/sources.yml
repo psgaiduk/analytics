@@ -8,3 +8,6 @@ sources:
       - name: analytics_results
       - name: competitions
       - name: events
+      - name: results_og
+      - name: competitions_og
+      - name: events_og
