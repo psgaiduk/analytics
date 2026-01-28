@@ -25,3 +25,33 @@ SELECT
     nullIf(Notes, 'None') AS notes,
     parseDateTime64BestEffort(updated_at, 3) AS updated_at
 FROM {{ source('biathlon_raw', 'events') }}
+
+UNION ALL
+
+SELECT
+    SeasonId AS season_id,
+    toInt8((toMonth(parseDateTime64BestEffort(StartDate, 3)) + 2) / 3) AS trimester,
+    EventId AS event_id,
+    parseDateTime64BestEffort(StartDate, 3) AS start_date,
+    parseDateTime64BestEffort(EndDate, 3) AS end_date,
+    parseDateTime64BestEffort(FirstCompetitionDate, 3) AS first_competition_date,
+    Description AS description,
+    toInt8OrNull(EventSeriesNr) AS event_series_nr,
+    ShortDescription AS short_description,
+    toInt32(Altitude) AS altitude,
+    OrganizerId AS organizer_id,
+    Organizer AS organizer,
+    nullIf(OrganizerColor, 'nan') AS organizer_color,
+    Nat AS nat,
+    NatLong AS nat_long,
+    nullIf(MedalSetId, 'nan') AS medal_set_id,
+    EventClassificationId AS event_classification_id,
+    toInt8(Level) AS level,
+    toInt8(UTCOffset) AS utc_offset,
+    toBool(IsActual) AS is_actual,
+    toBool(IsCurrent) AS is_current,
+    toInt8OrNull(EventStatusId) AS event_status_id,
+    nullIf(EventStatus, 'nan') AS event_status,
+    nullIf(Notes, 'nan') AS notes,
+    parseDateTime64BestEffort(updated_at, 3) AS updated_at
+FROM {{ source('biathlon_raw', 'events_og') }}
