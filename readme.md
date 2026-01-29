@@ -8,6 +8,7 @@
 * **Orchestration:** Airflow (запуск DAG-ов, ELT процессы).
 * **Storage:** ClickHouse (аналитическая БД), Postgres (метаданные Airflow).
 * **BI Tools:** Metabase & Apache Superset.
+* **Reporting:** Quarto: Статическая отчетность, публикации и PDF-дайджесты на Python.
 * **Transformation:** dbt (подготовка витрин данных).
 * **Infrastructure:** Docker Compose.
 
@@ -18,7 +19,10 @@
 1. **Extract**: Airflow забирает данные с `biathlonresults.com`.
 2. **Load**: Данные проходят дедупликацию и загружаются в ClickHouse.
 3. **Transform**: dbt трансформирует «сырые» данные в аналитические витрины.
-4. **Visualize**: Metabase и Superset подключаются к ClickHouse для построения дашбордов.
+4. **Visualize**: 
+
+    4.1. Metabase и Superset подключаются к ClickHouse для построения дашбордов.
+    4.2. Notebooks: Jupyter/Quarto для создания аналитических  книг
 
 
 ---
@@ -66,6 +70,9 @@ MB_ADMIN_EMAIL=admin@example.com
 MB_ADMIN_PASSWORD=1111admin0000
 MB_ADMIN_FIRST_NAME=Admin
 MB_ADMIN_LAST_NAME=User
+
+# Quarto
+JUPYTER_PASSWORD_HASH='argon2:$argon2id$v=19$m=10240,t=10,p=8$4HKnkL3sdr4aCDD3ECpUtg$H2zyIx1tg+oeybobiGvC7DVtrYGU/XezsMo21BJxCkM'
 ```
 
 ! Заменить все логины и пароли
@@ -80,7 +87,8 @@ MB_ADMIN_LAST_NAME=User
 | :--- | :--- |
 | **Airflow** | [http://localhost:8080](http://localhost:8080) 
 | **Metabase** | [http://localhost:3000](http://localhost:3000) 
-| **Superset** | [http://localhost:8088](http://localhost:8088) 
+| **Superset** | [http://localhost:8088](http://localhost:8088)
+| **Quarto** | [http://localhost:8888](http://localhost:8888) 
 
 Логины и пароли берутся из файла .env
 
