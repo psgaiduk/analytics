@@ -141,75 +141,75 @@ StartOrder,ResultOrder,IRM,IBUId,IsTeam,Name,ShortName,FamilyName,GivenName,Nat,
 59,59,null,null,0,TENTORI Alberto,TENTORI A.,TENTORI,Alberto,ITA,32,null,59,null,12,null,01:38:15.3,null,,null,,null,,null,,null,+24:29.4,null,,null,+24:29.4,null,,null,,null,null,null,BT6768SWRLOG__SMIN
 60,60,null,null,0,STEVENS Guy,STEVENS G.,STEVENS,Guy,GBR,49,null,60,null,13,null,01:46:50.7,null,,null,,null,,null,,null,+33:04.8,null,,null,+33:04.8,null,,null,,null,null,null,BT6768SWRLOG__SMIN
 1,1,null,null,1,USSR,USSR,null,null,URS,1,null,1,null,2,null,02:13:02.4,null,,null,,null,,null,,null,0.0,null,,null,02:13:02.4,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-1,1,null,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,1,1,1+1,2,null,00:33:33.3,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT6768SWRLOG__SMRL
-1,1,null,null,0,PUZANOV Nikolai,PUZANOV N.,PUZANOV,Nikolai,URS,1,2,1,0+0,0,null,00:32:59.5,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,BT6768SWRLOG__SMRL
-1,1,null,null,0,MAMATOV Viktor,MAMATOV V.,MAMATOV,Viktor,URS,1,3,1,0+0,0,null,00:32:48.5,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,BT6768SWRLOG__SMRL
-1,1,null,null,0,GUNDARTSEV Vladimir,GUNDARTSEV V.,GUNDARTSEV,Vladimir,URS,1,4,1,0+1,1,null,00:33:41.1,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,BT6768SWRLOG__SMRL
+1,1,null,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,1,1,1+1,2,null,00:33:33.3,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT6768SWRLOG__SMRL
+1,1,null,null,0,PUZANOV Nikolai,PUZANOV N.,PUZANOV,Nikolai,URS,1,2,1,0+0,0,null,00:32:59.5,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,,BT6768SWRLOG__SMRL
+1,1,null,null,0,MAMATOV Viktor,MAMATOV V.,MAMATOV,Viktor,URS,1,3,1,0+0,0,null,00:32:48.5,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,,BT6768SWRLOG__SMRL
+1,1,null,null,0,GUNDARTSEV Vladimir,GUNDARTSEV V.,GUNDARTSEV,Vladimir,URS,1,4,1,0+1,1,null,00:33:41.1,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,,BT6768SWRLOG__SMRL
 2,2,null,null,1,NORWAY,NORWAY,null,null,NOR,2,null,2,null,5,null,02:14:50.2,null,,null,,null,,null,,null,+01:47.8,null,,null,+01:47.8,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-2,2,null,null,0,WAERHAUG Ola,WAERHAUG O.,WAERHAUG,Ola,NOR,2,1,2,1+0,1,null,00:35:12.1,null,,null,,null,,null,,null,null,null,,null,null,3,3,null,null,,null,BT6768SWRLOG__SMRL
-2,2,null,null,0,JORDET Olav,JORDET O.,JORDET,Olav,NOR,2,2,2,0+2,2,null,00:34:06.8,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,BT6768SWRLOG__SMRL
-2,2,null,null,0,SOLBERG Magnar,SOLBERG M.,SOLBERG,Magnar,NOR,2,3,2,0+0,0,null,00:32:19.8,null,,null,,null,,null,,null,null,null,,null,null,1,2,null,null,,null,BT6768SWRLOG__SMRL
-2,2,null,null,0,ISTAD Jon,ISTAD J.,ISTAD,Jon,NOR,2,4,2,0+2,2,null,00:33:11.5,null,,null,,null,,null,,null,null,null,,null,null,1,2,null,null,,null,BT6768SWRLOG__SMRL
+2,2,null,null,0,WAERHAUG Ola,WAERHAUG O.,WAERHAUG,Ola,NOR,2,1,2,1+0,1,null,00:35:12.1,null,,null,,null,,null,,null,null,null,,null,null,3,3,null,null,,null,,BT6768SWRLOG__SMRL
+2,2,null,null,0,JORDET Olav,JORDET O.,JORDET,Olav,NOR,2,2,2,0+2,2,null,00:34:06.8,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,,BT6768SWRLOG__SMRL
+2,2,null,null,0,SOLBERG Magnar,SOLBERG M.,SOLBERG,Magnar,NOR,2,3,2,0+0,0,null,00:32:19.8,null,,null,,null,,null,,null,null,null,,null,null,1,2,null,null,,null,,BT6768SWRLOG__SMRL
+2,2,null,null,0,ISTAD Jon,ISTAD J.,ISTAD,Jon,NOR,2,4,2,0+2,2,null,00:33:11.5,null,,null,,null,,null,,null,null,null,,null,null,1,2,null,null,,null,,BT6768SWRLOG__SMRL
 3,3,null,null,1,SWEDEN,SWEDEN,null,null,SWE,3,null,3,null,0,null,02:17:26.3,null,,null,,null,,null,,null,+04:23.9,null,,null,+04:23.9,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-3,3,null,null,0,ARWIDSON Lars-Goran,ARWIDSON L.G.,ARWIDSON,Lars-Goran,SWE,3,1,3,0+0,0,null,00:34:13.3,null,,null,,null,,null,,null,null,null,,null,null,2,2,null,null,,null,BT6768SWRLOG__SMRL
-3,3,null,null,0,OLSSON Olle,OLSSON O.,OLSSON,Olle,SWE,3,2,3,0+0,0,null,00:35:03.8,null,,null,,null,,null,,null,null,null,,null,null,6,3,null,null,,null,BT6768SWRLOG__SMRL
-3,3,null,null,0,ERIKSSON Sten,ERIKSSON S.,ERIKSSON,Sten,SWE,3,3,3,0+0,0,null,00:35:00.0,null,,null,,null,,null,,null,null,null,,null,null,5,3,null,null,,null,BT6768SWRLOG__SMRL
-3,3,null,null,0,PETTERSSON Holmfrid,PETTERSSON H.,PETTERSSON,Holmfrid,SWE,3,4,3,0+0,0,null,00:33:09.2,null,,null,,null,,null,,null,null,null,,null,null,3,3,null,null,,null,BT6768SWRLOG__SMRL
+3,3,null,null,0,ARWIDSON Lars-Goran,ARWIDSON L.G.,ARWIDSON,Lars-Goran,SWE,3,1,3,0+0,0,null,00:34:13.3,null,,null,,null,,null,,null,null,null,,null,null,2,2,null,null,,null,,BT6768SWRLOG__SMRL
+3,3,null,null,0,OLSSON Olle,OLSSON O.,OLSSON,Olle,SWE,3,2,3,0+0,0,null,00:35:03.8,null,,null,,null,,null,,null,null,null,,null,null,6,3,null,null,,null,,BT6768SWRLOG__SMRL
+3,3,null,null,0,ERIKSSON Sten,ERIKSSON S.,ERIKSSON,Sten,SWE,3,3,3,0+0,0,null,00:35:00.0,null,,null,,null,,null,,null,null,null,,null,null,5,3,null,null,,null,,BT6768SWRLOG__SMRL
+3,3,null,null,0,PETTERSSON Holmfrid,PETTERSSON H.,PETTERSSON,Holmfrid,SWE,3,4,3,0+0,0,null,00:33:09.2,null,,null,,null,,null,,null,null,null,,null,null,3,3,null,null,,null,,BT6768SWRLOG__SMRL
 4,4,null,null,1,POLAND,POLAND,null,null,POL,4,null,4,null,4,null,02:20:19.6,null,,null,,null,,null,,null,+07:17.2,null,,null,+07:17.2,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-4,4,null,null,0,BORKOWSKI Jozef,BORKOWSKI J.,BORKOWSKI,Jozef,POL,4,1,4,0+2,2,null,00:36:46.3,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,BT6768SWRLOG__SMRL
-4,4,null,null,0,RUZYCKI Hubert,RUZYCKI H.,RUZYCKI,Hubert,POL,4,2,4,1+0,1,null,00:34:01.5,null,,null,,null,,null,,null,null,null,,null,null,3,5,null,null,,null,BT6768SWRLOG__SMRL
-4,4,null,null,0,STOPKA Stanislaw,STOPKA S.,STOPKA,Stanislaw,POL,4,3,4,0+0,0,null,00:34:39.3,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,BT6768SWRLOG__SMRL
-4,4,null,null,0,KOSSAKOWSKI Jan,KOSSAKOWSKI J.,KOSSAKOWSKI,Jan,POL,4,4,4,1+0,1,null,00:34:52.5,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,BT6768SWRLOG__SMRL
+4,4,null,null,0,BORKOWSKI Jozef,BORKOWSKI J.,BORKOWSKI,Jozef,POL,4,1,4,0+2,2,null,00:36:46.3,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,,BT6768SWRLOG__SMRL
+4,4,null,null,0,RUZYCKI Hubert,RUZYCKI H.,RUZYCKI,Hubert,POL,4,2,4,1+0,1,null,00:34:01.5,null,,null,,null,,null,,null,null,null,,null,null,3,5,null,null,,null,,BT6768SWRLOG__SMRL
+4,4,null,null,0,STOPKA Stanislaw,STOPKA S.,STOPKA,Stanislaw,POL,4,3,4,0+0,0,null,00:34:39.3,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,,BT6768SWRLOG__SMRL
+4,4,null,null,0,KOSSAKOWSKI Jan,KOSSAKOWSKI J.,KOSSAKOWSKI,Jan,POL,4,4,4,1+0,1,null,00:34:52.5,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,,BT6768SWRLOG__SMRL
 5,5,null,null,1,FINLAND,FINLAND,null,null,FIN,5,null,5,null,5,null,02:20:41.8,null,,null,,null,,null,,null,+07:39.4,null,,null,+07:39.4,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-5,5,null,null,0,FLOCIC Juhani,FLOCIC J.,FLOCIC,Juhani,FIN,5,1,5,0+0,0,null,00:36:12.0,null,,null,,null,,null,,null,null,null,,null,null,5,5,null,null,,null,BT6768SWRLOG__SMRL
-5,5,null,null,0,SORMU Heikki,SORMU H.,SORMU,Heikki,FIN,5,2,5,0+1,1,null,00:35:07.1,null,,null,,null,,null,,null,null,null,,null,null,7,6,null,null,,null,BT6768SWRLOG__SMRL
-5,5,null,null,0,KALLIOLA Kalevi,KALLIOLA K.,KALLIOLA,Kalevi,FIN,5,3,5,0+1,1,null,00:36:03.1,null,,null,,null,,null,,null,null,null,,null,null,10,7,null,null,,null,BT6768SWRLOG__SMRL
-5,5,null,null,0,SUUTARINEN Arve,SUUTARINEN A.,SUUTARINEN,Arve,FIN,5,4,5,1+2,3,null,00:33:19.6,null,,null,,null,,null,,null,null,null,,null,null,2,5,null,null,,null,BT6768SWRLOG__SMRL
+5,5,null,null,0,FLOCIC Juhani,FLOCIC J.,FLOCIC,Juhani,FIN,5,1,5,0+0,0,null,00:36:12.0,null,,null,,null,,null,,null,null,null,,null,null,5,5,null,null,,null,,BT6768SWRLOG__SMRL
+5,5,null,null,0,SORMU Heikki,SORMU H.,SORMU,Heikki,FIN,5,2,5,0+1,1,null,00:35:07.1,null,,null,,null,,null,,null,null,null,,null,null,7,6,null,null,,null,,BT6768SWRLOG__SMRL
+5,5,null,null,0,KALLIOLA Kalevi,KALLIOLA K.,KALLIOLA,Kalevi,FIN,5,3,5,0+1,1,null,00:36:03.1,null,,null,,null,,null,,null,null,null,,null,null,10,7,null,null,,null,,BT6768SWRLOG__SMRL
+5,5,null,null,0,SUUTARINEN Arve,SUUTARINEN A.,SUUTARINEN,Arve,FIN,5,4,5,1+2,3,null,00:33:19.6,null,,null,,null,,null,,null,null,null,,null,null,2,5,null,null,,null,,BT6768SWRLOG__SMRL
 6,6,null,null,1,GDR,GDR,null,null,GDR,6,null,6,null,4,null,02:21:54.5,null,,null,,null,,null,,null,+08:52.1,null,,null,+08:52.1,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-6,6,null,null,0,MUNCH Heinz,MUNCH H.,MUNCH,Heinz,GDR,6,1,6,0+1,1,null,00:37:46.2,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,BT6768SWRLOG__SMRL
-6,6,null,null,0,SPEER Dieter,SPEER D.,SPEER,Dieter,GDR,6,2,6,0+1,1,null,00:34:07.1,null,,null,,null,,null,,null,null,null,,null,null,5,7,null,null,,null,BT6768SWRLOG__SMRL
-6,6,null,null,0,KOSCHKA Horst,KOSCHKA H.,KOSCHKA,Horst,GDR,6,3,6,0+0,0,null,00:35:15.4,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,BT6768SWRLOG__SMRL
-6,6,null,null,0,SCHNABEL Hans-Gert,SCHNABEL H.G.,SCHNABEL,Hans-Gert,GDR,6,4,6,0+2,2,null,00:34:45.8,null,,null,,null,,null,,null,null,null,,null,null,5,6,null,null,,null,BT6768SWRLOG__SMRL
+6,6,null,null,0,MUNCH Heinz,MUNCH H.,MUNCH,Heinz,GDR,6,1,6,0+1,1,null,00:37:46.2,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,,BT6768SWRLOG__SMRL
+6,6,null,null,0,SPEER Dieter,SPEER D.,SPEER,Dieter,GDR,6,2,6,0+1,1,null,00:34:07.1,null,,null,,null,,null,,null,null,null,,null,null,5,7,null,null,,null,,BT6768SWRLOG__SMRL
+6,6,null,null,0,KOSCHKA Horst,KOSCHKA H.,KOSCHKA,Horst,GDR,6,3,6,0+0,0,null,00:35:15.4,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,,BT6768SWRLOG__SMRL
+6,6,null,null,0,SCHNABEL Hans-Gert,SCHNABEL H.G.,SCHNABEL,Hans-Gert,GDR,6,4,6,0+2,2,null,00:34:45.8,null,,null,,null,,null,,null,null,null,,null,null,5,6,null,null,,null,,BT6768SWRLOG__SMRL
 7,7,null,null,1,ROMANIA,ROMANIA,null,null,ROU,7,null,7,null,4,null,02:25:39.8,null,,null,,null,,null,,null,+12:37.4,null,,null,+12:37.4,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-7,7,null,null,0,GHEORGHE Constantin,GHEORGHE C.,GHEORGHE,Constantin,ROU,7,1,7,0+0,0,null,00:36:54.2,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,BT6768SWRLOG__SMRL
-7,7,null,null,0,CIMPOIA Nicolae,CIMPOIA N.,CIMPOIA,Nicolae,ROU,7,2,7,0+0,0,null,00:36:21.0,null,,null,,null,,null,,null,null,null,,null,null,9,8,null,null,,null,BT6768SWRLOG__SMRL
-7,7,null,null,0,CARABELA Vilmoš,CARABELA V.,CARABELA,Vilmoš,ROU,7,3,7,0+1,1,null,00:35:41.1,null,,null,,null,,null,,null,null,null,,null,null,7,8,null,null,,null,BT6768SWRLOG__SMRL
-7,7,null,null,0,FONTANA Nicolae,FONTANA N.,FONTANA,Nicolae,ROU,7,4,7,0+3,3,null,00:36:43.5,null,,null,,null,,null,,null,null,null,,null,null,10,7,null,null,,null,BT6768SWRLOG__SMRL
+7,7,null,null,0,GHEORGHE Constantin,GHEORGHE C.,GHEORGHE,Constantin,ROU,7,1,7,0+0,0,null,00:36:54.2,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,,BT6768SWRLOG__SMRL
+7,7,null,null,0,CIMPOIA Nicolae,CIMPOIA N.,CIMPOIA,Nicolae,ROU,7,2,7,0+0,0,null,00:36:21.0,null,,null,,null,,null,,null,null,null,,null,null,9,8,null,null,,null,,BT6768SWRLOG__SMRL
+7,7,null,null,0,CARABELA Vilmoš,CARABELA V.,CARABELA,Vilmoš,ROU,7,3,7,0+1,1,null,00:35:41.1,null,,null,,null,,null,,null,null,null,,null,null,7,8,null,null,,null,,BT6768SWRLOG__SMRL
+7,7,null,null,0,FONTANA Nicolae,FONTANA N.,FONTANA,Nicolae,ROU,7,4,7,0+3,3,null,00:36:43.5,null,,null,,null,,null,,null,null,null,,null,null,10,7,null,null,,null,,BT6768SWRLOG__SMRL
 8,8,null,null,1,USA,USA,null,null,USA,8,null,8,null,8,null,02:28:35.5,null,,null,,null,,null,,null,+15:33.1,null,,null,+15:33.1,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-8,8,null,null,0,BURRITT John,BURRITT J.,BURRITT,John,USA,8,1,8,2+0,2,null,00:37:46.1,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,BT6768SWRLOG__SMRL
-8,8,null,null,0,CARNEY Edward,CARNEY E.,CARNEY,Edward,USA,8,2,8,2+1,3,null,00:37:33.7,null,,null,,null,,null,,null,null,null,,null,null,11,10,null,null,,null,BT6768SWRLOG__SMRL
-8,8,null,null,0,GENTLE Bill,GENTLE B.,GENTLE,Bill,USA,8,3,8,0+1,1,null,00:37:47.7,null,,null,,null,,null,,null,null,null,,null,null,11,10,null,null,,null,BT6768SWRLOG__SMRL
-8,8,null,null,0,JORDAN Charlie,JORDAN C.,JORDAN,Charlie,USA,8,4,8,0+2,2,null,00:35:28.0,null,,null,,null,,null,,null,null,null,,null,null,6,8,null,null,,null,BT6768SWRLOG__SMRL
+8,8,null,null,0,BURRITT John,BURRITT J.,BURRITT,John,USA,8,1,8,2+0,2,null,00:37:46.1,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,,BT6768SWRLOG__SMRL
+8,8,null,null,0,CARNEY Edward,CARNEY E.,CARNEY,Edward,USA,8,2,8,2+1,3,null,00:37:33.7,null,,null,,null,,null,,null,null,null,,null,null,11,10,null,null,,null,,BT6768SWRLOG__SMRL
+8,8,null,null,0,GENTLE Bill,GENTLE B.,GENTLE,Bill,USA,8,3,8,0+1,1,null,00:37:47.7,null,,null,,null,,null,,null,null,null,,null,null,11,10,null,null,,null,,BT6768SWRLOG__SMRL
+8,8,null,null,0,JORDAN Charlie,JORDAN C.,JORDAN,Charlie,USA,8,4,8,0+2,2,null,00:35:28.0,null,,null,,null,,null,,null,null,null,,null,null,6,8,null,null,,null,,BT6768SWRLOG__SMRL
 9,9,null,null,1,FRANCE,FRANCE,null,null,FRA,9,null,9,null,10,null,02:28:44.6,null,,null,,null,,null,,null,+15:42.2,null,,null,+15:42.2,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-9,9,null,null,0,DUMONT Daniel,DUMONT D.,DUMONT,Daniel,FRA,9,1,9,0+3,3,null,00:37:11.5,null,,null,,null,,null,,null,null,null,,null,null,8,8,null,null,,null,BT6768SWRLOG__SMRL
-9,9,null,null,0,GERMAIN Serge,GERMAIN S.,GERMAIN,Serge,FRA,9,2,9,2+2,4,null,00:37:11.7,null,,null,,null,,null,,null,null,null,,null,null,10,9,null,null,,null,BT6768SWRLOG__SMRL
-9,9,null,null,0,BARTHELEMY Aimé,BARTHELEMY A.,BARTHELEMY,Aimé,FRA,9,3,9,1+2,3,null,00:36:46.0,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,BT6768SWRLOG__SMRL
-9,9,null,null,0,VILLA Jean-Claude,VILLA J.C.,VILLA,Jean-Claude,FRA,9,4,9,0+0,0,null,00:37:35.4,null,,null,,null,,null,,null,null,null,,null,null,11,9,null,null,,null,BT6768SWRLOG__SMRL
+9,9,null,null,0,DUMONT Daniel,DUMONT D.,DUMONT,Daniel,FRA,9,1,9,0+3,3,null,00:37:11.5,null,,null,,null,,null,,null,null,null,,null,null,8,8,null,null,,null,,BT6768SWRLOG__SMRL
+9,9,null,null,0,GERMAIN Serge,GERMAIN S.,GERMAIN,Serge,FRA,9,2,9,2+2,4,null,00:37:11.7,null,,null,,null,,null,,null,null,null,,null,null,10,9,null,null,,null,,BT6768SWRLOG__SMRL
+9,9,null,null,0,BARTHELEMY Aimé,BARTHELEMY A.,BARTHELEMY,Aimé,FRA,9,3,9,1+2,3,null,00:36:46.0,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,,BT6768SWRLOG__SMRL
+9,9,null,null,0,VILLA Jean-Claude,VILLA J.C.,VILLA,Jean-Claude,FRA,9,4,9,0+0,0,null,00:37:35.4,null,,null,,null,,null,,null,null,null,,null,null,11,9,null,null,,null,,BT6768SWRLOG__SMRL
 10,10,null,null,1,FRG,FRG,null,null,FRG,10,null,10,null,6,null,02:29:56.6,null,,null,,null,,null,,null,+16:54.2,null,,null,+16:54.2,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-10,10,null,null,0,REINHARDT Dieter,REINHARDT D.,REINHARDT,Dieter,FRG,10,1,10,1+0,1,null,00:40:30.3,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,BT6768SWRLOG__SMRL
-10,10,null,null,0,BEER Helmut,BEER H.,BEER,Helmut,FRG,10,2,10,1+1,2,null,00:36:09.1,null,,null,,null,,null,,null,null,null,,null,null,8,12,null,null,,null,BT6768SWRLOG__SMRL
-10,10,null,null,0,SCHUH Herbert,SCHUH H.,SCHUH,Herbert,FRG,10,3,10,0+2,2,null,00:36:31.5,null,,null,,null,,null,,null,null,null,,null,null,8,11,null,null,,null,BT6768SWRLOG__SMRL
-10,10,null,null,0,STIEGLER Theo,STIEGLER T.,STIEGLER,Theo,FRG,10,4,10,1+0,1,null,00:36:45.7,null,,null,,null,,null,,null,null,null,,null,null,9,10,null,null,,null,BT6768SWRLOG__SMRL
+10,10,null,null,0,REINHARDT Dieter,REINHARDT D.,REINHARDT,Dieter,FRG,10,1,10,1+0,1,null,00:40:30.3,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,,BT6768SWRLOG__SMRL
+10,10,null,null,0,BEER Helmut,BEER H.,BEER,Helmut,FRG,10,2,10,1+1,2,null,00:36:09.1,null,,null,,null,,null,,null,null,null,,null,null,8,12,null,null,,null,,BT6768SWRLOG__SMRL
+10,10,null,null,0,SCHUH Herbert,SCHUH H.,SCHUH,Herbert,FRG,10,3,10,0+2,2,null,00:36:31.5,null,,null,,null,,null,,null,null,null,,null,null,8,11,null,null,,null,,BT6768SWRLOG__SMRL
+10,10,null,null,0,STIEGLER Theo,STIEGLER T.,STIEGLER,Theo,FRG,10,4,10,1+0,1,null,00:36:45.7,null,,null,,null,,null,,null,null,null,,null,null,9,10,null,null,,null,,BT6768SWRLOG__SMRL
 11,11,null,null,1,ITALY,ITALY,null,null,ITA,11,null,11,null,11,null,02:33:53.5,null,,null,,null,,null,,null,+20:51.1,null,,null,+20:51.1,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-11,11,null,null,0,TENTORI Alberto,TENTORI A.,TENTORI,Alberto,ITA,11,1,11,3+0,3,null,00:44:20.2,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT6768SWRLOG__SMRL
-11,11,null,null,0,ALBANESI Ermanno,ALBANESI E.,ALBANESI,Ermanno,ITA,11,2,11,1+3,4,null,00:35:44.7,null,,null,,null,,null,,null,null,null,,null,null,6,13,null,null,,null,BT6768SWRLOG__SMRL
-11,11,null,null,0,FERRARI Costantino,FERRARI C.,FERRARI,Costantino,ITA,11,3,11,0+3,3,null,00:36:43.0,null,,null,,null,,null,,null,null,null,,null,null,10,13,null,null,,null,BT6768SWRLOG__SMRL
-11,11,null,null,0,TENTORI Giovanni,TENTORI G.,TENTORI,Giovanni,ITA,11,4,11,0+1,1,null,00:37:05.6,null,,null,,null,,null,,null,null,null,,null,null,12,11,null,null,,null,BT6768SWRLOG__SMRL
+11,11,null,null,0,TENTORI Alberto,TENTORI A.,TENTORI,Alberto,ITA,11,1,11,3+0,3,null,00:44:20.2,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT6768SWRLOG__SMRL
+11,11,null,null,0,ALBANESI Ermanno,ALBANESI E.,ALBANESI,Ermanno,ITA,11,2,11,1+3,4,null,00:35:44.7,null,,null,,null,,null,,null,null,null,,null,null,6,13,null,null,,null,,BT6768SWRLOG__SMRL
+11,11,null,null,0,FERRARI Costantino,FERRARI C.,FERRARI,Costantino,ITA,11,3,11,0+3,3,null,00:36:43.0,null,,null,,null,,null,,null,null,null,,null,null,10,13,null,null,,null,,BT6768SWRLOG__SMRL
+11,11,null,null,0,TENTORI Giovanni,TENTORI G.,TENTORI,Giovanni,ITA,11,4,11,0+1,1,null,00:37:05.6,null,,null,,null,,null,,null,null,null,,null,null,12,11,null,null,,null,,BT6768SWRLOG__SMRL
 12,12,null,null,1,GREAT BRITAIN,GREAT BRITAIN,null,null,GBR,12,null,12,null,9,null,02:34:40.9,null,,null,,null,,null,,null,+21:38.5,null,,null,+21:38.5,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-12,12,null,null,0,NOTLEY Marcus,NOTLEY M.,NOTLEY,Marcus,GBR,12,1,12,0+2,2,null,00:38:57.4,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,BT6768SWRLOG__SMRL
-12,12,null,null,0,MAIN Alan,MAIN A.,MAIN,Alan,GBR,12,2,12,2+3,5,null,00:39:23.3,null,,null,,null,,null,,null,null,null,,null,null,12,11,null,null,,null,BT6768SWRLOG__SMRL
-12,12,null,null,0,HARRISON Peter,HARRISON P.,HARRISON,Peter,GBR,12,3,12,1+1,2,null,00:39:58.4,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,BT6768SWRLOG__SMRL
-12,12,null,null,0,STEVENS Guy,STEVENS G.,STEVENS,Guy,GBR,12,4,12,0+0,0,null,00:36:21.8,null,,null,,null,,null,,null,null,null,,null,null,8,12,null,null,,null,BT6768SWRLOG__SMRL
+12,12,null,null,0,NOTLEY Marcus,NOTLEY M.,NOTLEY,Marcus,GBR,12,1,12,0+2,2,null,00:38:57.4,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,,BT6768SWRLOG__SMRL
+12,12,null,null,0,MAIN Alan,MAIN A.,MAIN,Alan,GBR,12,2,12,2+3,5,null,00:39:23.3,null,,null,,null,,null,,null,null,null,,null,null,12,11,null,null,,null,,BT6768SWRLOG__SMRL
+12,12,null,null,0,HARRISON Peter,HARRISON P.,HARRISON,Peter,GBR,12,3,12,1+1,2,null,00:39:58.4,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,,BT6768SWRLOG__SMRL
+12,12,null,null,0,STEVENS Guy,STEVENS G.,STEVENS,Guy,GBR,12,4,12,0+0,0,null,00:36:21.8,null,,null,,null,,null,,null,null,null,,null,null,8,12,null,null,,null,,BT6768SWRLOG__SMRL
 13,13,null,null,1,JAPAN,JAPAN,null,null,JPN,13,null,13,null,9,null,02:35:21.0,null,,null,,null,,null,,null,+22:18.6,null,,null,+22:18.6,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-13,13,null,null,0,ONO Isao,ONO I.,ONO,Isao,JPN,13,1,13,2+0,2,null,00:38:42.3,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,BT6768SWRLOG__SMRL
-13,13,null,null,0,SHIBATA Miki,SHIBATA M.,SHIBATA,Miki,JPN,13,2,13,3+0,3,null,00:39:18.1,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,BT6768SWRLOG__SMRL
-13,13,null,null,0,OHASHI Shozo,OHASHI S.,OHASHI,Shozo,JPN,1 Japanese,13,3,13,2+0,2,null,00:39:07.5,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,BT6768SWRLOG__SMRL
-13,13,null,null,0,OKUYAMA Yoshio,OKUYAMA Y.,OKUYAMA,Yoshio,JPN,13,4,13,2+0,2,null,00:38:13.1,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,BT6768SWRLOG__SMRL
+13,13,null,null,0,ONO Isao,ONO I.,ONO,Isao,JPN,13,1,13,2+0,2,null,00:38:42.3,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,,BT6768SWRLOG__SMRL
+13,13,null,null,0,SHIBATA Miki,SHIBATA M.,SHIBATA,Miki,JPN,13,2,13,3+0,3,null,00:39:18.1,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,,BT6768SWRLOG__SMRL
+13,13,null,null,0,OHASHI Shozo,OHASHI S.,OHASHI,Shozo,JPN,1 Japanese,13,3,13,2+0,2,null,00:39:07.5,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,,BT6768SWRLOG__SMRL
+13,13,null,null,0,OKUYAMA Yoshio,OKUYAMA Y.,OKUYAMA,Yoshio,JPN,13,4,13,2+0,2,null,00:38:13.1,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,,BT6768SWRLOG__SMRL
 14,14,null,null,1,CANADA,CANADA,null,null,CAN,14,null,14,null,null,null,02:39:51.4,null,,null,,null,,null,,null,+26:49.0,null,,null,+26:49.0,null,,null,,null,null,null,BT6768SWRLOG__SMRL
-14,14,null,null,0,VINE George,VINE G.,VINE,George,CAN,14,1,14,null,null,null,00:41:40.4,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT6768SWRLOG__SMRL
-14,14,null,null,0,LUCIER Norman,LUCIER N.,LUCIER,Norman,CAN,14,2,14,null,null,null,00:40:06.1,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT6768SWRLOG__SMRL
-14,14,null,null,0,LUCIER Jim,LUCIER J.,LUCIER,Jim,CAN,14,3,14,null,null,null,00:39:14.2,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT6768SWRLOG__SMRL
-14,14,null,null,0,RUTLEDGE Ewan,RUTLEDGE E.,RUTLEDGE,Ewan,CAN,14,4,14,null,null,null,00:38:50.7,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT6768SWRLOG__SMRL
+14,14,null,null,0,VINE George,VINE G.,VINE,George,CAN,14,1,14,null,null,null,00:41:40.4,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT6768SWRLOG__SMRL
+14,14,null,null,0,LUCIER Norman,LUCIER N.,LUCIER,Norman,CAN,14,2,14,null,null,null,00:40:06.1,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT6768SWRLOG__SMRL
+14,14,null,null,0,LUCIER Jim,LUCIER J.,LUCIER,Jim,CAN,14,3,14,null,null,null,00:39:14.2,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT6768SWRLOG__SMRL
+14,14,null,null,0,RUTLEDGE Ewan,RUTLEDGE E.,RUTLEDGE,Ewan,CAN,14,4,14,null,null,null,00:38:50.7,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT6768SWRLOG__SMRL
 1,1,null,null,0,SOLBERG Magnar,SOLBERG M.,SOLBERG,Magnar,NOR,34,null,1,0+1+1+0,2,null,01:15:55.5,null,,null,,null,,null,,null,0.0,null,,null,01:15:55.5,null,,null,,null,null,null,BT7172SWRLOG__SMIN
 2,2,null,null,0,HANSEN Hans-jorg,HANSEN H.,HANSEN,Hans-jorg,GDR,25,null,2,1+0+1+0,2,null,01:16:08.1,null,,null,,null,,null,,null,+12.6,null,,null,+12.6,null,,null,,null,null,null,BT7172SWRLOG__SMIN
 3,3,null,null,0,ARWIDSON Lars-Goran,ARWIDSON L.G.,ARWIDSON,Lars-Goran,SWE,42,null,3,0+0+2+0,2,null,01:16:27.0,null,,null,,null,,null,,null,+31.5,null,,null,+31.5,null,,null,,null,null,null,BT7172SWRLOG__SMIN
@@ -265,70 +265,70 @@ StartOrder,ResultOrder,IRM,IBUId,IsTeam,Name,ShortName,FamilyName,GivenName,Nat,
 53,53,null,null,0,LUCIER Jim,LUCIER J.,LUCIER,Jim,CAN,40,null,53,null,15,null,01:36:24.0,null,,null,,null,,null,,null,+20:28.5,null,,null,+20:28.5,null,,null,,null,null,null,BT7172SWRLOG__SMIN
 54,54,DNF,null,0,RUTLEDGE Ewan,RUTLEDGE E.,RUTLEDGE,Ewan,CAN,50,null,54,null,null,null,null,null,,null,,null,,null,,null,null,null,,null,null,null,,null,,null,null,null,BT7172SWRLOG__SMIN
 1,1,null,null,1,USSR,USSR,null,null,URS,1,null,1,null,3,null,01:51:44.9,null,,null,,null,,null,,null,0.0,null,,null,01:51:44.9,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-1,1,null,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,1,1,1+0,1,null,00:28:54.5,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,BT7172SWRLOG__SMRL
-1,1,null,null,0,SAFONOV Rinnat,SAFONOV R.,SAFONOV,Rinnat,URS,1,2,1,0+0,0,null,00:26:48.5,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT7172SWRLOG__SMRL
-1,1,null,null,0,MAMATOV Viktor,MAMATOV V.,MAMATOV,Viktor,URS,1,3,1,0+1,1,null,00:27:34.2,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,BT7172SWRLOG__SMRL
-1,1,null,null,0,BYAKOV Ivan,BYAKOV I.,BYAKOV,Ivan,URS,1,4,1,1+0,1,null,00:28:27.7,null,,null,,null,,null,,null,null,null,,null,null,3,1,null,null,,null,BT7172SWRLOG__SMRL
+1,1,null,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,1,1,1+0,1,null,00:28:54.5,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,,BT7172SWRLOG__SMRL
+1,1,null,null,0,SAFONOV Rinnat,SAFONOV R.,SAFONOV,Rinnat,URS,1,2,1,0+0,0,null,00:26:48.5,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT7172SWRLOG__SMRL
+1,1,null,null,0,MAMATOV Viktor,MAMATOV V.,MAMATOV,Viktor,URS,1,3,1,0+1,1,null,00:27:34.2,null,,null,,null,,null,,null,null,null,,null,null,2,1,null,null,,null,,BT7172SWRLOG__SMRL
+1,1,null,null,0,BYAKOV Ivan,BYAKOV I.,BYAKOV,Ivan,URS,1,4,1,1+0,1,null,00:28:27.7,null,,null,,null,,null,,null,null,null,,null,null,3,1,null,null,,null,,BT7172SWRLOG__SMRL
 2,2,null,null,1,FINLAND,FINLAND,null,null,FIN,2,null,2,null,3,null,01:54:37.3,null,,null,,null,,null,,null,+02:52.4,null,,null,+02:52.4,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-2,2,null,null,0,IKOLA Heikki,IKOLA H.,IKOLA,Heikki,FIN,2,1,2,0+0,0,null,00:28:52.1,null,,null,,null,,null,,null,null,null,,null,null,8,8,null,null,,null,BT7172SWRLOG__SMRL
-2,2,null,null,0,PELTOLA Juhani,PELTOLA J.,PELTOLA,Juhani,FIN,2,2,2,0+1,1,null,00:28:29.9,null,,null,,null,,null,,null,null,null,,null,null,4,2,null,null,,null,BT7172SWRLOG__SMRL
-2,2,null,null,0,TYRVAINEN Mauri,TYRVAINEN M.,TYRVAINEN,Mauri,FIN,2,3,2,0+0,0,null,00:28:30.6,null,,null,,null,,null,,null,null,null,,null,null,4,2,null,null,,null,BT7172SWRLOG__SMRL
-2,2,null,null,0,SUUTARINEN Esko,SUUTARINEN E.,SUUTARINEN,Esko,FIN,2,4,2,0+2,2,null,00:28:44.7,null,,null,,null,,null,,null,null,null,,null,null,5,2,null,null,,null,BT7172SWRLOG__SMRL
+2,2,null,null,0,IKOLA Heikki,IKOLA H.,IKOLA,Heikki,FIN,2,1,2,0+0,0,null,00:28:52.1,null,,null,,null,,null,,null,null,null,,null,null,8,8,null,null,,null,,BT7172SWRLOG__SMRL
+2,2,null,null,0,PELTOLA Juhani,PELTOLA J.,PELTOLA,Juhani,FIN,2,2,2,0+1,1,null,00:28:29.9,null,,null,,null,,null,,null,null,null,,null,null,4,2,null,null,,null,,BT7172SWRLOG__SMRL
+2,2,null,null,0,TYRVAINEN Mauri,TYRVAINEN M.,TYRVAINEN,Mauri,FIN,2,3,2,0+0,0,null,00:28:30.6,null,,null,,null,,null,,null,null,null,,null,null,4,2,null,null,,null,,BT7172SWRLOG__SMRL
+2,2,null,null,0,SUUTARINEN Esko,SUUTARINEN E.,SUUTARINEN,Esko,FIN,2,4,2,0+2,2,null,00:28:44.7,null,,null,,null,,null,,null,null,null,,null,null,5,2,null,null,,null,,BT7172SWRLOG__SMRL
 3,3,null,null,1,GDR,GDR,null,null,GDR,3,null,3,null,4,null,01:54:57.7,null,,null,,null,,null,,null,+03:12.8,null,,null,+03:12.8,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-3,3,null,null,0,HANSEN Hans-jorg,HANSEN H.,HANSEN,Hans-jorg,GDR,3,1,3,0+0,0,null,00:28:46.9,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,BT7172SWRLOG__SMRL
-3,3,null,null,0,MEISCHNER Rainer,MEISCHNER R.,MEISCHNER,Rainer,GDR,3,2,3,0+0,0,null,00:28:57.3,null,,null,,null,,null,,null,null,null,,null,null,5,3,null,null,,null,BT7172SWRLOG__SMRL
-3,3,null,null,0,KOSCHKA Horst,KOSCHKA H.,KOSCHKA,Horst,GDR,3,3,3,0+2,2,null,00:28:44.6,null,,null,,null,,null,,null,null,null,,null,null,6,3,null,null,,null,BT7172SWRLOG__SMRL
-3,3,null,null,0,SPEER Dieter,SPEER D.,SPEER,Dieter,GDR,3,4,3,2+0,2,null,00:28:28.9,null,,null,,null,,null,,null,null,null,,null,null,4,3,null,null,,null,BT7172SWRLOG__SMRL
+3,3,null,null,0,HANSEN Hans-jorg,HANSEN H.,HANSEN,Hans-jorg,GDR,3,1,3,0+0,0,null,00:28:46.9,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,,BT7172SWRLOG__SMRL
+3,3,null,null,0,MEISCHNER Rainer,MEISCHNER R.,MEISCHNER,Rainer,GDR,3,2,3,0+0,0,null,00:28:57.3,null,,null,,null,,null,,null,null,null,,null,null,5,3,null,null,,null,,BT7172SWRLOG__SMRL
+3,3,null,null,0,KOSCHKA Horst,KOSCHKA H.,KOSCHKA,Horst,GDR,3,3,3,0+2,2,null,00:28:44.6,null,,null,,null,,null,,null,null,null,,null,null,6,3,null,null,,null,,BT7172SWRLOG__SMRL
+3,3,null,null,0,SPEER Dieter,SPEER D.,SPEER,Dieter,GDR,3,4,3,2+0,2,null,00:28:28.9,null,,null,,null,,null,,null,null,null,,null,null,4,3,null,null,,null,,BT7172SWRLOG__SMRL
 4,4,null,null,1,NORWAY,NORWAY,null,null,NOR,4,null,4,null,7,null,01:56:24.4,null,,null,,null,,null,,null,+04:39.5,null,,null,+04:40.0,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-4,4,null,null,0,KROGSATER Tor,KROGSATER T.,KROGSATER,Tor,NOR,4,1,4,0+1,1,null,00:28:50.4,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,BT7172SWRLOG__SMRL
-4,4,null,null,0,HOVDA Kare,HOVDA K.,HOVDA,Kare,NOR,4,2,4,2+0,2,null,00:28:52.4,null,,null,,null,,null,,null,null,null,,null,null,2,4,null,null,,null,BT7172SWRLOG__SMRL
-4,4,null,null,0,TVEITEN Terje,TVEITEN T.,TVEITEN,Terje,NOR,4,3,4,0+3,3,null,00:29:42.5,null,,null,,null,,null,,null,null,null,,null,null,11,4,null,null,,null,BT7172SWRLOG__SMRL
-4,4,null,null,0,SOLBERG Magnar,SOLBERG M.,SOLBERG,Magnar,NOR,4,4,4,0+1,1,null,00:28:59.1,null,,null,,null,,null,,null,null,null,,null,null,6,4,null,null,,null,BT7172SWRLOG__SMRL
+4,4,null,null,0,KROGSATER Tor,KROGSATER T.,KROGSATER,Tor,NOR,4,1,4,0+1,1,null,00:28:50.4,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,,BT7172SWRLOG__SMRL
+4,4,null,null,0,HOVDA Kare,HOVDA K.,HOVDA,Kare,NOR,4,2,4,2+0,2,null,00:28:52.4,null,,null,,null,,null,,null,null,null,,null,null,2,4,null,null,,null,,BT7172SWRLOG__SMRL
+4,4,null,null,0,TVEITEN Terje,TVEITEN T.,TVEITEN,Terje,NOR,4,3,4,0+3,3,null,00:29:42.5,null,,null,,null,,null,,null,null,null,,null,null,11,4,null,null,,null,,BT7172SWRLOG__SMRL
+4,4,null,null,0,SOLBERG Magnar,SOLBERG M.,SOLBERG,Magnar,NOR,4,4,4,0+1,1,null,00:28:59.1,null,,null,,null,,null,,null,null,null,,null,null,6,4,null,null,,null,,BT7172SWRLOG__SMRL
 5,5,null,null,1,SWEDEN,SWEDEN,null,null,SWE,5,null,5,null,6,null,01:56:57.4,null,,null,,null,,null,,null,+05:12.5,null,,null,+05:12.5,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-5,5,null,null,0,ARWIDSON Lars-Goran,ARWIDSON L.G.,ARWIDSON,Lars-Goran,SWE,5,1,5,1+0,1,null,00:28:23.1,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT7172SWRLOG__SMRL
-5,5,null,null,0,OLSSON Olle,OLSSON O.,OLSSON,Olle,SWE,5,2,5,3+0,3,null,00:31:04.3,null,,null,,null,,null,,null,null,null,,null,null,11,8,null,null,,null,BT7172SWRLOG__SMRL
-5,5,null,null,0,ERIKSSON Torsten,ERIKSSON T.,ERIKSSON,Torsten,SWE,5,3,5,0+2,2,null,00:29:32.7,null,,null,,null,,null,,null,null,null,,null,null,9,6,null,null,,null,BT7172SWRLOG__SMRL
-5,5,null,null,0,PETTERSSON Holmfrid,PETTERSSON H.,PETTERSSON,Holmfrid,SWE,5,4,5,0+0,0,null,00:27:57.3,null,,null,,null,,null,,null,null,null,,null,null,2,5,null,null,,null,BT7172SWRLOG__SMRL
+5,5,null,null,0,ARWIDSON Lars-Goran,ARWIDSON L.G.,ARWIDSON,Lars-Goran,SWE,5,1,5,1+0,1,null,00:28:23.1,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT7172SWRLOG__SMRL
+5,5,null,null,0,OLSSON Olle,OLSSON O.,OLSSON,Olle,SWE,5,2,5,3+0,3,null,00:31:04.3,null,,null,,null,,null,,null,null,null,,null,null,11,8,null,null,,null,,BT7172SWRLOG__SMRL
+5,5,null,null,0,ERIKSSON Torsten,ERIKSSON T.,ERIKSSON,Torsten,SWE,5,3,5,0+2,2,null,00:29:32.7,null,,null,,null,,null,,null,null,null,,null,null,9,6,null,null,,null,,BT7172SWRLOG__SMRL
+5,5,null,null,0,PETTERSSON Holmfrid,PETTERSSON H.,PETTERSSON,Holmfrid,SWE,5,4,5,0+0,0,null,00:27:57.3,null,,null,,null,,null,,null,null,null,,null,null,2,5,null,null,,null,,BT7172SWRLOG__SMRL
 6,6,null,null,1,FRG,FRG,null,null,FRG,6,null,6,null,2,null,01:57:51.8,null,,null,,null,,null,,null,+06:06.9,null,,null,+06:06.9,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-6,6,null,null,0,REINHARDT Dieter,REINHARDT D.,REINHARDT,Dieter,FRG,6,1,6,0+0,0,null,00:28:43.7,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,BT7172SWRLOG__SMRL
-6,6,null,null,0,FLOCIC Herbert,FLOCIC H.,FLOCIC,Herbert,FRG,6,2,6,1+0,1,null,00:29:41.6,null,,null,,null,,null,,null,null,null,,null,null,9,6,null,null,,null,BT7172SWRLOG__SMRL
-6,6,null,null,0,STIEGLER Theo,STIEGLER T.,STIEGLER,Theo,FRG,6,3,6,0+1,1,null,00:29:51.6,null,,null,,null,,null,,null,null,null,,null,null,12,7,null,null,,null,BT7172SWRLOG__SMRL
-6,6,null,null,0,KOSSAKOWSKI Gerhard,KOSSAKOWSKI G.,KOSSAKOWSKI,Gerhard,FRG,6,4,6,0+0,0,null,00:29:34.9,null,,null,,null,,null,,null,null,null,,null,null,7,6,null,null,,null,BT7172SWRLOG__SMRL
+6,6,null,null,0,REINHARDT Dieter,REINHARDT D.,REINHARDT,Dieter,FRG,6,1,6,0+0,0,null,00:28:43.7,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,,BT7172SWRLOG__SMRL
+6,6,null,null,0,FLOCIC Herbert,FLOCIC H.,FLOCIC,Herbert,FRG,6,2,6,1+0,1,null,00:29:41.6,null,,null,,null,,null,,null,null,null,,null,null,9,6,null,null,,null,,BT7172SWRLOG__SMRL
+6,6,null,null,0,STIEGLER Theo,STIEGLER T.,STIEGLER,Theo,FRG,6,3,6,0+1,1,null,00:29:51.6,null,,null,,null,,null,,null,null,null,,null,null,12,7,null,null,,null,,BT7172SWRLOG__SMRL
+6,6,null,null,0,KOSSAKOWSKI Gerhard,KOSSAKOWSKI G.,KOSSAKOWSKI,Gerhard,FRG,6,4,6,0+0,0,null,00:29:34.9,null,,null,,null,,null,,null,null,null,,null,null,7,6,null,null,,null,,BT7172SWRLOG__SMRL
 7,7,null,null,1,POLAND,POLAND,null,null,POL,7,null,7,null,1,null,01:58:09.9,null,,null,,null,,null,,null,+06:25.0,null,,null,+06:25.0,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-7,7,null,null,0,BORKOWSKI Jozef,BORKOWSKI J.,BORKOWSKI,Jozef,POL,7,1,7,0+0,0,null,00:29:36.1,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,BT7172SWRLOG__SMRL
-7,7,null,null,0,RUZYCKI Hubert,RUZYCKI H.,RUZYCKI,Hubert,POL,7,2,7,0+0,0,null,00:29:26.7,null,,null,,null,,null,,null,null,null,,null,null,8,7,null,null,,null,BT7172SWRLOG__SMRL
-7,7,null,null,0,STOPKA Andrzej,STOPKA A.,STOPKA,Andrzej,POL,7,3,7,0+0,0,null,00:29:21.0,null,,null,,null,,null,,null,null,null,,null,null,8,5,null,null,,null,BT7172SWRLOG__SMRL
-7,7,null,null,0,RAPACZ Aleksander,RAPACZ A.,RAPACZ,Aleksander,POL,7,4,7,0+1,1,null,00:29:46.1,null,,null,,null,,null,,null,null,null,,null,null,9,7,null,null,,null,BT7172SWRLOG__SMRL
+7,7,null,null,0,BORKOWSKI Jozef,BORKOWSKI J.,BORKOWSKI,Jozef,POL,7,1,7,0+0,0,null,00:29:36.1,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,,BT7172SWRLOG__SMRL
+7,7,null,null,0,RUZYCKI Hubert,RUZYCKI H.,RUZYCKI,Hubert,POL,7,2,7,0+0,0,null,00:29:26.7,null,,null,,null,,null,,null,null,null,,null,null,8,7,null,null,,null,,BT7172SWRLOG__SMRL
+7,7,null,null,0,STOPKA Andrzej,STOPKA A.,STOPKA,Andrzej,POL,7,3,7,0+0,0,null,00:29:21.0,null,,null,,null,,null,,null,null,null,,null,null,8,5,null,null,,null,,BT7172SWRLOG__SMRL
+7,7,null,null,0,RAPACZ Aleksander,RAPACZ A.,RAPACZ,Aleksander,POL,7,4,7,0+1,1,null,00:29:46.1,null,,null,,null,,null,,null,null,null,,null,null,9,7,null,null,,null,,BT7172SWRLOG__SMRL
 8,8,null,null,1,JAPAN,JAPAN,null,null,JPN,8,null,8,null,5,null,01:59:09.4,null,,null,,null,,null,,null,+07:24.5,null,,null,+07:24.5,null,,null,,null,null,null,BT7172SWRLOG__SMRL
 8,8,null,null,0,ONO Isao,ONO I.,ONO,Isao,JPN,8,1,8,0+0,0,null,00:27:35.7,null,,null,,null,,null,,null,null,null,,null,null,2,2,null,null,,null,BT7172SWRLOG__SMRL
 8,8,null,null,0,SHIBATA Shozo,SHIBATA S.,SHIBATA,Shozo,JPN,8,2,8,2+0,2,null,00:29:05.6,null,,null,,null,,null,,null,null,null,,null,null,7,5,null,null,,null,BT7172SWRLOG__SMRL
 8,8,null,null,0,SASAKI Miki,SASAKI M.,SASAKI,Miki,JPN,8,3,8,0+0,0,null,00:30:09.4,null,,null,,null,,null,,null,null,null,,null,null,13,9,null,null,,null,BT7172SWRLOG__SMRL
 8,8,null,null,0,OKUYAMA Kazuo,OKUYAMA K.,OKUYAMA,Kazuo,JPN,8,4,8,0+3,3,null,00:32:18.7,null,,null,,null,,null,,null,null,null,,null,null,13,8,null,null,,null,BT7172SWRLOG__SMRL
 9,9,null,null,1,FRANCE,FRANCE,null,null,FRA,9,null,9,null,4,null,02:03:08.9,null,,null,,null,,null,,null,+11:24.0,null,,null,+11:24.0,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-9,9,null,null,0,ROUVY Guy,ROUVY G.,ROUVY,Guy,FRA,9,1,9,0+0,0,null,00:29:19.1,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,BT7172SWRLOG__SMRL
-9,9,null,null,0,BIANCHI Daniel,BIANCHI D.,BIANCHI,Daniel,FRA,9,2,9,2+0,2,null,00:31:08.5,null,,null,,null,,null,,null,null,null,,null,null,12,11,null,null,,null,BT7172SWRLOG__SMRL
-9,9,null,null,0,FONTAINE Rene,FONTAINE R.,FONTAINE,Rene,FRA,9,3,9,0+0,0,null,00:30:49.6,null,,null,,null,,null,,null,null,null,,null,null,14,11,null,null,,null,BT7172SWRLOG__SMRL
-9,9,null,null,0,ALBANESI Aimé,ALBANESI A.,ALBANESI,Aimé,FRA,9,4,9,0+2,2,null,00:31:51.7,null,,null,,null,,null,,null,null,null,,null,null,12,9,null,null,,null,BT7172SWRLOG__SMRL
+9,9,null,null,0,ROUVY Guy,ROUVY G.,ROUVY,Guy,FRA,9,1,9,0+0,0,null,00:29:19.1,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,,BT7172SWRLOG__SMRL
+9,9,null,null,0,BIANCHI Daniel,BIANCHI D.,BIANCHI,Daniel,FRA,9,2,9,2+0,2,null,00:31:08.5,null,,null,,null,,null,,null,null,null,,null,null,12,11,null,null,,null,,BT7172SWRLOG__SMRL
+9,9,null,null,0,FONTAINE Rene,FONTAINE R.,FONTAINE,Rene,FRA,9,3,9,0+0,0,null,00:30:49.6,null,,null,,null,,null,,null,null,null,,null,null,14,11,null,null,,null,,BT7172SWRLOG__SMRL
+9,9,null,null,0,ALBANESI Aimé,ALBANESI A.,ALBANESI,Aimé,FRA,9,4,9,0+2,2,null,00:31:51.7,null,,null,,null,,null,,null,null,null,,null,null,12,9,null,null,,null,,BT7172SWRLOG__SMRL
 10,10,null,null,1,ROMANIA,ROMANIA,null,null,ROU,10,null,10,null,5,null,02:03:09.3,null,,null,,null,,null,,null,+11:24.4,null,,null,+11:24.4,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-10,10,null,null,0,CIMPOIA Nicolae,CIMPOIA N.,CIMPOIA,Nicolae,ROU,10,1,10,0+0,0,null,00:28:47.9,null,,null,,null,,null,,null,null,null,,null,null,5,5,null,null,,null,BT7172SWRLOG__SMRL
-10,10,null,null,0,GHEORGHE Constantin,GHEORGHE C.,GHEORGHE,Constantin,ROU,10,2,10,1+1,2,null,00:30:52.3,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,BT7172SWRLOG__SMRL
-10,10,null,null,0,VELESCU Victor,VELESCU V.,VELESCU,Victor,ROU,10,3,10,0+2,2,null,00:31:23.6,null,,null,,null,,null,,null,null,null,,null,null,15,10,null,null,,null,BT7172SWRLOG__SMRL
-10,10,null,null,0,FONTANA Nicolae,FONTANA N.,FONTANA,Nicolae,ROU,10,4,10,0+1,1,null,00:32:05.5,null,,null,,null,,null,,null,null,null,,null,null,13,10,null,null,,null,BT7172SWRLOG__SMRL
+10,10,null,null,0,CIMPOIA Nicolae,CIMPOIA N.,CIMPOIA,Nicolae,ROU,10,1,10,0+0,0,null,00:28:47.9,null,,null,,null,,null,,null,null,null,,null,null,5,5,null,null,,null,,BT7172SWRLOG__SMRL
+10,10,null,null,0,GHEORGHE Constantin,GHEORGHE C.,GHEORGHE,Constantin,ROU,10,2,10,1+1,2,null,00:30:52.3,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,,BT7172SWRLOG__SMRL
+10,10,null,null,0,VELESCU Victor,VELESCU V.,VELESCU,Victor,ROU,10,3,10,0+2,2,null,00:31:23.6,null,,null,,null,,null,,null,null,null,,null,null,15,10,null,null,,null,,BT7172SWRLOG__SMRL
+10,10,null,null,0,FONTANA Nicolae,FONTANA N.,FONTANA,Nicolae,ROU,10,4,10,0+1,1,null,00:32:05.5,null,,null,,null,,null,,null,null,null,,null,null,13,10,null,null,,null,,BT7172SWRLOG__SMRL
 11,11,null,null,1,GREAT BRITAIN,GREAT BRITAIN,null,null,GBR,11,null,11,null,7,null,02:04:38.8,null,,null,,null,,null,,null,+12:53.9,null,,null,+12:53.9,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-11,11,null,null,0,NOTLEY Marcus,NOTLEY M.,NOTLEY,Marcus,GBR,11,1,11,0+0,0,null,00:30:06.4,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,BT7172SWRLOG__SMRL
-11,11,null,null,0,HARRISON Peter,HARRISON P.,HARRISON,Peter,GBR,11,2,11,1+1,2,null,00:31:40.5,null,,null,,null,,null,,null,null,null,,null,null,13,12,null,null,,null,BT7172SWRLOG__SMRL
-11,11,null,null,0,OLIVER Jeffrey,OLIVER J.,OLIVER,Jeffrey,GBR,11,3,11,0+2,2,null,00:31:37.7,null,,null,,null,,null,,null,null,null,,null,null,16,13,null,null,,null,BT7172SWRLOG__SMRL
-11,11,null,null,0,MAIN Alan,MAIN A.,MAIN,Alan,GBR,11,4,11,0+3,3,null,00:31:14.2,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,BT7172SWRLOG__SMRL
+11,11,null,null,0,NOTLEY Marcus,NOTLEY M.,NOTLEY,Marcus,GBR,11,1,11,0+0,0,null,00:30:06.4,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,,BT7172SWRLOG__SMRL
+11,11,null,null,0,HARRISON Peter,HARRISON P.,HARRISON,Peter,GBR,11,2,11,1+1,2,null,00:31:40.5,null,,null,,null,,null,,null,null,null,,null,null,13,12,null,null,,null,,BT7172SWRLOG__SMRL
+11,11,null,null,0,OLIVER Jeffrey,OLIVER J.,OLIVER,Jeffrey,GBR,11,3,11,0+2,2,null,00:31:37.7,null,,null,,null,,null,,null,null,null,,null,null,16,13,null,null,,null,,BT7172SWRLOG__SMRL
+11,11,null,null,0,MAIN Alan,MAIN A.,MAIN,Alan,GBR,11,4,11,0+3,3,null,00:31:14.2,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,,BT7172SWRLOG__SMRL
 12,12,null,null,1,ITALY,ITALY,null,null,ITA,12,null,12,null,6,null,02:07:05.6,null,,null,,null,,null,,null,+15:20.7,null,,null,+15:20.7,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-12,12,null,null,0,MORODER Willy,MORODER W.,MORODER,Willy,ITA,12,1,12,2+0,2,null,00:30:32.7,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,BT7172SWRLOG__SMRL
-12,12,null,null,0,PONTICELLI Giovanni,PONTICELLI G.,PONTICELLI,Giovanni,ITA,12,2,12,4+0,4,null,00:33:11.8,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT7172SWRLOG__SMRL
-12,12,null,null,0,FERRARI Lino,FERRARI L.,FERRARI,Lino,ITA,12,3,12,0+0,0,null,00:29:58.2,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,BT7172SWRLOG__SMRL
-12,12,null,null,0,MORODER Pierantonio,MORODER P.,MORODER,Pierantonio,ITA,12,4,12,0+0,0,null,00:33:22.9,null,,null,,null,,null,,null,null,null,,null,null,15,12,null,null,,null,BT7172SWRLOG__SMRL
+12,12,null,null,0,MORODER Willy,MORODER W.,MORODER,Willy,ITA,12,1,12,2+0,2,null,00:30:32.7,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,,BT7172SWRLOG__SMRL
+12,12,null,null,0,PONTICELLI Giovanni,PONTICELLI G.,PONTICELLI,Giovanni,ITA,12,2,12,4+0,4,null,00:33:11.8,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT7172SWRLOG__SMRL
+12,12,null,null,0,FERRARI Lino,FERRARI L.,FERRARI,Lino,ITA,12,3,12,0+0,0,null,00:29:58.2,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,,BT7172SWRLOG__SMRL
+12,12,null,null,0,MORODER Pierantonio,MORODER P.,MORODER,Pierantonio,ITA,12,4,12,0+0,0,null,00:33:22.9,null,,null,,null,,null,,null,null,null,,null,null,15,12,null,null,,null,,BT7172SWRLOG__SMRL
 13,13,null,null,1,USA,USA,null,null,USA,13,null,13,null,null,null,02:07:24.3,null,,null,,null,,null,,null,+15:39.4,null,,null,+15:39.4,null,,null,,null,null,null,BT7172SWRLOG__SMRL
-13,13,null,null,0,DONAHUE Peter,DONAHUE P.,DONAHUE,Peter,USA,13,1,13,null,null,null,00:31:20.4,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT7172SWRLOG__SMRL
-13,13,null,null,0,CARNEY Edward,CARNEY E.,CARNEY,Edward,USA,13,2,13,null,null,null,00:32:14.6,null,,null,,null,,null,,null,null,null,,null,null,15,13,null,null,,null,BT7172SWRLOG__SMRL
-13,13,null,null,0,BOWSER Dennis,BOWSER D.,BOWSER,Dennis,USA,13,3,13,null,null,null,00:30:42.5,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,BT7172SWRLOG__SMRL
-13,13,null,null,0,JORDAN Charlie,JORDAN C.,JORDAN,Charlie,USA,13,4,13,null,null,null,00:33:06.8,null,,null,,null,,null,,null,null,null,,null,null,14,13,null,null,,null,BT7172SWRLOG__SMRL
+13,13,null,null,0,DONAHUE Peter,DONAHUE P.,DONAHUE,Peter,USA,13,1,13,null,null,null,00:31:20.4,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT7172SWRLOG__SMRL
+13,13,null,null,0,CARNEY Edward,CARNEY E.,CARNEY,Edward,USA,13,2,13,null,null,null,00:32:14.6,null,,null,,null,,null,,null,null,null,,null,null,15,13,null,null,,null,,BT7172SWRLOG__SMRL
+13,13,null,null,0,BOWSER Dennis,BOWSER D.,BOWSER,Dennis,USA,13,3,13,null,null,null,00:30:42.5,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,,BT7172SWRLOG__SMRL
+13,13,null,null,0,JORDAN Charlie,JORDAN C.,JORDAN,Charlie,USA,13,4,13,null,null,null,00:33:06.8,null,,null,,null,,null,,null,null,null,,null,null,14,13,null,null,,null,,BT7172SWRLOG__SMRL
 1,1,null,null,0,KRUGLOV Nikolay,KRUGLOV N.,KRUGLOV,Nikolay,URS,25,null,1,1+1+0+0,2,null,01:14:12.3,null,,null,,null,,null,,null,0.0,null,,null,01:14:12.3,null,,null,,null,null,null,BT7576SWRLOG__SMIN
 2,2,null,null,0,ELORANTA Heikki,ELORANTA H.,ELORANTA,Heikki,FIN,34,null,2,0+1+0+1,2,null,01:15:55.6,null,,null,,null,,null,,null,+01:43.3,null,,null,+01:43.3,null,,null,,null,null,null,BT7576SWRLOG__SMIN
 3,3,null,null,0,YELIZAROV Alexander,YELIZAROV A.,YELIZAROV,Alexander,URS,22,null,3,1+1+0+1,3,null,01:16:05.6,null,,null,,null,,null,,null,+01:53.3,null,,null,+01:53.3,null,,null,,null,null,null,BT7576SWRLOG__SMIN
@@ -382,80 +382,80 @@ StartOrder,ResultOrder,IRM,IBUId,IsTeam,Name,ShortName,FamilyName,GivenName,Nat,
 51,51,null,null,0,MATOUŠ Ladislav,MATOUŠ L.,MATOUŠ,Ladislav,SUI,6,null,51,null,11,null,01:34:25.2,null,,null,,null,,null,,null,+20:12.9,null,,null,+20:12.9,null,,null,,null,null,null,BT7576SWRLOG__SMIN
 52,52,null,null,0,KOSSAKOWSKI Jan,KOSSAKOWSKI J.,KOSSAKOWSKI,Jan,TCH,17,null,52,null,15,null,01:35:10.5,null,,null,,null,,null,,null,+20:58.2,null,,null,+20:58.2,null,,null,,null,null,null,BT7576SWRLOG__SMIN
 1,1,null,null,1,USSR,USSR,null,null,URS,1,null,1,null,0,null,01:57:55.6,null,,null,,null,,null,,null,0.0,null,,null,01:57:55.6,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-1,1,null,null,0,YELIZAROV Alexander,YELIZAROV A.,YELIZAROV,Alexander,URS,1,1,1,0+0,0,null,00:29:47.4,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT7576SWRLOG__SMRL
-1,1,null,null,0,BYAKOV Ivan,BYAKOV I.,BYAKOV,Ivan,URS,1,2,1,0+0,0,null,00:29:54.7,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT7576SWRLOG__SMRL
-1,1,null,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,3,1,0+0,0,null,00:29:07.1,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT7576SWRLOG__SMRL
-1,1,null,null,0,KRUGLOV Nikolay,KRUGLOV N.,KRUGLOV,Nikolay,URS,1,4,1,0+0,0,null,00:29:06.2,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,BT7576SWRLOG__SMRL
+1,1,null,null,0,YELIZAROV Alexander,YELIZAROV A.,YELIZAROV,Alexander,URS,1,1,1,0+0,0,null,00:29:47.4,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT7576SWRLOG__SMRL
+1,1,null,null,0,BYAKOV Ivan,BYAKOV I.,BYAKOV,Ivan,URS,1,2,1,0+0,0,null,00:29:54.7,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT7576SWRLOG__SMRL
+1,1,null,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,3,1,0+0,0,null,00:29:07.1,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT7576SWRLOG__SMRL
+1,1,null,null,0,KRUGLOV Nikolay,KRUGLOV N.,KRUGLOV,Nikolay,URS,1,4,1,0+0,0,null,00:29:06.2,null,,null,,null,,null,,null,null,null,,null,null,1,1,null,null,,null,,BT7576SWRLOG__SMRL
 2,2,null,null,1,FINLAND,FINLAND,null,null,FIN,2,null,2,null,2,null,02:01:45.6,null,,null,,null,,null,,null,+03:50.0,null,,null,+03:50.0,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-2,2,null,null,0,HALONEN Henrik,HALONEN H.,HALONEN,Henrik,FIN,2,1,2,0+0,0,null,00:30:44.6,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,BT7576SWRLOG__SMRL
-2,2,null,null,0,IKOLA Heikki,IKOLA H.,IKOLA,Heikki,FIN,2,2,2,0+0,0,null,00:28:52.9,null,,null,,null,,null,,null,null,null,,null,null,1,2,null,null,,null,BT7576SWRLOG__SMRL
-2,2,null,null,0,SUUTARINEN Esko,SUUTARINEN E.,SUUTARINEN,Esko,FIN,2,3,2,0+1,1,null,00:29:54.7,null,,null,,null,,null,,null,null,null,,null,null,3,2,null,null,,null,BT7576SWRLOG__SMRL
-2,2,null,null,0,ELORANTA Heikki,ELORANTA H.,ELORANTA,Heikki,FIN,2,4,2,0+1,1,null,00:32:13.4,null,,null,,null,,null,,null,null,null,,null,null,12,2,null,null,,null,BT7576SWRLOG__SMRL
+2,2,null,null,0,HALONEN Henrik,HALONEN H.,HALONEN,Henrik,FIN,2,1,2,0+0,0,null,00:30:44.6,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,,BT7576SWRLOG__SMRL
+2,2,null,null,0,IKOLA Heikki,IKOLA H.,IKOLA,Heikki,FIN,2,2,2,0+0,0,null,00:28:52.9,null,,null,,null,,null,,null,null,null,,null,null,1,2,null,null,,null,,BT7576SWRLOG__SMRL
+2,2,null,null,0,SUUTARINEN Esko,SUUTARINEN E.,SUUTARINEN,Esko,FIN,2,3,2,0+1,1,null,00:29:54.7,null,,null,,null,,null,,null,null,null,,null,null,3,2,null,null,,null,,BT7576SWRLOG__SMRL
+2,2,null,null,0,ELORANTA Heikki,ELORANTA H.,ELORANTA,Heikki,FIN,2,4,2,0+1,1,null,00:32:13.4,null,,null,,null,,null,,null,null,null,,null,null,12,2,null,null,,null,,BT7576SWRLOG__SMRL
 3,3,null,null,1,GDR,GDR,null,null,GDR,3,null,3,null,5,null,02:04:08.6,null,,null,,null,,null,,null,+06:13.0,null,,null,+06:13.0,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-3,3,null,null,0,BEER Karl-Heinz,BEER K.H.,BEER,Karl-Heinz,GDR,3,1,3,0+0,0,null,00:31:00.0,null,,null,,null,,null,,null,null,null,,null,null,5,5,null,null,,null,BT7576SWRLOG__SMRL
-3,3,null,null,0,ULLRICH Frank,ULLRICH F.,ULLRICH,Frank,GDR,3,2,3,4+0,4,null,00:32:47.2,null,,null,,null,,null,,null,null,null,,null,null,11,8,null,null,,null,BT7576SWRLOG__SMRL
-3,3,null,null,0,GEYER Manfred,GEYER M.,GEYER,Manfred,GDR,3,3,3,0+1,1,null,00:31:27.4,null,,null,,null,,null,,null,null,null,,null,null,9,6,null,null,,null,BT7576SWRLOG__SMRL
-3,3,null,null,0,MUNCH Heinz,MUNCH H.,MUNCH,Heinz,GDR,3,4,3,0+0,0,null,00:28:54.0,null,,null,,null,,null,,null,null,null,,null,null,1,3,null,null,,null,BT7576SWRLOG__SMRL
+3,3,null,null,0,BEER Karl-Heinz,BEER K.H.,BEER,Karl-Heinz,GDR,3,1,3,0+0,0,null,00:31:00.0,null,,null,,null,,null,,null,null,null,,null,null,5,5,null,null,,null,,BT7576SWRLOG__SMRL
+3,3,null,null,0,ULLRICH Frank,ULLRICH F.,ULLRICH,Frank,GDR,3,2,3,4+0,4,null,00:32:47.2,null,,null,,null,,null,,null,null,null,,null,null,11,8,null,null,,null,,BT7576SWRLOG__SMRL
+3,3,null,null,0,GEYER Manfred,GEYER M.,GEYER,Manfred,GDR,3,3,3,0+1,1,null,00:31:27.4,null,,null,,null,,null,,null,null,null,,null,null,9,6,null,null,,null,,BT7576SWRLOG__SMRL
+3,3,null,null,0,MUNCH Heinz,MUNCH H.,MUNCH,Heinz,GDR,3,4,3,0+0,0,null,00:28:54.0,null,,null,,null,,null,,null,null,null,,null,null,1,3,null,null,,null,,BT7576SWRLOG__SMRL
 4,4,null,null,1,FRG,FRG,null,null,FRG,4,null,4,null,4,null,02:04:11.8,null,,null,,null,,null,,null,+06:16.2,null,,null,+06:16.2,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-4,4,null,null,0,REINHARDT Heinrich,REINHARDT H.,REINHARDT,Heinrich,FRG,4,1,4,0+0,0,null,00:30:37.7,null,,null,,null,,null,,null,null,null,,null,null,3,3,null,null,,null,BT7576SWRLOG__SMRL
-4,4,null,null,0,BEER Gerhard,BEER G.,BEER,Gerhard,FRG,4,2,4,1+0,1,null,00:30:49.5,null,,null,,null,,null,,null,null,null,,null,null,4,3,null,null,,null,BT7576SWRLOG__SMRL
-4,4,null,null,0,ESTNER Josef,ESTNER J.,ESTNER,Josef,FRG,4,3,4,3+0,3,null,00:31:33.7,null,,null,,null,,null,,null,null,null,,null,null,10,5,null,null,,null,BT7576SWRLOG__SMRL
-4,4,null,null,0,WINKLER Claus,WINKLER C.,WINKLER,Claus,FRG,4,4,4,0+0,0,null,00:31:10.9,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,BT7576SWRLOG__SMRL
+4,4,null,null,0,REINHARDT Heinrich,REINHARDT H.,REINHARDT,Heinrich,FRG,4,1,4,0+0,0,null,00:30:37.7,null,,null,,null,,null,,null,null,null,,null,null,3,3,null,null,,null,,BT7576SWRLOG__SMRL
+4,4,null,null,0,BEER Gerhard,BEER G.,BEER,Gerhard,FRG,4,2,4,1+0,1,null,00:30:49.5,null,,null,,null,,null,,null,null,null,,null,null,4,3,null,null,,null,,BT7576SWRLOG__SMRL
+4,4,null,null,0,ESTNER Josef,ESTNER J.,ESTNER,Josef,FRG,4,3,4,3+0,3,null,00:31:33.7,null,,null,,null,,null,,null,null,null,,null,null,10,5,null,null,,null,,BT7576SWRLOG__SMRL
+4,4,null,null,0,WINKLER Claus,WINKLER C.,WINKLER,Claus,FRG,4,4,4,0+0,0,null,00:31:10.9,null,,null,,null,,null,,null,null,null,,null,null,4,4,null,null,,null,,BT7576SWRLOG__SMRL
 5,5,null,null,1,NORWAY,NORWAY,null,null,NOR,5,null,5,null,0,null,02:05:10.3,null,,null,,null,,null,,null,+07:14.7,null,,null,+07:14.7,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-5,5,null,null,0,LUNDE Kjell,LUNDE K.,LUNDE,Kjell,NOR,5,1,5,0+0,0,null,00:31:06.1,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,BT7576SWRLOG__SMRL
-5,5,null,null,0,NILSEN Terje,NILSEN T.,NILSEN,Terje,NOR,5,2,5,0+0,0,null,00:31:29.9,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,BT7576SWRLOG__SMRL
-5,5,null,null,0,HOVDA Svein,HOVDA S.,HOVDA,Svein,NOR,5,3,5,0+0,0,null,00:31:48.5,null,,null,,null,,null,,null,null,null,,null,null,11,7,null,null,,null,BT7576SWRLOG__SMRL
-5,5,null,null,0,KROGSATER Tor,KROGSATER T.,KROGSATER,Tor,NOR,5,4,5,0+0,0,null,00:30:45.8,null,,null,,null,,null,,null,null,null,,null,null,2,5,null,null,,null,BT7576SWRLOG__SMRL
+5,5,null,null,0,LUNDE Kjell,LUNDE K.,LUNDE,Kjell,NOR,5,1,5,0+0,0,null,00:31:06.1,null,,null,,null,,null,,null,null,null,,null,null,6,6,null,null,,null,,BT7576SWRLOG__SMRL
+5,5,null,null,0,NILSEN Terje,NILSEN T.,NILSEN,Terje,NOR,5,2,5,0+0,0,null,00:31:29.9,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,,BT7576SWRLOG__SMRL
+5,5,null,null,0,HOVDA Svein,HOVDA S.,HOVDA,Svein,NOR,5,3,5,0+0,0,null,00:31:48.5,null,,null,,null,,null,,null,null,null,,null,null,11,7,null,null,,null,,BT7576SWRLOG__SMRL
+5,5,null,null,0,KROGSATER Tor,KROGSATER T.,KROGSATER,Tor,NOR,5,4,5,0+0,0,null,00:30:45.8,null,,null,,null,,null,,null,null,null,,null,null,2,5,null,null,,null,,BT7576SWRLOG__SMRL
 6,6,null,null,1,ITALY,ITALY,null,null,ITA,6,null,6,null,3,null,02:06:16.5,null,,null,,null,,null,,null,+08:20.9,null,,null,+08:20.9,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-6,6,null,null,0,BERTIN Lino,BERTIN L.,BERTIN,Lino,ITA,6,1,6,0+0,0,null,00:31:47.7,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,BT7576SWRLOG__SMRL
-6,6,null,null,0,MANFREDINI Pierantonio,MANFREDINI P.,MANFREDINI,Pierantonio,ITA,6,2,6,0+0,0,null,00:30:58.4,null,,null,,null,,null,,null,null,null,,null,null,6,5,null,null,,null,BT7576SWRLOG__SMRL
-6,6,null,null,0,PONTICELLI Luigi,PONTICELLI L.,PONTICELLI,Luigi,ITA,6,3,6,1+2,3,null,00:31:31.4,null,,null,,null,,null,,null,null,null,,null,null,9,8,null,null,,null,BT7576SWRLOG__SMRL
-6,6,null,null,0,BERTIN Willy,BERTIN W.,BERTIN,Willy,ITA,6,4,6,0+0,0,null,00:31:59.0,null,,null,,null,,null,,null,null,null,,null,null,11,6,null,null,,null,BT7576SWRLOG__SMRL
+6,6,null,null,0,BERTIN Lino,BERTIN L.,BERTIN,Lino,ITA,6,1,6,0+0,0,null,00:31:47.7,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,,BT7576SWRLOG__SMRL
+6,6,null,null,0,MANFREDINI Pierantonio,MANFREDINI P.,MANFREDINI,Pierantonio,ITA,6,2,6,0+0,0,null,00:30:58.4,null,,null,,null,,null,,null,null,null,,null,null,6,5,null,null,,null,,BT7576SWRLOG__SMRL
+6,6,null,null,0,PONTICELLI Luigi,PONTICELLI L.,PONTICELLI,Luigi,ITA,6,3,6,1+2,3,null,00:31:31.4,null,,null,,null,,null,,null,null,null,,null,null,9,8,null,null,,null,,BT7576SWRLOG__SMRL
+6,6,null,null,0,BERTIN Willy,BERTIN W.,BERTIN,Willy,ITA,6,4,6,0+0,0,null,00:31:59.0,null,,null,,null,,null,,null,null,null,,null,null,11,6,null,null,,null,,BT7576SWRLOG__SMRL
 7,7,null,null,1,FRANCE,FRANCE,null,null,FRA,7,null,7,null,5,null,02:07:32.3,null,,null,,null,,null,,null,+09:36.7,null,,null,+09:36.7,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-7,7,null,null,0,ROUVY René,ROUVY R.,ROUVY,René,FRA,7,1,7,0+0,0,null,00:32:05.3,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,BT7576SWRLOG__SMRL
-7,7,null,null,0,FONTAINE Yvon,FONTAINE Y.,FONTAINE,Yvon,FRA,7,2,7,0+2,2,null,00:31:08.5,null,,null,,null,,null,,null,null,null,,null,null,8,9,null,null,,null,BT7576SWRLOG__SMRL
-7,7,null,null,0,BIANCHI Marius,BIANCHI M.,BIANCHI,Marius,FRA,7,3,7,0+0,0,null,00:31:37.6,null,,null,,null,,null,,null,null,null,,null,null,10,9,null,null,,null,BT7576SWRLOG__SMRL
-7,7,null,null,0,ALBANESI Jean-Claude,ALBANESI J.C.,ALBANESI,Jean-Claude,FRA,7,4,7,0+3,3,null,00:32:40.9,null,,null,,null,,null,,null,null,null,,null,null,14,7,null,null,,null,BT7576SWRLOG__SMRL
+7,7,null,null,0,ROUVY René,ROUVY R.,ROUVY,René,FRA,7,1,7,0+0,0,null,00:32:05.3,null,,null,,null,,null,,null,null,null,,null,null,10,10,null,null,,null,,BT7576SWRLOG__SMRL
+7,7,null,null,0,FONTAINE Yvon,FONTAINE Y.,FONTAINE,Yvon,FRA,7,2,7,0+2,2,null,00:31:08.5,null,,null,,null,,null,,null,null,null,,null,null,8,9,null,null,,null,,BT7576SWRLOG__SMRL
+7,7,null,null,0,BIANCHI Marius,BIANCHI M.,BIANCHI,Marius,FRA,7,3,7,0+0,0,null,00:31:37.6,null,,null,,null,,null,,null,null,null,,null,null,10,9,null,null,,null,,BT7576SWRLOG__SMRL
+7,7,null,null,0,ALBANESI Jean-Claude,ALBANESI J.C.,ALBANESI,Jean-Claude,FRA,7,4,7,0+3,3,null,00:32:40.9,null,,null,,null,,null,,null,null,null,,null,null,14,7,null,null,,null,,BT7576SWRLOG__SMRL
 8,8,null,null,1,SWEDEN,SWEDEN,null,null,SWE,8,null,8,null,8,null,02:08:46.9,null,,null,,null,,null,,null,+10:51.3,null,,null,+10:51.3,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-8,8,null,null,0,MANNERMÄKI Mats-Ake,MANNERMÄKI M.A.,MANNERMÄKI,Mats-Ake,SWE,8,1,8,0+3,3,null,00:32:27.0,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,BT7576SWRLOG__SMRL
-8,8,null,null,0,ERIKSSON Gunnar,ERIKSSON G.,ERIKSSON,Gunnar,SWE,8,2,8,3+0,3,null,00:32:41.9,null,,null,,null,,null,,null,null,null,,null,null,10,11,null,null,,null,BT7576SWRLOG__SMRL
-8,8,null,null,0,ARWIDSON Sune,ARWIDSON S.,ARWIDSON,Sune,SWE,8,3,8,0+2,2,null,00:31:35.6,null,,null,,null,,null,,null,null,null,,null,null,8,11,null,null,,null,BT7576SWRLOG__SMRL
-8,8,null,null,0,PETTERSSON Nils,PETTERSSON N.,PETTERSSON,Nils,SWE,8,4,8,0+0,0,null,00:32:02.4,null,,null,,null,,null,,null,null,null,,null,null,13,8,null,null,,null,BT7576SWRLOG__SMRL
+8,8,null,null,0,MANNERMÄKI Mats-Ake,MANNERMÄKI M.A.,MANNERMÄKI,Mats-Ake,SWE,8,1,8,0+3,3,null,00:32:27.0,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,,BT7576SWRLOG__SMRL
+8,8,null,null,0,ERIKSSON Gunnar,ERIKSSON G.,ERIKSSON,Gunnar,SWE,8,2,8,3+0,3,null,00:32:41.9,null,,null,,null,,null,,null,null,null,,null,null,10,11,null,null,,null,,BT7576SWRLOG__SMRL
+8,8,null,null,0,ARWIDSON Sune,ARWIDSON S.,ARWIDSON,Sune,SWE,8,3,8,0+2,2,null,00:31:35.6,null,,null,,null,,null,,null,null,null,,null,null,8,11,null,null,,null,,BT7576SWRLOG__SMRL
+8,8,null,null,0,PETTERSSON Nils,PETTERSSON N.,PETTERSSON,Nils,SWE,8,4,8,0+0,0,null,00:32:02.4,null,,null,,null,,null,,null,null,null,,null,null,13,8,null,null,,null,,BT7576SWRLOG__SMRL
 9,9,null,null,1,CZECHOSLOVAKIA,CZECHOSLOVAKIA,null,null,TCH,9,null,9,null,4,null,02:09:06.6,null,,null,,null,,null,,null,+11:11.0,null,,null,+11:11.0,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-9,9,null,null,0,BARTUSKA Ladislav,BARTUSKA L.,BARTUSKA,Ladislav,TCH,9,1,9,0+0,0,null,00:30:19.4,null,,null,,null,,null,,null,null,null,,null,null,2,2,null,null,,null,BT7576SWRLOG__SMRL
-9,9,null,null,0,WAERHAUG Miroslav,WAERHAUG M.,WAERHAUG,Miroslav,TCH,9,2,9,1+0,1,null,00:30:46.3,null,,null,,null,,null,,null,null,null,,null,null,3,4,null,null,,null,BT7576SWRLOG__SMRL
-9,9,null,null,0,SORMU Antonin,SORMU A.,SORMU,Antonin,TCH,9,3,9,0+3,3,null,00:34:25.7,null,,null,,null,,null,,null,null,null,,null,null,15,10,null,null,,null,BT7576SWRLOG__SMRL
-9,9,null,null,0,BORKOWSKI Zdenek,BORKOWSKI Z.,BORKOWSKI,Zdenek,TCH,9,4,9,0+0,0,null,00:33:35.2,null,,null,,null,,null,,null,null,null,,null,null,15,9,null,null,,null,BT7576SWRLOG__SMRL
+9,9,null,null,0,BARTUSKA Ladislav,BARTUSKA L.,BARTUSKA,Ladislav,TCH,9,1,9,0+0,0,null,00:30:19.4,null,,null,,null,,null,,null,null,null,,null,null,2,2,null,null,,null,,BT7576SWRLOG__SMRL
+9,9,null,null,0,WAERHAUG Miroslav,WAERHAUG M.,WAERHAUG,Miroslav,TCH,9,2,9,1+0,1,null,00:30:46.3,null,,null,,null,,null,,null,null,null,,null,null,3,4,null,null,,null,,BT7576SWRLOG__SMRL
+9,9,null,null,0,SORMU Antonin,SORMU A.,SORMU,Antonin,TCH,9,3,9,0+3,3,null,00:34:25.7,null,,null,,null,,null,,null,null,null,,null,null,15,10,null,null,,null,,BT7576SWRLOG__SMRL
+9,9,null,null,0,BORKOWSKI Zdenek,BORKOWSKI Z.,BORKOWSKI,Zdenek,TCH,9,4,9,0+0,0,null,00:33:35.2,null,,null,,null,,null,,null,null,null,,null,null,15,9,null,null,,null,,BT7576SWRLOG__SMRL
 10,10,null,null,1,ROMANIA,ROMANIA,null,null,ROU,10,null,10,null,7,null,02:09:54.4,null,,null,,null,,null,,null,+11:58.8,null,,null,+11:58.8,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-10,10,null,null,0,FONTANA Nicolae,FONTANA N.,FONTANA,Nicolae,ROU,10,1,10,0+0,0,null,00:31:39.1,null,,null,,null,,null,,null,null,null,,null,null,8,8,null,null,,null,BT7576SWRLOG__SMRL
-10,10,null,null,0,CIMPOIA Gheorghe,CIMPOIA G.,CIMPOIA,Gheorghe,ROU,10,2,10,0+0,0,null,00:32:05.7,null,,null,,null,,null,,null,null,null,,null,null,9,10,null,null,,null,BT7576SWRLOG__SMRL
-10,10,null,null,0,VELESCU Victor,VELESCU V.,VELESCU,Victor,ROU,10,3,10,2+2,4,null,00:33:48.3,null,,null,,null,,null,,null,null,null,,null,null,14,12,null,null,,null,BT7576SWRLOG__SMRL
-10,10,null,null,0,GHEORGHE Gheorghe,GHEORGHE G.,GHEORGHE,Gheorghe,ROU,10,4,10,0+3,3,null,00:32:21.3,null,,null,,null,,null,,null,null,null,,null,null,13,10,null,null,,null,BT7576SWRLOG__SMRL
+10,10,null,null,0,FONTANA Nicolae,FONTANA N.,FONTANA,Nicolae,ROU,10,1,10,0+0,0,null,00:31:39.1,null,,null,,null,,null,,null,null,null,,null,null,8,8,null,null,,null,,BT7576SWRLOG__SMRL
+10,10,null,null,0,CIMPOIA Gheorghe,CIMPOIA G.,CIMPOIA,Gheorghe,ROU,10,2,10,0+0,0,null,00:32:05.7,null,,null,,null,,null,,null,null,null,,null,null,9,10,null,null,,null,,BT7576SWRLOG__SMRL
+10,10,null,null,0,VELESCU Victor,VELESCU V.,VELESCU,Victor,ROU,10,3,10,2+2,4,null,00:33:48.3,null,,null,,null,,null,,null,null,null,,null,null,14,12,null,null,,null,,BT7576SWRLOG__SMRL
+10,10,null,null,0,GHEORGHE Gheorghe,GHEORGHE G.,GHEORGHE,Gheorghe,ROU,10,4,10,0+3,3,null,00:32:21.3,null,,null,,null,,null,,null,null,null,,null,null,13,10,null,null,,null,,BT7576SWRLOG__SMRL
 11,11,null,null,1,USA,USA,null,null,USA,11,null,11,null,null,null,02:10:01.2,null,,null,,null,,null,,null,+12:05.6,null,,null,+12:05.6,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-11,11,null,null,0,DONAHUE Lyle,DONAHUE L.,DONAHUE,Lyle,USA,11,1,11,null,null,null,00:33:04.9,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,BT7576SWRLOG__SMRL
-11,11,null,null,0,CARNEY Curt,CAR Carney,CARNEY,Curt,USA,11,2,11,null,null,null,00:31:49.2,null,,null,,null,,null,,null,null,null,,null,null,10,11,null,null,,null,BT7576SWRLOG__SMRL
-11,11,null,null,0,BOWSER Peter,BOWSER P.,BOWSER,Peter,USA,11,3,11,null,null,null,00:33:07.7,null,,null,,null,,null,,null,null,null,,null,null,12,13,null,null,,null,BT7576SWRLOG__SMRL
-11,11,null,null,0,JORDAN Martin,JORDAN M.,JORDAN,Martin,USA,11,4,11,null,null,null,00:31:59.4,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,BT7576SWRLOG__SMRL
+11,11,null,null,0,DONAHUE Lyle,DONAHUE L.,DONAHUE,Lyle,USA,11,1,11,null,null,null,00:33:04.9,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,,BT7576SWRLOG__SMRL
+11,11,null,null,0,CARNEY Curt,CAR Carney,CARNEY,Curt,USA,11,2,11,null,null,null,00:31:49.2,null,,null,,null,,null,,null,null,null,,null,null,10,11,null,null,,null,,BT7576SWRLOG__SMRL
+11,11,null,null,0,BOWSER Peter,BOWSER P.,BOWSER,Peter,USA,11,3,11,null,null,null,00:33:07.7,null,,null,,null,,null,,null,null,null,,null,null,12,13,null,null,,null,,BT7576SWRLOG__SMRL
+11,11,null,null,0,JORDAN Martin,JORDAN M.,JORDAN,Martin,USA,11,4,11,null,null,null,00:31:59.4,null,,null,,null,,null,,null,null,null,,null,null,11,11,null,null,,null,,BT7576SWRLOG__SMRL
 12,12,null,null,1,JAPAN,JAPAN,null,null,JPN,12,null,12,null,10,null,02:11:00.6,null,,null,,null,,null,,null,+13:05.0,null,,null,+13:05.0,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-12,12,null,null,0,ONO Isao,ONO I.,ONO,Isao,JPN,12,1,12,1+2,3,null,00:31:07.9,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,BT7576SWRLOG__SMRL
-12,12,null,null,0,SHIBATA Hiroyuki,SHIBATA H.,SHIBATA,Hiroyuki,JPN,12,2,12,2+3,5,null,00:33:38.2,null,,null,,null,,null,,null,null,null,,null,null,15,12,null,null,,null,BT7576SWRLOG__SMRL
-12,12,null,null,0,SASAKI Manabu,SASAKI M.,SASAKI,Manabu,JPN,12,3,12,0+0,0,null,00:32:06.0,null,,null,,null,,null,,null,null,null,,null,null,11,12,null,null,,null,BT7576SWRLOG__SMRL
-12,12,null,null,0,OKUYAMA Yoshiyuki,OKUYAMA Y.,OKUYAMA,Yoshiyuki,JPN,12,4,12,0+2,2,null,00:34:08.5,null,,null,,null,,null,,null,null,null,,null,null,14,12,null,null,,null,BT7576SWRLOG__SMRL
+12,12,null,null,0,ONO Isao,ONO I.,ONO,Isao,JPN,12,1,12,1+2,3,null,00:31:07.9,null,,null,,null,,null,,null,null,null,,null,null,7,7,null,null,,null,,BT7576SWRLOG__SMRL
+12,12,null,null,0,SHIBATA Hiroyuki,SHIBATA H.,SHIBATA,Hiroyuki,JPN,12,2,12,2+3,5,null,00:33:38.2,null,,null,,null,,null,,null,null,null,,null,null,15,12,null,null,,null,,BT7576SWRLOG__SMRL
+12,12,null,null,0,SASAKI Manabu,SASAKI M.,SASAKI,Manabu,JPN,12,3,12,0+0,0,null,00:32:06.0,null,,null,,null,,null,,null,null,null,,null,null,11,12,null,null,,null,,BT7576SWRLOG__SMRL
+12,12,null,null,0,OKUYAMA Yoshiyuki,OKUYAMA Y.,OKUYAMA,Yoshiyuki,JPN,12,4,12,0+2,2,null,00:34:08.5,null,,null,,null,,null,,null,null,null,,null,null,14,12,null,null,,null,,BT7576SWRLOG__SMRL
 13,13,null,null,1,GREAT BRITAIN,GREAT BRITAIN,null,null,GBR,13,null,13,null,8,null,02:11:54.3,null,,null,,null,,null,,null,+13:58.7,null,,null,+13:58.7,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-13,13,null,null,0,NOTLEY Malcolm,NOTLEY M.,NOTLEY,Malcolm,GBR,13,1,13,1+0,1,null,00:33:33.1,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT7576SWRLOG__SMRL
-13,13,null,null,0,HARRISON Jeffrey,HARRISON J.,HARRISON,Jeffrey,GBR,13,2,13,0+1,1,null,00:32:27.5,null,,null,,null,,null,,null,null,null,,null,null,12,13,null,null,,null,BT7576SWRLOG__SMRL
-13,13,null,null,0,OLIVER Graeme,OLIVER G.,OLIVER,Graeme,GBR,13,3,13,0+3,3,null,00:33:36.1,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,BT7576SWRLOG__SMRL
-13,13,null,null,0,MAIN Douglas,MAIN D.,MAIN,Douglas,GBR,13,4,13,0+3,3,null,00:32:17.6,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,BT7576SWRLOG__SMRL
+13,13,null,null,0,NOTLEY Malcolm,NOTLEY M.,NOTLEY,Malcolm,GBR,13,1,13,1+0,1,null,00:33:33.1,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT7576SWRLOG__SMRL
+13,13,null,null,0,HARRISON Jeffrey,HARRISON J.,HARRISON,Jeffrey,GBR,13,2,13,0+1,1,null,00:32:27.5,null,,null,,null,,null,,null,null,null,,null,null,12,13,null,null,,null,,BT7576SWRLOG__SMRL
+13,13,null,null,0,OLIVER Graeme,OLIVER G.,OLIVER,Graeme,GBR,13,3,13,0+3,3,null,00:33:36.1,null,,null,,null,,null,,null,null,null,,null,null,13,14,null,null,,null,,BT7576SWRLOG__SMRL
+13,13,null,null,0,MAIN Douglas,MAIN D.,MAIN,Douglas,GBR,13,4,13,0+3,3,null,00:32:17.6,null,,null,,null,,null,,null,null,null,,null,null,13,13,null,null,,null,,BT7576SWRLOG__SMRL
 14,14,null,null,1,AUSTRIA,AUSTRIA,null,null,AUT,14,null,14,null,11,null,02:18:06.8,null,,null,,null,,null,,null,+20:11.2,null,,null,+20:11.2,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-14,14,null,null,0,STIEGLER Franz-Josef,STIEGLER F.J.,STIEGLER,Franz-Josef,AUT,14,1,14,0+2,2,null,00:32:51.3,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,BT7576SWRLOG__SMRL
-14,14,null,null,0,ALBANESI Hans,ALBANESI H.,ALBANESI,Hans,AUT,14,2,14,1+3,4,null,00:35:10.4,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,BT7576SWRLOG__SMRL
-14,14,null,null,0,TENTORI Josef,TENTORI J.,TENTORI,Josef,AUT,14,3,14,0+3,3,null,00:35:46.3,null,,null,,null,,null,,null,null,null,,null,null,16,15,null,null,,null,BT7576SWRLOG__SMRL
-14,14,null,null,0,FERRARI Alfred,FERRARI A.,FERRARI,Alfred,AUT,14,4,14,0+2,2,null,00:34:18.8,null,,null,,null,,null,,null,null,null,,null,null,15,14,null,null,,null,BT7576SWRLOG__SMRL
+14,14,null,null,0,STIEGLER Franz-Josef,STIEGLER F.J.,STIEGLER,Franz-Josef,AUT,14,1,14,0+2,2,null,00:32:51.3,null,,null,,null,,null,,null,null,null,,null,null,12,12,null,null,,null,,BT7576SWRLOG__SMRL
+14,14,null,null,0,ALBANESI Hans,ALBANESI H.,ALBANESI,Hans,AUT,14,2,14,1+3,4,null,00:35:10.4,null,,null,,null,,null,,null,null,null,,null,null,14,14,null,null,,null,,BT7576SWRLOG__SMRL
+14,14,null,null,0,TENTORI Josef,TENTORI J.,TENTORI,Josef,AUT,14,3,14,0+3,3,null,00:35:46.3,null,,null,,null,,null,,null,null,null,,null,null,16,15,null,null,,null,,BT7576SWRLOG__SMRL
+14,14,null,null,0,FERRARI Alfred,FERRARI A.,FERRARI,Alfred,AUT,14,4,14,0+2,2,null,00:34:18.8,null,,null,,null,,null,,null,null,null,,null,null,15,14,null,null,,null,,BT7576SWRLOG__SMRL
 15,15,null,null,1,SWITZERLAND,SWITZERLAND,null,null,SUI,15,null,15,null,11,null,02:24:28.4,null,,null,,null,,null,,null,+26:32.8,null,,null,+26:32.8,null,,null,,null,null,null,BT7576SWRLOG__SMRL
-15,15,null,null,0,KOSSAKOWSKI Hansruedi,KOSSAKOWSKI H.,KOSSAKOWSKI,Hansruedi,SUI,15,1,15,0+0,0,null,00:35:05.0,null,,null,,null,,null,,null,null,null,,null,null,15,15,null,null,,null,BT7576SWRLOG__SMRL
-15,15,null,null,0,MEINILÄ Christian,MEINILÄ C.,MEINILÄ,Christian,SUI,15,2,15,2+3,5,null,00:37:37.0,null,,null,,null,,null,,null,null,null,,null,null,16,15,null,null,,null,BT7576SWRLOG__SMRL
-15,15,null,null,0,PONTICELLI Jürg,PONTICELLI J.,PONTICELLI,Jürg,SUI,15,3,15,0+3,3,null,00:35:18.4,null,,null,,null,,null,,null,null,null,,null,null,14,15,null,null,,null,BT7576SWRLOG__SMRL
-15,15,null,null,0,BEER Urs,BEER U.,BEER,Urs,SUI,15,4,15,1+2,3,null,00:36:28.0,null,,null,,null,,null,,null,null,null,,null,null,16,15,null,null,,null,BT7576SWRLOG__SMRL
+15,15,null,null,0,KOSSAKOWSKI Hansruedi,KOSSAKOWSKI H.,KOSSAKOWSKI,Hansruedi,SUI,15,1,15,0+0,0,null,00:35:05.0,null,,null,,null,,null,,null,null,null,,null,null,15,15,null,null,,null,,BT7576SWRLOG__SMRL
+15,15,null,null,0,MEINILÄ Christian,MEINILÄ C.,MEINILÄ,Christian,SUI,15,2,15,2+3,5,null,00:37:37.0,null,,null,,null,,null,,null,null,null,,null,null,16,15,null,null,,null,,BT7576SWRLOG__SMRL
+15,15,null,null,0,PONTICELLI Jürg,PONTICELLI J.,PONTICELLI,Jürg,SUI,15,3,15,0+3,3,null,00:35:18.4,null,,null,,null,,null,,null,null,null,,null,null,14,15,null,null,,null,,BT7576SWRLOG__SMRL
+15,15,null,null,0,BEER Urs,BEER U.,BEER,Urs,SUI,15,4,15,1+2,3,null,00:36:28.0,null,,null,,null,,null,,null,null,null,,null,null,16,15,null,null,,null,,BT7576SWRLOG__SMRL
 1,1,null,null,0,ALYABYEV Anatoly,ALYABYEV A.,ALYABYEV,Anatoly,URS,43,null,1,0+0+0+0,0,null,01:08:16.3,null,,null,,null,,null,,null,0.0,null,,null,01:08:16.3,null,,null,,null,null,null,BT7980SWRLOG__SMIN
 2,2,null,null,0,ULLRICH Frank,ULLRICH F.,ULLRICH,Frank,GDR,36,null,2,1+0+1+1,3,null,01:08:27.8,null,,null,,null,,null,,null,+11.5,null,,null,+11.5,null,,null,,null,null,null,BT7980SWRLOG__SMIN
 3,3,null,null,0,RÖSCH Eberhard,RÖSCH E.,RÖSCH,Eberhard,GDR,29,null,3,0+1+1+0,2,null,01:11:11.7,null,,null,,null,,null,,null,+02:55.4,null,,null,+02:55.4,null,,null,,null,null,null,BT7980SWRLOG__SMIN
