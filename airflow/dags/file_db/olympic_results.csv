@@ -613,3 +613,88 @@ StartOrder,ResultOrder,IRM,IBUId,IsTeam,Name,ShortName,FamilyName,GivenName,Nat,
 12,12,null,null,1,POLAND,POLAND,null,null,POL,12,null,12,null,null,null,01:44:19.6,null,,null,,null,,null,,null,+10:16.3,null,,null,+10:16.3,null,,null,,null,null,null,BT7980SWRLOG__SMRL
 12,12,null,null,0,KOSSAKOWSKI Stanislaw,KOSSAKOWSKI S.,KOSSAKOWSKI,Stanislaw,POL,12,1,12,null,null,null,00:24:35.3,null,,null,,null,,null,,null,null,null,,null,null,9,9,null,null,,null,,BT7980SWRLOG__SMRL
 12,12,null,null,0,MEINILÄ Andrzej,MEINILÄ A.,MEINILÄ,Andrzej,POL,12,2,12,null,null,null,00:25:52.3,null,,null,,null,,null,,null,null,null,,null,null,13,11,null,null,,null,,BT7980SWRLOG__SMRL
+1,1,,null,1,USSR,USSR,,null,URS,1,,1,,2,null,01:38:51.7,,,,,,,,,,0.0,,,,01:38:51.7,,,,,null,,,BT8384SWRLOG__SMRL
+1,1,,null,0,ALIKIN Vladimir,ALIKIN V.,ALIKIN,Vladimir,URS,1,1,1,0+0,0,null,00:24:53.9,,,,,,,,,,null,,,,null,1,1,null,,,,,BT8384SWRLOG__SMRL
+1,1,,null,0,ALYAByev Nikolay,ALYAByev N.,ALYAByev,Nikolay,URS,1,2,1,0+1,1,null,00:24:23.2,,,,,,,,,,null,,,,null,1,1,null,,,,,BT8384SWRLOG__SMRL
+1,1,,null,0,TIKHONOV Alexander,TIKHONOV A.,TIKHONOV,Alexander,URS,1,3,1,0+0,0,null,00:24:26.4,,,,,,,,,,null,,,,null,1,1,null,,,,,BT8384SWRLOG__SMRL
+1,1,,null,0,VASILYEV Vladimir,VASILYEV V.,VASILYEV,Vladimir,URS,1,4,1,0+1,1,null,00:25:08.2,,,,,,,,,,null,,,,null,1,1,null,,,,,BT8384SWRLOG__SMRL
+2,2,,null,1,NORWAY,NORWAY,,null,NOR,2,,2,,2,null,01:39:03.9,,,,,,,,,,+00:12.2,,,,01:39:03.9,,,,,null,,,BT8384SWRLOG__SMRL
+2,2,,null,0,RØNNINGEN Kjell,RØNNINGEN K.,RØNNINGEN,Kjell,NOR,2,1,2,0+1,1,null,00:25:34.5,,,,,,,,,,null,,,,null,4,4,null,,,,,BT8384SWRLOG__SMRL
+2,2,,null,0,SØBAK Eirik,SØBAK E.,SØBAK,Eirik,NOR,2,2,2,0+0,0,null,00:24:34.3,,,,,,,,,,null,,,,null,2,3,null,,,,,BT8384SWRLOG__SMRL
+2,2,,null,0,LIRHUS Terje,LIRHUS T.,LIRHUS,Terje,NOR,2,3,2,0+1,1,null,00:24:13.6,,,,,,,,,,null,,,,null,2,2,null,,,,,BT8384SWRLOG__SMRL
+2,2,,null,0,KVALFOSS Eirik,KVALFOSS E.,KVALFOSS,Eirik,NOR,2,4,2,0+0,0,null,00:24:41.5,,,,,,,,,,null,,,,null,2,2,null,,,,,BT8384SWRLOG__SMRL
+3,3,,null,1,FRG,FRG,,null,FRG,3,,3,,1,null,01:39:05.1,,,,,,,,,,+00:13.4,,,,01:39:05.1,,,,,null,,,BT8384SWRLOG__SMRL
+3,3,,null,0,FINKL Sascha,FINKL S.,FINKL,Sascha,FRG,3,1,3,0+1,1,null,00:24:59.4,,,,,,,,,,null,,,,null,2,2,null,,,,,BT8384SWRLOG__SMRL
+3,3,,null,0,BERNREITER Peter,BERNREITER P.,BERNREITER,Peter,FRG,3,2,3,0+0,0,null,00:24:41.9,,,,,,,,,,null,,,,null,3,2,null,,,,,BT8384SWRLOG__SMRL
+3,3,,null,0,PICHOL Stefan,PICHOL S.,PICHOL,Stefan,FRG,3,3,3,0+0,0,null,00:25:23.1,,,,,,,,,,null,,,,null,3,3,null,,,,,BT8384SWRLOG__SMRL
+3,3,,null,0,ANGEREER Peter,ANGEREER P.,ANGEREER,Peter,FRG,3,4,3,0+0,0,null,00:24:00.7,,,,,,,,,,null,,,,null,1,3,null,,,,,BT8384SWRLOG__SMRL
+4,4,,null,1,GDR,GDR,,null,GDR,4,,4,,1,null,01:40:04.7,,,,,,,,,,+01:13.0,,,,01:40:04.7,,,,,null,,,BT8384SWRLOG__SMRL
+4,4,,null,0,JUNG Holger,JUNG H.,JUNG,Holger,GDR,4,1,4,0+0,0,null,00:25:01.2,,,,,,,,,,null,,,,null,3,3,null,,,,,BT8384SWRLOG__SMRL
+4,4,,null,0,SPEER Matthias,SPEER M.,SPEER,Matthias,GDR,4,2,4,0+0,0,null,00:25:48.5,,,,,,,,,,null,,,,null,7,5,null,,,,,BT8384SWRLOG__SMRL
+4,4,,null,0,SIEBERT Frank,SIEBERT F.,SIEBERT,Frank,GDR,4,3,4,0+1,1,null,00:24:05.7,,,,,,,,,,null,,,,null,1,4,null,,,,,BT8384SWRLOG__SMRL
+4,4,,null,0,RÖTSCH Frank-Peter,RÖTSCH F.P.,RÖTSCH,Frank-Peter,GDR,4,4,4,0+0,0,null,00:25:09.3,,,,,,,,,,null,,,,null,3,4,null,,,,,BT8384SWRLOG__SMRL
+5,5,,null,1,ITALY,ITALY,,null,ITA,5,,5,,0,null,01:42:32.8,,,,,,,,,,+03:41.1,,,,01:42:32.8,,,,,null,,,BT8384SWRLOG__SMRL
+5,5,,null,0,ZINGERLE Andreas,ZINGERLE A.,ZINGERLE,Andreas,ITA,5,1,5,0+0,0,null,00:26:30.3,,,,,,,,,,null,,,,null,8,8,null,,,,,BT8384SWRLOG__SMRL
+5,5,,null,0,PASSLER Johann,PASSLER J.,PASSLER,Johann,ITA,5,2,5,0+0,0,null,00:25:34.3,,,,,,,,,,null,,,,null,6,8,null,,,,,BT8384SWRLOG__SMRL
+5,5,,null,0,KAPINER Adriano,KAPINER A.,KAPINER,Adriano,ITA,5,3,5,0+0,0,null,00:25:04.1,,,,,,,,,,null,,,,null,4,5,null,,,,,BT8384SWRLOG__SMRL
+5,5,,null,0,CARRARA Pieralberto,CARRARA P.,CARRARA,Pieralberto,ITA,5,4,5,0+0,0,null,00:25:24.1,,,,,,,,,,null,,,,null,4,5,null,,,,,BT8384SWRLOG__SMRL
+6,6,,null,1,CZECHOSLOVAKIA,CZECHOSLOVAKIA,,null,TCH,6,,6,,4,null,01:42:40.5,,,,,,,,,,+03:48.8,,,,01:42:40.5,,,,,null,,,BT8384SWRLOG__SMRL
+6,6,,null,0,HÁK Jaromír,HÁK J.,HÁK,Jaromír,TCH,6,1,6,0+0,0,null,00:25:55.5,,,,,,,,,,null,,,,null,5,5,null,,,,,BT8384SWRLOG__SMRL
+6,6,,null,0,ŠIMŮNEK Jan,ŠIMŮNEK J.,ŠIMŮNEK,Jan,TCH,6,2,6,0+1,1,null,00:25:04.3,,,,,,,,,,null,,,,null,5,4,null,,,,,BT8384SWRLOG__SMRL
+6,6,,null,0,VONDRAŠEK Zdeněk,VONDRAŠEK Z.,VONDRAŠEK,Zdeněk,TCH,6,3,6,0+2,2,null,00:25:51.4,,,,,,,,,,null,,,,null,8,6,null,,,,,BT8384SWRLOG__SMRL
+6,6,,null,0,MATOUŠ Jan,MATOUŠ J.,MATOUŠ,Jan,TCH,6,4,6,0+1,1,null,00:25:49.3,,,,,,,,,,null,,,,null,5,6,null,,,,,BT8384SWRLOG__SMRL
+7,7,,null,1,FINLAND,FINLAND,,null,FIN,7,,7,,2,null,01:43:03.2,,,,,,,,,,+04:11.5,,,,01:43:03.2,,,,,null,,,BT8384SWRLOG__SMRL
+7,7,,null,0,LAITINEN Keijo,LAITINEN K.,LAITINEN,Keijo,FIN,7,1,7,0+0,0,null,00:25:58.9,,,,,,,,,,null,,,,null,6,6,null,,,,,BT8384SWRLOG__SMRL
+7,7,,null,0,JÄÄSKELÄINEN Toivo,JÄÄSKELÄINEN T.,JÄÄSKELÄINEN,Toivo,FIN,7,2,7,0+2,2,null,00:26:08.4,,,,,,,,,,null,,,,null,9,7,null,,,,,BT8384SWRLOG__SMRL
+7,7,,null,0,MÄNTYMAA Arto,MÄNTYMAA A.,MÄNTYMAA,Arto,FIN,7,3,7,0+0,0,null,00:25:29.8,,,,,,,,,,null,,,,null,5,7,null,,,,,BT8384SWRLOG__SMRL
+7,7,,null,0,TAPANINEN Tapio,TAPANINEN T.,TAPANINEN,Tapio,FIN,7,4,7,0+0,0,null,00:25:26.1,,,,,,,,,,null,,,,null,6,7,null,,,,,BT8384SWRLOG__SMRL
+8,8,,null,1,AUSTRIA,AUSTRIA,,null,AUT,8,,8,,1,null,01:43:28.1,,,,,,,,,,+04:36.4,,,,01:43:28.1,,,,,null,,,BT8384SWRLOG__SMRL
+8,8,,null,0,DOCKNER Rudolf,DOCKNER R.,DOCKNER,Rudolf,AUT,8,1,8,0+0,0,null,00:26:12.0,,,,,,,,,,null,,,,null,7,7,null,,,,,BT8384SWRLOG__SMRL
+8,8,,null,0,SCHULER Franz,SCHULER F.,SCHULER,Franz,AUT,8,2,8,0+1,1,null,00:25:27.2,,,,,,,,,,null,,,,null,4,6,null,,,,,BT8384SWRLOG__SMRL
+8,8,,null,0,EDER Anton,EDER A.,EDER,Anton,AUT,8,3,8,0+0,0,null,00:26:32.8,,,,,,,,,,null,,,,null,11,8,null,,,,,BT8384SWRLOG__SMRL
+8,8,,null,0,HÖRL Alfred,HÖRL A.,HÖRL,Alfred,AUT,8,4,8,0+0,0,null,00:25:16.1,,,,,,,,,,null,,,,null,3,8,null,,,,,BT8384SWRLOG__SMRL
+9,9,,null,1,FRANCE,FRANCE,,null,FRA,9,,9,,3,null,01:43:56.6,,,,,,,,,,+05:04.9,,,,01:43:56.6,,,,,null,,,BT8384SWRLOG__SMRL
+9,9,,null,0,DUMONT Daniel,DUMONT D.,DUMONT,Daniel,FRA,9,1,9,0+0,0,null,00:26:22.5,,,,,,,,,,null,,,,null,7,7,null,,,,,BT8384SWRLOG__SMRL
+9,9,,null,0,GERMAIN Serge,GERMAIN S.,GERMAIN,Serge,FRA,9,2,9,0+2,2,null,00:26:34.7,,,,,,,,,,null,,,,null,11,9,null,,,,,BT8384SWRLOG__SMRL
+9,9,,null,0,BARTHELEMY Aimé,BARTHELEMY A.,BARTHELEMY,Aimé,FRA,9,3,9,0+0,0,null,00:25:21.0,,,,,,,,,,null,,,,null,2,9,null,,,,,BT8384SWRLOG__SMRL
+9,9,,null,0,MOUREGEL Francis,MOUREGEL F.,MOUREGEL,Francis,FRA,9,4,9,0+1,1,null,00:25:38.4,,,,,,,,,,null,,,,null,7,9,null,,,,,BT8384SWRLOG__SMRL
+10,10,,null,1,SWEDEN,SWEDEN,,null,SWE,10,,10,,2,null,01:44:28.2,,,,,,,,,,+05:36.5,,,,01:44:28.2,,,,,null,,,BT8384SWRLOG__SMRL
+10,10,,null,0,ARWIDSON Lars-Goran,ARWIDSON L.G.,ARWIDSON,Lars-Goran,SWE,10,1,10,0+0,0,null,00:26:58.2,,,,,,,,,,null,,,,null,11,11,null,,,,,BT8384SWRLOG__SMRL
+10,10,,null,0,GREN SVEN,GREN S.,GREN,SVEN,SWE,10,2,10,0+0,0,null,00:25:32.8,,,,,,,,,,null,,,,null,5,10,null,,,,,BT8384SWRLOG__SMRL
+10,10,,null,0,KARLSSON Roger,KARLSSON R.,KARLSSON,Roger,SWE,10,3,10,0+1,1,null,00:26:22.5,,,,,,,,,,null,,,,null,10,10,null,,,,,BT8384SWRLOG__SMRL
+10,10,,null,0,HÖGLUND Ronnie,HÖGLUND R.,HÖGLUND,Ronnie,SWE,10,4,10,0+1,1,null,00:25:34.7,,,,,,,,,,null,,,,null,8,10,null,,,,,BT8384SWRLOG__SMRL
+11,11,,null,1,POLAND,POLAND,,null,POL,11,,11,,2,null,01:47:25.1,,,,,,,,,,+08:33.4,,,,01:47:25.1,,,,,null,,,BT8384SWRLOG__SMRL
+11,11,,null,0,GŁADYSZ Władysław,GŁADYSZ W.,GŁADYSZ,Władysław,POL,11,1,11,0+0,0,null,00:26:52.0,,,,,,,,,,null,,,,null,10,10,null,,,,,BT8384SWRLOG__SMRL
+11,11,,null,0,ZYCH Jerzy,ZYCH J.,ZYCH,Jerzy,POL,11,2,11,0+1,1,null,00:26:31.0,,,,,,,,,,null,,,,null,10,11,null,,,,,BT8384SWRLOG__SMRL
+11,11,,null,0,STOPKA Stanislaw,STOPKA S.,STOPKA,Stanislaw,POL,11,3,11,0+1,1,null,00:27:54.1,,,,,,,,,,null,,,,null,14,11,null,,,,,BT8384SWRLOG__SMRL
+11,11,,null,0,BODZIANA Jan,BODZIANA J.,BODZIANA,Jan,POL,11,4,11,0+0,0,null,00:26:08.0,,,,,,,,,,null,,,,null,9,11,null,,,,,BT8384SWRLOG__SMRL
+12,12,,null,1,USA,USA,,null,USA,12,,12,,12,null,01:48:57.7,,,,,,,,,,+10:06.0,,,,01:48:57.7,,,,,null,,,BT8384SWRLOG__SMRL
+12,12,,null,0,HAGEN Bill,HAGEN B.,HAGEN,Bill,USA,12,1,12,0+0,0,null,00:27:23.0,,,,,,,,,,null,,,,null,13,13,null,,,,,BT8384SWRLOG__SMRL
+12,12,,null,0,NELSON Donald,NELSON D.,NELSON,Donald,USA,12,2,12,0+3,3,null,00:27:23.8,,,,,,,,,,null,,,,null,13,13,null,,,,,BT8384SWRLOG__SMRL
+12,12,,null,0,GENTLE Bill,GENTLE B.,GENTLE,Bill,USA,12,3,12,0+0,0,null,00:26:40.9,,,,,,,,,,null,,,,null,12,12,null,,,,,BT8384SWRLOG__SMRL
+12,12,,null,0,CARNEY Edward,CARNEY E.,CARNEY,Edward,USA,12,4,12,0+9,9,null,00:27:30.0,,,,,,,,,,null,,,,null,12,12,null,,,,,BT8384SWRLOG__SMRL
+13,13,,null,1,ROMANIA,ROMANIA,,null,ROU,13,,13,,2,null,01:49:54.8,,,,,,,,,,+11:03.1,,,,01:49:54.8,,,,,null,,,BT8384SWRLOG__SMRL
+13,13,,null,0,BABA Vladimir,BABA V.,BABA,Vladimir,ROU,13,1,13,0+0,0,null,00:27:14.4,,,,,,,,,,null,,,,null,12,12,null,,,,,BT8384SWRLOG__SMRL
+13,13,,null,0,CIMPOIA Nicolae,CIMPOIA N.,CIMPOIA,Nicolae,ROU,13,2,13,0+0,0,null,00:26:40.4,,,,,,,,,,null,,,,null,12,12,null,,,,,BT8384SWRLOG__SMRL
+13,13,,null,0,ENACHE Imre,ENACHE I.,ENACHE,Imre,ROU,13,3,13,0+0,0,null,00:27:45.3,,,,,,,,,,null,,,,null,13,13,null,,,,,BT8384SWRLOG__SMRL
+13,13,,null,0,GHEORGHE Mihai,GHEORGHE M.,GHEORGHE,Mihai,ROU,13,4,13,0+2,2,null,00:28:14.7,,,,,,,,,,null,,,,null,15,13,null,,,,,BT8384SWRLOG__SMRL
+14,14,,null,1,GREAT BRITAIN,GREAT BRITAIN,,null,GBR,14,,14,,0,null,01:51:11.4,,,,,,,,,,+12:19.7,,,,01:51:11.4,,,,,null,,,BT8384SWRLOG__SMRL
+14,14,,null,0,WOOD Jim,WOOD J.,WOOD,Jim,GBR,14,1,14,0+0,0,null,00:27:11.6,,,,,,,,,,null,,,,null,9,9,null,,,,,BT8384SWRLOG__SMRL
+14,14,,null,0,FRENCH Patrick,FRENCH P.,FRENCH,Patrick,GBR,14,2,14,0+0,0,null,00:27:44.2,,,,,,,,,,null,,,,null,14,14,null,,,,,BT8384SWRLOG__SMRL
+14,14,,null,0,KING Michael,KING M.,KING,Michael,GBR,14,3,14,0+0,0,null,00:28:01.9,,,,,,,,,,null,,,,null,15,14,null,,,,,BT8384SWRLOG__SMRL
+14,14,,null,0,MAIN Alan,MAIN A.,MAIN,Alan,GBR,14,4,14,0+0,0,null,00:28:13.7,,,,,,,,,,null,,,,null,14,14,null,,,,,BT8384SWRLOG__SMRL
+15,15,,null,1,JAPAN,JAPAN,,null,JPN,15,,15,,1,null,01:51:43.1,,,,,,,,,,+12:51.4,,,,01:51:43.1,,,,,null,,,BT8384SWRLOG__SMRL
+15,15,,null,0,YAMASE Isao,YAMASE I.,YAMASE,Isao,JPN,15,1,15,0+0,0,null,00:29:00.5,,,,,,,,,,null,,,,null,16,16,null,,,,,BT8384SWRLOG__SMRL
+15,15,,null,0,SATO Shoichi,SATO S.,SATO,Shoichi,JPN,15,2,15,0+1,1,null,00:27:17.1,,,,,,,,,,null,,,,null,9,15,null,,,,,BT8384SWRLOG__SMRL
+15,15,,null,0,MURASE Yoshinobu,MURASE Y.,MURASE,Yoshinobu,JPN,15,3,15,0+0,0,null,00:27:32.4,,,,,,,,,,null,,,,null,11,15,null,,,,,BT8384SWRLOG__SMRL
+15,15,,null,0,DEGUCHI Hiroyuki,DEGUCHI H.,DEGUCHI,Hiroyuki,JPN,15,4,15,0+0,0,null,00:27:53.1,,,,,,,,,,null,,,,null,13,15,null,,,,,BT8384SWRLOG__SMRL
+16,16,,null,1,HUNGARY,HUNGARY,,null,HUN,16,,16,,4,null,01:54:13.9,,,,,,,,,,+15:22.2,,,,01:54:13.9,,,,,null,,,BT8384SWRLOG__SMRL
+16,16,,null,0,KOVÁCS János,KOVÁCS J.,KOVÁCS,János,HUN,16,1,16,0+1,1,null,00:26:57.5,,,,,,,,,,null,,,,null,14,14,null,,,,,BT8384SWRLOG__SMRL
+16,16,,null,0,LIHI József,LIHI J.,LIHI,József,HUN,16,2,16,0+2,2,null,00:28:41.6,,,,,,,,,,null,,,,null,16,16,null,,,,,BT8384SWRLOG__SMRL
+16,16,,null,0,MAYER Gábor,MAYER G.,MAYER,Gábor,HUN,16,3,16,0+0,0,null,00:28:57.9,,,,,,,,,,null,,,,null,16,16,null,,,,,BT8384SWRLOG__SMRL
+16,16,,null,0,PALÁCSZIK László,PALÁCSZIK L.,PALÁCSZIK,László,HUN,16,4,16,0+1,1,null,00:29:36.9,,,,,,,,,,null,,,,null,16,16,null,,,,,BT8384SWRLOG__SMRL
+17,17,,null,1,YUGOSLAVIA,YUGOSLAVIA,,null,YUG,17,,17,,15,null,01:54:13.8,,,,,,,,,,+15:22.1,,,,01:54:13.8,,,,,null,,,BT8384SWRLOG__SMRL
+17,17,,null,0,MILENKOVIĆ Andrej,MILENKOVIĆ A.,MILENKOVIĆ,Andrej,YUG,17,1,17,0+5,5,null,00:28:27.0,,,,,,,,,,null,,,,null,15,15,null,,,,,BT8384SWRLOG__SMRL
+17,17,,null,0,VIDMAR Jure,VIDMAR J.,VIDMAR,Jure,YUG,17,2,17,0+8,8,null,00:28:30.1,,,,,,,,,,null,,,,null,15,17,null,,,,,BT8384SWRLOG__SMRL
+17,17,,null,0,LEPOJA Tomislav,LEPOJA T.,LEPOJA,Tomislav,YUG,17,3,17,0+1,1,null,00:28:30.5,,,,,,,,,,null,,,,null,17,17,null,,,,,BT8384SWRLOG__SMRL
+17,17,,null,0,LANIŠEK Marjan,LANIŠEK M.,LANIŠEK,Marjan,YUG,17,4,17,0+1,1,null,00:28:46.2,,,,,,,,,,null,,,,null,17,17,null,,,,,BT8384SWRLOG__SMRL
