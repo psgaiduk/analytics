@@ -1,2 +1,4 @@
 clickhouse-connect==0.10.0
+great_tables==0.20.0
 pandas==2.3.3
+typing_extensions==4.15.0
