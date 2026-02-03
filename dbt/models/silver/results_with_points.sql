@@ -45,7 +45,7 @@ SELECT
                 rank = 7, 270,
                 rank = 8, 250,
                 rank = 9, 230, 
-                ank = 10, 220, 
+                rank = 10, 220, 
                 rank BETWEEN 11 AND 15, 320 - (rank * 10),
                 0
             ),
