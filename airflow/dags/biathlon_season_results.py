@@ -1,16 +1,12 @@
 from datetime import datetime
 from logging import getLogger
 
-from airflow.exceptions import AirflowSkipException
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, Param, task
-from pandas import DataFrame, concat
 
 from choices.name_tables import TableNames
 from functions.generate_season_id import generate_season_id_func
-from functions.insert_values_to_database import load_to_database
-from sdk.biathlon.fetch_data import BiathlonCompetitionsFetcher, BiathlonEventsFetcher
-from sdk.clickhouse_sdk import DeleteFromDatabase
+from sdk.clickhouse_sdk import GetDataByQuery
 
 
 log = getLogger(__name__)
@@ -37,46 +33,88 @@ with DAG(
 ) as dag:
 
     @task()
-    def get_events(**kwargs) -> DataFrame:
-        rt = kwargs["params"]["rt"]
+    def get_season_id(**kwargs) -> str:
+        """
+        Get SeasonId for biathlonresults.com from params or generate it if not provided.
+
+        Returns:
+            str: SeasonId for biathlonresults.com
+        """
         season_id = kwargs["params"]["season_id"] or generate_season_id_func()
-        events_df = BiathlonEventsFetcher(rt=rt, season_id=season_id).fetch()
-        if events_df.empty:
-            log.info("Данных нет. Пропускаем выполнение всего DAG.")
-            raise AirflowSkipException("No events found for this season")
-        events_df = events_df[
-            (events_df["EventId"].str.startswith(f"BT{season_id}SWRL")) & (events_df["Level"].astype("int") == 1)
-        ]
-        return events_df
+        log.info(f"SeasonId для обновления: {season_id}")
+        return season_id
 
     @task()
-    def load_events_to_clickhouse(events_df, **kwargs) -> list[int]:
-        season_id = kwargs["params"]["season_id"] or generate_season_id_func()
-        table_name = TableNames.BIATHLON_EVENTS.value
-        DeleteFromDatabase(table_name=table_name).delete_where(condition=f"SeasonId = '{season_id}'")
-        load_to_database(data=events_df, table_name=table_name)
-        return [event_id for event_id in events_df["EventId"].tolist()]
+    def prepare_conf(season_id):
+        return [{"season_id": season_id}]
 
     @task()
-    def get_competitions(event_id, **kwargs):
-        rt = kwargs["params"]["rt"]
-        season_id = kwargs["params"]["season_id"] or generate_season_id_func()
-        return BiathlonCompetitionsFetcher(rt=rt, season_id=season_id).fetch(event_id=event_id)
+    def get_events_ids(season_id: str) -> list:
+        """
+        Get EventIds for given SeasonId from database.
+
+        Args:
+            season_id (str): SeasonId for biathlonresults.com
+
+        Returns:
+            list: List of dictionaries with EventIds, e.g. [{"event_id": "123"}, {"event_id": "456"}]
+
+        """
+        query_for_get_events_ids = f"""
+        SELECT
+            EventId
+        FROM {TableNames.BIATHLON_EVENTS.value}
+        WHERE SeasonId = '{season_id}'
+        """
+        log.info(f"Query for get events ids: {query_for_get_events_ids}")
+        events_df = GetDataByQuery().get_data(query=query_for_get_events_ids)
+        log.info(f"Get events from database events_df = {events_df.head()}")
+        return [{"event_id": event_id} for event_id in events_df["EventId"].tolist()]
 
     @task()
-    def merge_and_load_competitions(dfs_list, **kwargs):
-        competitions_df = concat(dfs_list, ignore_index=True)
-        table_name = TableNames.BIATHLON_COMPETITION.value
-        load_to_database(data=competitions_df, table_name=table_name)
+    def get_races_ids(season_id: str) -> list:
+        """
+        Get RaceIds for given SeasonId from database.
 
-        finished_races = competitions_df[competitions_df["StatusId"].astype(int) == 11]
-        log.info(f"Total races: {len(competitions_df)}, Finished races to trigger: {len(finished_races)}")
-        return [{"race_id": race_id} for race_id in finished_races["RaceId"].tolist()]
+        Args:
+            season_id (str): SeasonId for biathlonresults.com
 
-    events_df = get_events()
-    events_ids = load_events_to_clickhouse(events_df=events_df)
-    dfs_list = get_competitions.partial(max_active_tis_per_dag=1).expand(event_id=events_ids)
-    race_ids = merge_and_load_competitions(dfs_list=dfs_list)
+        Returns:
+            list: List of dictionaries with RacesIds.
+        """
+        query_for_get_races_ids = f"""
+        SELECT
+            RaceId
+        FROM {TableNames.BIATHLON_COMPETITION.value}
+        WHERE season_id = '{season_id}' AND StatusId = '11'
+        """
+        log.info(f"Query for get races ids: {query_for_get_races_ids}")
+        races_df = GetDataByQuery().get_data(query=query_for_get_races_ids)
+        log.info(f"Get races ids from database races_df = {races_df.head()}")
+        return [{"race_id": race_id} for race_id in races_df["RaceId"].tolist()]
+
+    season_id = get_season_id()
+    conf = prepare_conf(season_id=season_id)
+
+    TriggerDagRunOperator.partial(
+        task_id="trigger_biathlon_update_events",
+        trigger_dag_id="biathlon_update_events",
+        wait_for_completion=True,
+        poke_interval=5,
+        max_active_tis_per_dag=1,
+    ).expand(conf=conf)
+
+    events_ids = get_events_ids(season_id=season_id)
+
+    TriggerDagRunOperator.partial(
+        task_id="trigger_biathlon_update_competitions",
+        trigger_dag_id="biathlon_update_competitions",
+        wait_for_completion=True,
+        poke_interval=5,
+        max_active_tis_per_dag=5,
+    ).expand(conf=events_ids)
+
+    race_ids = get_races_ids(season_id=season_id)
 
     TriggerDagRunOperator.partial(
         task_id="trigger_update_races_results",
