@@ -27,7 +27,7 @@ with DAG(
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=["biathlon"],
+    tags=["biathlon", "manual"],
     max_active_tasks=5,
 ) as dag:
 

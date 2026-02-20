@@ -40,7 +40,7 @@ def get_seasons_list() -> list[dict[str, int]]:
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=["biathlon"],
+    tags=["biathlon", "manual"],
 )
 def biathlon_update_dag():
 

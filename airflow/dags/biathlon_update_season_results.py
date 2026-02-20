@@ -16,7 +16,7 @@ with DAG(
     schedule="0 1 1 * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=["biathlon"],
+    tags=["biathlon", "regular"],
     params={
         "season_id": Param(
             "",

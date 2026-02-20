@@ -14,10 +14,10 @@ log = getLogger(__name__)
 
 with DAG(
     dag_id="biathlon_update_fresh_race",
-    schedule=None,
+    schedule="0 */1 * * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=["biathlon"],
+    tags=["biathlon", "regular"],
     params={
         "rt": Param(
             385698,
