@@ -55,8 +55,8 @@ with DAG(
     race_id = get_race_id()
 
     TriggerDagRunOperator(
-        task_id="trigger_single_race_update",
-        trigger_dag_id="biathlon_update_race_results",
+        task_id="trigger_biathlon_race_results_fresh",
+        trigger_dag_id="biathlon_race_results",
         conf={"race_id": race_id},
         wait_for_completion=True,
     )

@@ -14,7 +14,7 @@ log = getLogger(__name__)
 
 
 with DAG(
-    dag_id="biathlon_update_race_results",
+    dag_id="biathlon_race_results",
     description="Обновление результатов одной гонки с biathlonresults.com",
     schedule=None,
     start_date=datetime(2024, 1, 1),
