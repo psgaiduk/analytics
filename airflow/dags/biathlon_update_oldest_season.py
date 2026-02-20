@@ -4,6 +4,7 @@ from logging import getLogger
 from airflow.sdk import DAG, task
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 
+from choices import CompetitionTable
 from choices.name_tables import TableNames
 from sdk.clickhouse_sdk import GetDataByQuery
 
@@ -14,10 +15,10 @@ log = getLogger(__name__)
 def generate_season_id():
     query_for_get_race_id = f"""
     SELECT
-        season_id
+        {CompetitionTable.SEASON_ID.value} AS season_id
     FROM {TableNames.BIATHLON_COMPETITION.value}
-    GROUP BY season_id
-    ORDER BY MIN(updated_at)
+    GROUP BY {CompetitionTable.SEASON_ID.value}
+    ORDER BY MIN({CompetitionTable.UPDATED_AT.value})
     LIMIT 1
     """
     season_id_df = GetDataByQuery().get_data(query=query_for_get_race_id)

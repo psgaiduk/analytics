@@ -5,6 +5,7 @@ from airflow.exceptions import AirflowSkipException
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, task
 
+from choices import CompetitionTable
 from choices.name_tables import TableNames
 from constants import COMPETITION_FINISHED_STATUS
 from sdk.clickhouse_sdk import GetDataByQuery
@@ -26,15 +27,15 @@ with DAG(
         log.info("Get finished race without results")
         query_for_get_race_id = f"""
         SELECT
-            RaceId
+            {CompetitionTable.RACE_ID.value} AS RaceId
         FROM {TableNames.BIATHLON_COMPETITION.value}
-        WHERE StatusId = '{COMPETITION_FINISHED_STATUS}'
-        AND RaceId NOT IN (
+        WHERE {CompetitionTable.STATUS_ID.value} = '{COMPETITION_FINISHED_STATUS}'
+        AND {CompetitionTable.RACE_ID.value} NOT IN (
             SELECT
                 DISTINCT race_id
             FROM {TableNames.BIATHLON_RESULT.value}
         )
-        ORDER BY StartTime DESC
+        ORDER BY {CompetitionTable.START_TIME.value} DESC
         LIMIT 1
         """
         race_id_df = GetDataByQuery().get_data(query=query_for_get_race_id)

@@ -1,0 +1,1 @@
+from choices.competition_table import CompetitionTable
