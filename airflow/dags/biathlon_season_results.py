@@ -97,8 +97,8 @@ with DAG(
     conf = prepare_conf(season_id=season_id)
 
     TriggerDagRunOperator.partial(
-        task_id="trigger_biathlon_update_events",
-        trigger_dag_id="biathlon_update_events",
+        task_id="trigger_biathlon_events_season",
+        trigger_dag_id="biathlon_events",
         wait_for_completion=True,
         poke_interval=5,
         max_active_tis_per_dag=1,

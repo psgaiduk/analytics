@@ -15,8 +15,8 @@ from sdk.clickhouse_sdk import DeleteFromDatabase
 log = getLogger(__name__)
 
 with DAG(
-    dag_id="biathlon_update_events",
-    schedule="0 1 1 * *",
+    dag_id="biathlon_events",
+    schedule="0 0 * * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=["biathlon"],
