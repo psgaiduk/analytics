@@ -6,6 +6,7 @@ from airflow.sdk import DAG, Param, task
 from pandas import DataFrame
 
 from choices.name_tables import TableNames
+from constants import BIATHLON_RT
 from functions.generate_season_id import generate_season_id_func
 from functions.insert_values_to_database import load_to_database
 from sdk.biathlon.fetch_data import BiathlonEventsFetcher
@@ -27,7 +28,7 @@ with DAG(
             description="SeasonId для biathlonresults.com",
         ),
         "rt": Param(
-            385698,
+            BIATHLON_RT,
             type="integer",
             description="RT для biathlonresults.com",
         ),

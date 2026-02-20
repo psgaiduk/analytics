@@ -5,6 +5,7 @@ from airflow.sdk import DAG, Param, task
 from pandas import DataFrame, concat
 
 from choices.name_tables import TableNames
+from constants import BIATHLON_RT
 from functions.insert_values_to_database import load_to_database
 from sdk.biathlon.fetch_data import BiathlonAnalyticsResultsFetcher, BiathlonResultsFetcher
 from sdk.clickhouse_sdk import DeleteFromDatabase
@@ -22,7 +23,7 @@ with DAG(
     tags=["biathlon", "triggered"],
     params={
         "rt": Param(
-            385698,
+            BIATHLON_RT,
             type="integer",
             description="RT для biathlonresults.com",
         ),
