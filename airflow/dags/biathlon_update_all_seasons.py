@@ -68,8 +68,8 @@ def biathlon_update_dag():
     drop_task >> seasons_data
 
     TriggerDagRunOperator.partial(
-        task_id="trigger_all_season_results",
-        trigger_dag_id="biathlon_season_results",
+        task_id="trigger_update_season_results_all_seasons",
+        trigger_dag_id="biathlon_update_season_results",
         wait_for_completion=True,
         max_active_tis_per_dag=1,
     ).expand(conf=seasons_data)

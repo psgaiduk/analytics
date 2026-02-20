@@ -12,7 +12,7 @@ from sdk.clickhouse_sdk import GetDataByQuery
 log = getLogger(__name__)
 
 with DAG(
-    dag_id="biathlon_season_results",
+    dag_id="biathlon_update_season_results",
     schedule="0 1 1 * *",
     start_date=datetime(2024, 1, 1),
     catchup=False,

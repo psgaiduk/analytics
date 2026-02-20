@@ -42,7 +42,7 @@ with DAG(
     conf_data = build_conf()
 
     trigger = TriggerDagRunOperator(
-        task_id="trigger_season_results",
-        trigger_dag_id="biathlon_season_results",
+        task_id="trigger_update_season_results_oldest",
+        trigger_dag_id="biathlon_update_season_results",
         conf=conf_data,
     )
