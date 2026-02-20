@@ -3,7 +3,7 @@ from logging import getLogger
 
 from airflow.exceptions import AirflowSkipException
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
-from airflow.sdk import DAG, Param, task
+from airflow.sdk import DAG, task
 
 from choices.name_tables import TableNames
 from sdk.clickhouse_sdk import GetDataByQuery
@@ -18,13 +18,6 @@ with DAG(
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=["biathlon", "regular"],
-    params={
-        "rt": Param(
-            385698,
-            type="integer",
-            description="RT для biathlonresults.com",
-        ),
-    },
 ) as dag:
 
     @task()

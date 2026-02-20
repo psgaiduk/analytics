@@ -23,11 +23,6 @@ with DAG(
             type="string",
             description="SeasonId для biathlonresults.com",
         ),
-        "rt": Param(
-            385698,
-            type="integer",
-            description="RT для biathlonresults.com",
-        ),
     },
     max_active_tasks=5,
 ) as dag:
