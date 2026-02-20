@@ -19,7 +19,7 @@ with DAG(
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
-    tags=["biathlon"],
+    tags=["biathlon", "triggered"],
     params={
         "rt": Param(
             385698,
