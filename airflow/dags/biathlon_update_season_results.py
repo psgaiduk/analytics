@@ -96,7 +96,7 @@ with DAG(
     season_id = get_season_id()
     conf = prepare_conf(season_id=season_id)
 
-    TriggerDagRunOperator.partial(
+    trigger_events = TriggerDagRunOperator.partial(
         task_id="trigger_biathlon_events_season",
         trigger_dag_id="biathlon_events",
         wait_for_completion=True,
@@ -105,8 +105,9 @@ with DAG(
     ).expand(conf=conf)
 
     events_ids = get_events_ids(season_id=season_id)
+    trigger_events >> events_ids
 
-    TriggerDagRunOperator.partial(
+    trigger_races = TriggerDagRunOperator.partial(
         task_id="trigger_biathlon_competitions_season",
         trigger_dag_id="biathlon_competitions",
         wait_for_completion=True,
@@ -115,6 +116,7 @@ with DAG(
     ).expand(conf=events_ids)
 
     race_ids = get_races_ids(season_id=season_id)
+    trigger_races >> race_ids
 
     TriggerDagRunOperator.partial(
         task_id="trigger_races_results_season",
