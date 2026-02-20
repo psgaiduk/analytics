@@ -6,6 +6,7 @@ from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOpe
 from airflow.sdk import DAG, task
 
 from choices.name_tables import TableNames
+from constants import COMPETITION_FINISHED_STATUS
 from sdk.clickhouse_sdk import GetDataByQuery
 
 
@@ -27,7 +28,7 @@ with DAG(
         SELECT
             RaceId
         FROM {TableNames.BIATHLON_COMPETITION.value}
-        WHERE StatusId = '11'
+        WHERE StatusId = '{COMPETITION_FINISHED_STATUS}'
         AND RaceId NOT IN (
             SELECT
                 DISTINCT race_id

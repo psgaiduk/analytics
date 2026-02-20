@@ -5,6 +5,7 @@ from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOpe
 from airflow.sdk import DAG, Param, task
 
 from choices.name_tables import TableNames
+from constants import COMPETITION_FINISHED_STATUS
 from functions.generate_season_id import generate_season_id_func
 from sdk.clickhouse_sdk import GetDataByQuery
 
@@ -81,7 +82,7 @@ with DAG(
         SELECT
             RaceId
         FROM {TableNames.BIATHLON_COMPETITION.value}
-        WHERE season_id = '{season_id}' AND StatusId = '11'
+        WHERE season_id = '{season_id}' AND StatusId = '{COMPETITION_FINISHED_STATUS}'
         """
         log.info(f"Query for get races ids: {query_for_get_races_ids}")
         races_df = GetDataByQuery().get_data(query=query_for_get_races_ids)

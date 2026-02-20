@@ -6,6 +6,7 @@ from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOpe
 from airflow.sdk import DAG, task
 
 from choices.name_tables import TableNames
+from constants import COMPETITION_FINISHED_STATUS
 from sdk.clickhouse_sdk import GetDataByQuery
 
 
@@ -40,7 +41,7 @@ with DAG(
             WHERE today() BETWEEN parseDateTime64BestEffort(StartDate) AND parseDateTime64BestEffort(EndDate)
         )
         AND DATE(parseDateTime64BestEffort(StartTime)) = today() AND parseDateTime64BestEffort(StartTime) <= now()
-        AND StatusId != '11'
+        AND StatusId != '{COMPETITION_FINISHED_STATUS}'
         """
         log.info(f"Query for get events ids: {query_for_get_events_ids}")
         events_df = GetDataByQuery().get_data(query=query_for_get_events_ids)
