@@ -5,7 +5,7 @@ from airflow.exceptions import AirflowSkipException
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, task
 
-from choices import CompetitionTable
+from choices import CompetitionTable, EventsTable
 from choices.name_tables import TableNames
 from constants import COMPETITION_FINISHED_STATUS
 from sdk.clickhouse_sdk import GetDataByQuery
@@ -37,9 +37,10 @@ with DAG(
         FROM {TableNames.BIATHLON_COMPETITION.value}
         WHERE {CompetitionTable.EVENT_ID.value} IN (
             SELECT
-                EventId
+                {EventsTable.EVENT_ID.value}
             FROM {TableNames.BIATHLON_EVENTS.value}
-            WHERE today() BETWEEN parseDateTime64BestEffort(StartDate) AND parseDateTime64BestEffort(EndDate)
+            WHERE today() BETWEEN parseDateTime64BestEffort({EventsTable.START_DATE.value})
+                AND parseDateTime64BestEffort({EventsTable.END_DATE.value})
         )
         AND DATE(parseDateTime64BestEffort({CompetitionTable.START_TIME.value})) = today()
         AND parseDateTime64BestEffort({CompetitionTable.START_TIME.value}) <= now()

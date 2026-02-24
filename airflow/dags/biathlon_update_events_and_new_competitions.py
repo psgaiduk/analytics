@@ -5,6 +5,7 @@ from airflow.exceptions import AirflowSkipException
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, task
 
+from choices import EventsTable
 from choices.name_tables import TableNames
 from functions.generate_season_id import generate_season_id_func
 from sdk.clickhouse_sdk import GetDataByQuery
@@ -44,9 +45,10 @@ with DAG(
         """
         query_for_get_events_ids = f"""
         SELECT
-            EventId
+            {EventsTable.EVENT_ID.value} AS EventId
         FROM {TableNames.BIATHLON_EVENTS.value}
-        WHERE today() BETWEEN parseDateTime64BestEffort(StartDate) AND parseDateTime64BestEffort(EndDate)
+        WHERE today() BETWEEN parseDateTime64BestEffort({EventsTable.START_DATE.value})
+            AND parseDateTime64BestEffort({EventsTable.END_DATE.value})
         """
         log.info(f"Query for get events ids: {query_for_get_events_ids}")
         events_df = GetDataByQuery().get_data(query=query_for_get_events_ids)

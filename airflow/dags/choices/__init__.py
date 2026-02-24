@@ -1,1 +1,2 @@
 from choices.competition_table import CompetitionTable
+from choices.events_table import EventsTable

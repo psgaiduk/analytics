@@ -4,7 +4,7 @@ from logging import getLogger
 from airflow.providers.standard.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.sdk import DAG, Param, task
 
-from choices import CompetitionTable
+from choices import CompetitionTable, EventsTable
 from choices.name_tables import TableNames
 from constants import COMPETITION_FINISHED_STATUS
 from functions.generate_season_id import generate_season_id_func
@@ -59,9 +59,9 @@ with DAG(
         """
         query_for_get_events_ids = f"""
         SELECT
-            EventId
+            {EventsTable.EVENT_ID.value} AS EventId
         FROM {TableNames.BIATHLON_EVENTS.value}
-        WHERE SeasonId = '{season_id}'
+        WHERE {EventsTable.SEASON_ID.value} = '{season_id}'
         """
         log.info(f"Query for get events ids: {query_for_get_events_ids}")
         events_df = GetDataByQuery().get_data(query=query_for_get_events_ids)
